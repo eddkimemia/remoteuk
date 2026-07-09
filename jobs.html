@@ -737,7 +737,7 @@ function renderJobs(filtered) {
                     <button class="btn-save ${savedJobs.has(j.id)?'saved':''}" onclick="toggleSave(${j.id},this)" aria-label="Save job">
                         <span class="iconify" data-icon="${savedJobs.has(j.id)?'mdi:heart':'mdi:heart-outline'}"></span>
                     </button>
-                    <button class="btn-apply-sm" onclick="openJobModal(${j.id})">View & Apply</button>
+                    <button class="btn-apply-sm" onclick="event.stopPropagation(); window.location.href='apply.html?job_title=' + encodeURIComponent('${j.title}')" style="background: linear-gradient(135deg, var(--green-600), var(--green-700)); color: white; font-weight: 700; box-shadow: 0 2px 8px rgba(5,150,105,0.3);">👉 APPLY NOW – LIMITED SLOTS AVAILABLE</button>
                 </div>
             </div>
         </div>
@@ -860,14 +860,14 @@ function openJobModal(id) {
             </div>
             <hr class="modal-divider">
             <div style="background:var(--blue-50);border:1.5px solid var(--blue-200);border-radius:12px;padding:24px 32px;text-align:center;margin-top:20px">
-                <span class="iconify" data-icon="mdi:alert-circle-outline" style="font-size:36px;color:var(--blue-600);margin-bottom:12px"></span>
-                <h4 style="font-size:1.15rem;font-weight:800;color:var(--slate-900);margin-bottom:8px">Course Completion Required</h4>
+                <span class="iconify" data-icon="mdi:fire" style="font-size:36px;color:var(--amber-500);margin-bottom:12px"></span>
+                <h4 style="font-size:1.15rem;font-weight:800;color:var(--slate-900);margin-bottom:8px">Apply for ${j.title}</h4>
                 <p style="font-size:0.875rem;color:var(--slate-600);line-height:1.6;margin-bottom:20px;max-width:480px;margin-left:auto;margin-right:auto">
-                    To apply for <strong>${j.title}</strong>, all candidates are required to complete the <strong>Remote Healthcare Career Accelerator</strong> course. This ensures proper verification of digital competencies, data governance, and remote assessment skills before onboarding.
+                    There are currently high volumes of applicants for this clinical position. Submit your eligibility details immediately to lock in your priority spot.
                 </p>
                 <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-                    <a href="course.html" class="btn btn-green btn-lg" style="box-shadow:0 4px 14px rgba(5,150,105,0.25)">
-                        <span class="iconify" data-icon="mdi:school-outline"></span> Enroll in Course & Unlock Applications — $27
+                    <a href="apply.html?job_title=${encodeURIComponent(j.title)}" class="btn btn-green btn-lg" style="box-shadow:0 4px 14px rgba(5,150,105,0.25); font-weight: 800;">
+                        👉 APPLY NOW – LIMITED SLOTS AVAILABLE
                     </a>
                 </div>
             </div>

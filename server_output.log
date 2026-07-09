@@ -1,0 +1,13 @@
+◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]
+WARNING: PAYSTACK_SECRET_KEY is not defined in env. Running in Sandbox Mock Mode.
+=================================================
+RemoteMedicalJobs Node.js Server listening on port 3000
+Mock Mode: ACTIVE (No API Keys required)
+URL: http://localhost:3000
+=================================================
+Connected to the SQLite database.
+Enrollments table ready.
+Received Paystack Webhook Event: charge.success
+Webhook: successfully completed enrollment status for RMJ-WEBHOOK-1783633859582
+Received Paystack Webhook Event: charge.success
+Webhook: successfully completed enrollment status for RMJ-WEBHOOK-1783633938792

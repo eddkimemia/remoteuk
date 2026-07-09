@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apply for the Course — RemoteMedicalJobs.co.uk</title>
-    <meta name="description" content="Apply and enrol in the Remote Healthcare Career Accelerator course. Secure Paystack checkout.">
+    <title>Check Your Eligibility — RemoteMedicalJobs.co.uk</title>
+    <meta name="description" content="Check your eligibility for remote healthcare roles. Quick validation check.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
@@ -61,12 +61,9 @@
 
         /* CONTENT LAYOUT */
         .container {
-            max-width: 1100px;
+            max-width: 900px;
             margin: 120px auto 80px;
             padding: 0 24px;
-            display: grid;
-            grid-template-columns: 1fr 450px;
-            gap: 40px;
         }
 
         .apply-card {
@@ -74,7 +71,7 @@
             border: 1px solid var(--slate-200);
             border-radius: var(--radius-lg);
             padding: 40px;
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-lg);
         }
 
         .apply-title {
@@ -82,6 +79,9 @@
             font-weight: 800;
             color: var(--slate-900);
             margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .apply-subtitle {
@@ -134,82 +134,36 @@
             gap: 16px;
         }
 
-        .form-consent {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            margin-top: 24px;
+        .file-upload {
+            border: 2px dashed var(--slate-200);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            cursor: pointer;
+            transition: all .2s;
+            position: relative;
+        }
+        .file-upload:hover {
+            border-color: var(--blue-400);
+            background: var(--blue-50);
+        }
+        .file-upload input {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
             cursor: pointer;
         }
-        .form-consent input[type="checkbox"] {
-            width: 18px;
-            height: 18px;
-            accent-color: var(--blue-600);
-            margin-top: 2px;
-            flex-shrink: 0;
-            cursor: pointer;
+        .file-upload-icon {
+            font-size: 28px;
+            color: var(--slate-300);
+            margin-bottom: 6px;
         }
-        .form-consent-text {
-            font-size: 0.8rem;
+        .file-upload-text {
+            font-size: .82rem;
             color: var(--slate-500);
-            line-height: 1.5;
         }
-
-        /* SIDE PANEL */
-        .side-panel {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        .summary-card {
-            background: linear-gradient(135deg, var(--blue-900), var(--blue-950));
-            color: white;
-            border-radius: var(--radius-lg);
-            padding: 32px;
-            box-shadow: var(--shadow-md);
-        }
-
-        .summary-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .summary-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-            font-size: 0.875rem;
-        }
-        .summary-item:last-child {
-            border-bottom: none;
-        }
-        .summary-item.total {
-            font-size: 1.1rem;
-            font-weight: 800;
-            border-top: 1.5px solid rgba(255,255,255,0.15);
-            padding-top: 16px;
-            margin-top: 8px;
-        }
-
-        .benefit-item {
-            display: flex;
-            gap: 12px;
-            align-items: flex-start;
-            font-size: 0.85rem;
-            color: var(--slate-600);
-            margin-bottom: 12px;
-        }
-        .benefit-item .iconify {
-            color: var(--green-600);
-            font-size: 18px;
-            flex-shrink: 0;
+        .file-upload-text strong {
+            color: var(--blue-600);
         }
 
         /* TOAST */
@@ -229,13 +183,85 @@
         .footer-links a{font-size:.78rem;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s}
         .footer-links a:hover{color:white}
 
-        @media(max-width: 900px) {
-            .container {
+        /* PIVOT MODAL POPUP */
+        .pivot-box {
+            display: none;
+            margin-top: 10px;
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .pivot-header {
+            background: #FEF3C7;
+            border: 1px solid #FCD34D;
+            border-radius: 12px;
+            padding: 20px 24px;
+            color: #92400E;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+            font-size: 1.2rem;
+        }
+
+        .pivot-quote {
+            background: var(--slate-100);
+            border-left: 4px solid var(--blue-600);
+            padding: 16px 20px;
+            font-style: italic;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--slate-700);
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0 32px;
+        }
+        .comparison-table th, .comparison-table td {
+            border: 1px solid var(--slate-200);
+            padding: 14px 18px;
+            font-size: 0.875rem;
+            text-align: left;
+        }
+        .comparison-table th {
+            background: var(--slate-50);
+            font-weight: 700;
+            color: var(--slate-900);
+        }
+        .comparison-table td.option-col {
+            font-weight: 700;
+            width: 140px;
+        }
+        .comparison-table tr.highlighted {
+            background: var(--green-50);
+        }
+
+        .offer-footer {
+            font-size: 0.8rem;
+            color: var(--slate-400);
+            text-align: center;
+            margin-top: 12px;
+            font-weight: 500;
+        }
+
+        @media(max-width: 600px) {
+            .form-row {
                 grid-template-columns: 1fr;
-                margin-top: 100px;
             }
-            .side-panel {
-                order: -1;
+            .comparison-table th, .comparison-table td {
+                padding: 10px;
+                font-size: 0.8rem;
+            }
+            .comparison-table td.option-col {
+                width: auto;
             }
         }
     </style>
@@ -258,7 +284,6 @@
             <li><a href="index.html#contact">Contact</a></li>
         </ul>
         <div class="nav-cta">
-            <a href="jobs.html" class="btn btn-secondary">Browse Jobs</a>
             <a href="course.html" class="btn btn-primary">Course Accelerator</a>
         </div>
         <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
@@ -278,132 +303,127 @@
 
 <!-- MAIN LAYOUT -->
 <div class="container">
-    <div class="apply-card">
-        <h1 class="apply-title">Course Registration</h1>
-        <p class="apply-subtitle">Fill in your information below to submit your application and proceed to Paystack secure payment.</p>
+    <div class="apply-card" id="flowContainer">
+        <!-- SCREEN 1: ELIGIBILITY CHECK -->
+        <div id="screenEligibility">
+            <h1 class="apply-title">⚠️ Almost There! Let's Check Your Eligibility...</h1>
+            <p class="apply-subtitle">Please fill out this short form to evaluate your clinical qualifications and experience for remote clinical roles.</p>
 
-        <form id="applyForm" onsubmit="handleApplySubmit(event)">
-            <div class="form-row">
-                <div class="form-group">
-                    <label>First Name <span class="req">*</span></label>
-                    <input type="text" class="form-input" id="first_name" placeholder="Sarah" required>
+            <form id="eligibilityForm" onsubmit="submitEligibility(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>First Name <span class="req">*</span></label>
+                        <input type="text" class="form-input" id="first_name" placeholder="Sarah" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name <span class="req">*</span></label>
+                        <input type="text" class="form-input" id="last_name" placeholder="Mitchell" required>
+                    </div>
                 </div>
+
                 <div class="form-group">
-                    <label>Last Name <span class="req">*</span></label>
-                    <input type="text" class="form-input" id="last_name" placeholder="Mitchell" required>
+                    <label>Email Address <span class="req">*</span></label>
+                    <input type="email" class="form-input" id="email" placeholder="sarah@example.com" required>
                 </div>
-            </div>
 
-            <div class="form-group">
-                <label>Email Address <span class="req">*</span></label>
-                <input type="email" class="form-input" id="email" placeholder="sarah@example.com" required>
-            </div>
-
-            <div class="form-group">
-                <label>Phone Number <span class="req">*</span></label>
-                <input type="tel" class="form-input" id="phone" placeholder="+44 7700 900000" required>
-            </div>
-
-            <div class="form-group">
-                <label>Profession <span class="req">*</span></label>
-                <select class="form-select" id="profession" required>
-                    <option value="">Select your profession...</option>
-                    <option value="nurse">Nurse (RGN / RMN / RSCN)</option>
-                    <option value="pharmacist">Pharmacist</option>
-                    <option value="gp">GP / Physician</option>
-                    <option value="ahp">Allied Health Professional</option>
-                    <option value="coder">Medical Coder</option>
-                    <option value="informatics">Health Informatics / IT</option>
-                    <option value="compliance">Compliance / Regulatory</option>
-                    <option value="writer">Medical Writer</option>
-                    <option value="coordinator">Patient Coordinator</option>
-                    <option value="student">Healthcare Student</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
-
-            <div class="form-row">
                 <div class="form-group">
-                    <label>Professional Registration Body</label>
-                    <select class="form-select" id="reg_body">
-                        <option value="none">None / Non-Clinical</option>
-                        <option value="nmc">NMC (Nursing)</option>
-                        <option value="gmc">GMC (Medical)</option>
-                        <option value="gphc">GPhC (Pharmacy)</option>
-                        <option value="hcpc">HCPC (Allied Health)</option>
+                    <label>WhatsApp Number (for fast interview scheduling) <span class="req">*</span></label>
+                    <input type="tel" class="form-input" id="phone" placeholder="+44 7700 900077" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Country of Residence <span class="req">*</span></label>
+                        <input type="text" class="form-input" id="country" placeholder="United Kingdom" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Years of Clinical Experience <span class="req">*</span></label>
+                        <select class="form-select" id="experience" required>
+                            <option value="">Select...</option>
+                            <option value="0-1">Under 1 Year</option>
+                            <option value="1-2">1 – 2 Years</option>
+                            <option value="3-5">3 – 5 Years</option>
+                            <option value="6-10">6 – 10 Years</option>
+                            <option value="10+">10+ Years</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Profession / Speciality <span class="req">*</span></label>
+                    <select class="form-select" id="profession" required>
+                        <option value="">Select your profession...</option>
+                        <option value="nurse">Nurse (RGN / RMN / RSCN)</option>
+                        <option value="pharmacist">Pharmacist</option>
+                        <option value="gp">GP / Physician</option>
+                        <option value="ahp">Allied Health Professional</option>
+                        <option value="coder">Medical Coder</option>
+                        <option value="informatics">Health Informatics / IT</option>
+                        <option value="compliance">Compliance / Regulatory</option>
+                        <option value="writer">Medical Writer</option>
+                        <option value="coordinator">Patient Coordinator</option>
+                        <option value="student">Healthcare Student</option>
+                        <option value="other">Other</option>
                     </select>
                 </div>
+
                 <div class="form-group">
-                    <label>Registration Number (if clinical)</label>
-                    <input type="text" class="form-input" id="reg_num" placeholder="e.g. 12C3456E">
+                    <label>Upload CV / Document (max 5MB) <span class="req">*</span></label>
+                    <div class="file-upload" id="cvUploadBox">
+                        <input type="file" id="cv_file" accept=".pdf,.doc,.docx" onchange="handleFile(this)" required>
+                        <div class="file-upload-icon"><span class="iconify" data-icon="mdi:file-document-outline"></span></div>
+                        <div class="file-upload-text"><strong>Click to upload</strong> or drag & drop CV</div>
+                        <div class="file-upload-text" id="cv_file_name" style="color:var(--green-600);font-weight:600;margin-top:6px;display:none"></div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group">
-                <label>LinkedIn Profile URL</label>
-                <input type="url" class="form-input" id="linkedin" placeholder="https://linkedin.com/in/yourprofile">
-            </div>
-
-            <div class="form-group">
-                <label>Briefly share your remote career goals</label>
-                <textarea class="form-textarea" id="goals" style="min-height: 100px;" placeholder="What kind of remote or hybrid roles are you targeting, and what do you hope to learn?"></textarea>
-            </div>
-
-            <label class="form-consent">
-                <input type="checkbox" id="consent" required>
-                <div class="form-consent-text">
-                    I consent to RemoteMedicalJobs.co.uk processing my data for this application and agree to the Terms of Service. <span class="req">*</span>
-                </div>
-            </label>
-
-            <button type="submit" class="btn btn-green btn-lg" style="width: 100%; margin-top: 32px;" id="applyBtn">
-                <span class="iconify" data-icon="mdi:credit-card-outline"></span> Apply & Pay $27 with Paystack
-            </button>
-        </form>
-    </div>
-
-    <div class="side-panel">
-        <div class="summary-card">
-            <h3 class="summary-title">
-                <span class="iconify" data-icon="mdi:cart-outline"></span> Order Summary
-            </h3>
-            <div class="summary-item">
-                <span>Course Price</span>
-                <span style="text-decoration: line-through; opacity: 0.6;">$197.00</span>
-            </div>
-            <div class="summary-item">
-                <span>Special Job Seeker Discount</span>
-                <span style="color: var(--green-400); font-weight: 600;">-$170.00</span>
-            </div>
-            <div class="summary-item total">
-                <span>Total Amount</span>
-                <span>$27.00</span>
-            </div>
+                <button type="submit" class="btn btn-green btn-lg" style="width: 100%; margin-top: 16px;" id="submitBtn">
+                    Submit Eligibility Form & Continue <span class="iconify" data-icon="mdi:arrow-right"></span>
+                </button>
+            </form>
         </div>
 
-        <div class="apply-card" style="padding: 24px;">
-            <h3 style="font-size: 1rem; font-weight: 700; color: var(--slate-900); margin-bottom: 16px;">
-                What's Included:
-            </h3>
-            <div class="benefit-item">
-                <span class="iconify" data-icon="mdi:check-circle"></span>
-                <span>8 Self-Paced Learning Modules (42 lessons)</span>
+        <!-- SCREEN 2: THE PIVOT (POPUP EFFECT) -->
+        <div id="screenPivot" class="pivot-box">
+            <div class="pivot-header">
+                <span class="iconify" data-icon="mdi:clipboard-check-outline" style="font-size:28px"></span>
+                📋 Great News! You Qualify... BUT There's a Catch.
             </div>
-            <div class="benefit-item">
-                <span class="iconify" data-icon="mdi:check-circle"></span>
-                <span>ATS-Optimised CV Templates & Examples</span>
+
+            <p style="font-size: 0.95rem; color: var(--slate-700); line-height: 1.7; margin-bottom: 16px;">
+                Your profile matches what our partner clinics are looking for. However, our hiring partners have one mandatory requirement before they will interview you:
+            </p>
+
+            <div class="pivot-quote">
+                "All candidates must hold a valid Telehealth Compliance & Scheduling Certification to handle UK/US patient data (HIPAA/GDPR compliant)."
             </div>
-            <div class="benefit-item">
-                <span class="iconify" data-icon="mdi:check-circle"></span>
-                <span>CPD Certified Certificate (6 Hours)</span>
-            </div>
-            <div class="benefit-item">
-                <span class="iconify" data-icon="mdi:check-circle"></span>
-                <span>Lifetime Access & Free Program Updates</span>
-            </div>
-            <div class="benefit-item">
-                <span class="iconify" data-icon="mdi:check-circle"></span>
-                <span>30-Day Money-Back Guarantee</span>
+
+            <h3 style="font-size: 1.1rem; font-weight: 800; color: var(--slate-900); margin: 28px 0 12px;">You have two options right now:</h3>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Option</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="option-col" style="color: var(--red-600);"><span class="iconify" data-icon="mdi:close-circle" style="vertical-align:middle;margin-right:4px"></span> Option 1</td>
+                        <td style="color: var(--slate-500);">Withdraw your application and wait for a job that doesn't require certification (you'll be waiting a long time).</td>
+                    </tr>
+                    <tr class="highlighted">
+                        <td class="option-col" style="color: var(--green-700);"><span class="iconify" data-icon="mdi:checkbox-marked-circle" style="vertical-align:middle;margin-right:4px"></span> Option 2</td>
+                        <td style="color: var(--slate-800); font-weight: 500;">Get certified in under 4 hours through our partner training portal and unlock instant access to the job board.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <button onclick="triggerPurchase()" class="btn btn-green btn-xl" style="width: 100%; font-size: 1.15rem; box-shadow: 0 8px 24px rgba(5,150,105,0.3);" id="purchaseBtn">
+                🎓 GET COURSE NOW – ONLY $27
+            </button>
+            <div class="offer-footer">
+                Includes: Full training + CV template + Guaranteed interview slot
             </div>
         </div>
     </div>
@@ -434,39 +454,75 @@
 </div>
 
 <script>
-// ===== FORM SUBMISSION WITH PAYSTACK =====
-async function handleApplySubmit(e) {
+// Keep candidate info in memory to submit with purchase initialization
+let candidateInfo = {};
+
+// Parse job_title query param to personalize the funnel
+window.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const jobTitle = params.get('job_title');
+    if (jobTitle) {
+        const titleEl = document.querySelector('.apply-title');
+        titleEl.innerHTML = `⚠️ Almost There! Let's Check Your Eligibility for <span style="color:var(--blue-600);text-decoration:underline;">${decodeURIComponent(jobTitle)}</span>...`;
+    }
+});
+
+// Handle CV file state
+function handleFile(input) {
+    if (input.files.length) {
+        const file = input.files[0];
+        if (file.size > 5 * 1024 * 1024) {
+            showToast('File too large — maximum 5MB', 'error');
+            input.value = '';
+            return;
+        }
+        const nameEl = document.getElementById('cv_file_name');
+        nameEl.textContent = '✓ ' + file.name;
+        nameEl.style.display = 'block';
+    }
+}
+
+// Eligibility short form submission
+function submitEligibility(e) {
     e.preventDefault();
 
-    const first_name = document.getElementById('first_name').value.trim();
-    const last_name = document.getElementById('last_name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const profession = document.getElementById('profession').value;
-    const reg_body = document.getElementById('reg_body').value;
-    const reg_num = document.getElementById('reg_num').value.trim();
-    const linkedin = document.getElementById('linkedin').value.trim();
-    const goals = document.getElementById('goals').value.trim();
+    // Save to candidateInfo object in memory
+    candidateInfo = {
+        first_name: document.getElementById('first_name').value.trim(),
+        last_name: document.getElementById('last_name').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        phone: document.getElementById('phone').value.trim(),
+        country: document.getElementById('country').value.trim(),
+        experience: document.getElementById('experience').value,
+        profession: document.getElementById('profession').value,
+        goals: 'Eligibility application check.'
+    };
 
-    const btn = document.getElementById('applyBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span class="iconify" data-icon="mdi:loading" style="animation:spin 1s linear infinite"></span> Checking eligibility...';
+
+    setTimeout(() => {
+        // Transition to pivot screen (Page 2 step 2)
+        document.getElementById('screenEligibility').style.display = 'none';
+        document.getElementById('screenPivot').style.display = 'block';
+        window.scrollTo({top: 100, behavior: 'smooth'});
+    }, 1500);
+}
+
+// Trigger Paystack Course Purchase
+async function triggerPurchase() {
+    const btn = document.getElementById('purchaseBtn');
     btn.disabled = true;
-    btn.innerHTML = '<span class="iconify" data-icon="mdi:loading" style="animation:spin 1s linear infinite"></span> Processing to Checkout...';
+    btn.innerHTML = '<span class="iconify" data-icon="mdi:loading" style="animation:spin 1s linear infinite"></span> Securing Connection to Paystack Checkout...';
 
     try {
         const response = await fetch('/api/payment/initialize', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                first_name,
-                last_name,
-                email,
-                phone,
-                profession,
-                reg_body,
-                reg_num,
-                linkedin,
-                goals,
-                amount: 27 // dollar amount
+                ...candidateInfo,
+                amount: 27
             })
         });
 
@@ -483,7 +539,7 @@ async function handleApplySubmit(e) {
     } catch (err) {
         showToast(err.message || 'An error occurred during checkout initialization.', 'error');
         btn.disabled = false;
-        btn.innerHTML = '<span class="iconify" data-icon="mdi:credit-card-outline"></span> Apply & Pay $27 with Paystack';
+        btn.innerHTML = '🎓 GET COURSE NOW – ONLY $27';
     }
 }
 
