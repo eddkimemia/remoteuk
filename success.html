@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enrollment Receipt — RemoteMedicalJobs.co.uk</title>
+    <meta name="description" content="Thank you for enrolling in the Remote Healthcare Career Accelerator course. Your registration details and payment confirmation receipt.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --blue-50:#EFF6FF;--blue-100:#DBEAFE;--blue-200:#BFDBFE;--blue-400:#60A5FA;
+            --blue-500:#3B82F6;--blue-600:#2563EB;--blue-700:#1D4ED8;--blue-800:#1E40AF;--blue-900:#1E3A8A;--blue-950:#172554;
+            --green-50:#ECFDF5;--green-100:#D1FAE5;--green-400:#34D399;--green-500:#10B981;--green-600:#059669;--green-700:#047857;
+            --amber-50:#FFFBEB;--amber-100:#FEF3C7;--amber-500:#F59E0B;--amber-600:#D97706;
+            --purple-50:#F3E8FF;--purple-100:#EDE9FE;--purple-600:#7C3AED;
+            --red-50:#FEF2F2;--red-500:#EF4444;--red-600:#DC2626;
+            --slate-50:#F8FAFC;--slate-100:#F1F5F9;--slate-200:#E2E8F0;--slate-300:#CBD5E1;--slate-400:#94A3B8;--slate-500:#64748B;--slate-600:#475569;--slate-700:#334155;--slate-800:#1E293B;--slate-900:#0F172A;
+            --white:#FFFFFF;
+            --radius:12px;--radius-lg:20px;
+            --shadow-sm:0 1px 2px rgba(0,0,0,.05);
+            --shadow:0 1px 3px rgba(0,0,0,.1),0 1px 2px rgba(0,0,0,.06);
+            --shadow-md:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);
+            --shadow-lg:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);
+            --shadow-xl:0 20px 25px -5px rgba(0,0,0,.1),0 8px 10px -6px rgba(0,0,0,.1);
+            --shadow-2xl:0 25px 50px -12px rgba(0,0,0,.25);
+        }
+        body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--slate-800);background:var(--slate-50);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+        /* NAV */
+        .nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--slate-200);transition:box-shadow .3s}
+        .nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:72px}
+        .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:1.125rem;color:var(--blue-900)}
+        .nav-logo-icon{width:40px;height:40px;background:linear-gradient(135deg,var(--blue-600),var(--green-600));border-radius:10px;display:flex;align-items:center;justify-content:center;color:white;font-size:20px}
+        .nav-logo span{color:var(--green-600)}
+        .nav-links{display:flex;align-items:center;gap:4px;list-style:none}
+        .nav-links a{text-decoration:none;color:var(--slate-600);font-size:.875rem;font-weight:500;padding:8px 16px;border-radius:8px;transition:all .2s}
+        .nav-links a:hover{color:var(--blue-700);background:var(--blue-50)}
+
+        .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 28px;border-radius:10px;font-size:.9rem;font-weight:600;text-decoration:none;border:none;cursor:pointer;transition:all .25s cubic-bezier(.16,1,.3,1);white-space:nowrap;font-family:inherit}
+        .btn-primary{background:linear-gradient(135deg,var(--blue-600),var(--blue-700));color:white;box-shadow:0 2px 8px rgba(37,99,235,.3)}
+        .btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,99,235,.4)}
+        .btn-green{background:linear-gradient(135deg,var(--green-600),var(--green-700));color:white;box-shadow:0 2px 8px rgba(5,150,105,.3)}
+        .btn-green:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(5,150,105,.4)}
+        .btn-secondary{background:var(--white);color:var(--blue-700);border:1.5px solid var(--blue-200)}
+        .btn-secondary:hover{background:var(--blue-50);border-color:var(--blue-400)}
+        .btn-lg{padding:16px 36px;font-size:1rem;border-radius:12px}
+
+        /* CONTENT */
+        .container {
+            max-width: 680px;
+            margin: 120px auto 80px;
+            padding: 0 24px;
+        }
+
+        .success-card {
+            background: var(--white);
+            border: 1px solid var(--slate-200);
+            border-radius: var(--radius-lg);
+            padding: 48px;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--green-50);
+            color: var(--green-600);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 44px;
+            margin: 0 auto 24px;
+        }
+
+        .error-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--red-50);
+            color: var(--red-600);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 44px;
+            margin: 0 auto 24px;
+        }
+
+        .success-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--slate-900);
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+
+        .success-desc {
+            font-size: 1rem;
+            color: var(--slate-500);
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        /* RECEIPT BOX */
+        .receipt-box {
+            background: var(--slate-50);
+            border: 1px solid var(--slate-200);
+            border-radius: var(--radius);
+            padding: 24px 32px;
+            text-align: left;
+            margin-bottom: 36px;
+        }
+
+        .receipt-header {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--slate-400);
+            border-bottom: 1px solid var(--slate-200);
+            padding-bottom: 12px;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .receipt-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            font-size: 0.9rem;
+        }
+        .receipt-label {
+            color: var(--slate-500);
+        }
+        .receipt-value {
+            font-weight: 600;
+            color: var(--slate-800);
+        }
+        .receipt-value.price {
+            color: var(--green-600);
+            font-weight: 700;
+        }
+
+        /* STEPS LIST */
+        .steps-box {
+            text-align: left;
+            margin-bottom: 40px;
+        }
+        .steps-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--slate-900);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .step-item {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        .step-num {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--blue-50);
+            color: var(--blue-600);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .step-text {
+            font-size: 0.875rem;
+            color: var(--slate-600);
+            line-height: 1.5;
+        }
+        .step-text strong {
+            color: var(--slate-900);
+        }
+
+        /* FOOTER */
+        .footer{background:var(--slate-900);color:rgba(255,255,255,.6);padding:48px 24px 24px}
+        .footer-inner{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+        .footer-brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:1rem;color:white}
+        .footer-brand-icon{width:32px;height:32px;background:linear-gradient(135deg,var(--blue-600),var(--green-600));border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-size:16px}
+        .footer-brand span{color:var(--green-500)}
+        .footer-copy{font-size:.78rem}
+        .footer-links{display:flex;gap:24px}
+        .footer-links a{font-size:.78rem;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s}
+        .footer-links a:hover{color:white}
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-logo">
+            <div class="nav-logo-icon"><span class="iconify" data-icon="mdi:stethoscope"></span></div>
+            RemoteMedical<span>Jobs</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="jobs.html">Jobs</a></li>
+            <li><a href="course.html">Course</a></li>
+            <li><a href="index.html#seekers">Job Seekers</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="nav-cta">
+            <a href="jobs.html" class="btn btn-secondary">Browse Jobs</a>
+            <a href="course.html" class="btn btn-primary">Course Accelerator</a>
+        </div>
+    </div>
+</nav>
+
+<!-- MAIN CONTAINER -->
+<div class="container">
+    <div class="success-card" id="responseCard">
+        <!-- Rendered dynamically -->
+        <div class="success-icon">
+            <span class="iconify" data-icon="mdi:loading" style="animation: spin 1s linear infinite;"></span>
+        </div>
+        <h1 class="success-title">Verifying Payment...</h1>
+        <p class="success-desc">Please wait while we verify your transaction status with Paystack.</p>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-inner">
+        <a href="index.html" class="footer-brand">
+            <div class="footer-brand-icon"><span class="iconify" data-icon="mdi:stethoscope"></span></div>
+            RemoteMedical<span>Jobs</span>
+        </a>
+        <p class="footer-copy">© 2025 RemoteMedicalJobs.co.uk. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="jobs.html">Jobs</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+// ===== URL PARSING & CARD RENDERING =====
+function init() {
+    const params = new URLSearchParams(window.location.search);
+    const isFailed = params.get('failed') === 'true';
+    const first_name = params.get('first_name') || 'Job Seeker';
+    const email = params.get('email') || '';
+    const amount = params.get('amount') || '27.00';
+    const reference = params.get('reference') || '';
+
+    const card = document.getElementById('responseCard');
+
+    if (isFailed) {
+        card.innerHTML = `
+            <div class="error-icon">
+                <span class="iconify" data-icon="mdi:alert-circle-outline"></span>
+            </div>
+            <h1 class="success-title" style="color: var(--red-600);">Payment Failed</h1>
+            <p class="success-desc">We were unable to complete your transaction. No charges have been made. Please review your details or try another card.</p>
+
+            <div class="receipt-box">
+                <div class="receipt-header">
+                    <span>Transaction Details</span>
+                    <span>Status: Unsuccessful</span>
+                </div>
+                <div class="receipt-row">
+                    <span class="receipt-label">Candidate Name</span>
+                    <span class="receipt-value">${first_name}</span>
+                </div>
+                <div class="receipt-row">
+                    <span class="receipt-label">Reference ID</span>
+                    <span class="receipt-value" style="font-family: monospace;">${reference || 'N/A'}</span>
+                </div>
+            </div>
+
+            <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+                <a href="apply.html" class="btn btn-primary btn-lg">
+                    <span class="iconify" data-icon="mdi:refresh"></span> Try Again
+                </a>
+                <a href="course.html" class="btn btn-secondary btn-lg">Back to Course Info</a>
+            </div>
+        `;
+    } else {
+        card.innerHTML = `
+            <div class="success-icon">
+                <span class="iconify" data-icon="mdi:checkbox-marked-circle-outline"></span>
+            </div>
+            <h1 class="success-title">Welcome to the Accelerator, ${first_name}! 🎉</h1>
+            <p class="success-desc">Your payment of <strong>$${amount}</strong> was processed successfully. You now have lifetime access to the Remote Healthcare Career Accelerator.</p>
+
+            <div class="receipt-box">
+                <div class="receipt-header">
+                    <span>Official Receipt</span>
+                    <span>Status: Paid</span>
+                </div>
+                <div class="receipt-row">
+                    <span class="receipt-label">Candidate Email</span>
+                    <span class="receipt-value">${email || 'Registered Email'}</span>
+                </div>
+                <div class="receipt-row">
+                    <span class="receipt-label">Payment Gateway</span>
+                    <span class="receipt-value">Paystack Secures</span>
+                </div>
+                <div class="receipt-row">
+                    <span class="receipt-label">Transaction Reference</span>
+                    <span class="receipt-value" style="font-family: monospace;">${reference}</span>
+                </div>
+                <div class="receipt-row">
+                    <span class="receipt-label">Amount Paid</span>
+                    <span class="receipt-value price">$${amount} USD</span>
+                </div>
+            </div>
+
+            <div class="steps-box">
+                <h3 class="steps-title">
+                    <span class="iconify" data-icon="mdi:directions-fork" style="color:var(--blue-600)"></span>
+                    Your Next Steps:
+                </h3>
+                <div class="step-item">
+                    <div class="step-num">1</div>
+                    <div class="step-text">
+                        <strong>Check your inbox</strong>: We've dispatched a formal registration email containing your personalized course portal login details.
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">2</div>
+                    <div class="step-text">
+                        <strong>Access SBAR and CV templates</strong>: Navigate immediately to your dashboard's Resource Hub to download ATS-vetted frameworks.
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">3</div>
+                    <div class="step-text">
+                        <strong>Apply for jobs</strong>: Once you start Module 6 (CV makeover), browse our verified list of vacancies to begin tailoring applications!
+                    </div>
+                </div>
+            </div>
+
+            <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+                <button class="btn btn-green btn-lg" onclick="window.alert('Redirecting you to the Academy course dashboard...')">
+                    <span class="iconify" data-icon="mdi:play-circle-outline"></span> Start Course Now
+                </button>
+                <a href="jobs.html" class="btn btn-secondary btn-lg">Browse Open Jobs</a>
+            </div>
+        `;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
+
+<style>
+@keyframes spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+</style>
+</body>
+</html>

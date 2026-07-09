@@ -252,14 +252,13 @@
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="jobs.html" class="active">Jobs</a></li>
+            <li><a href="course.html" style="font-weight: 600; color: var(--blue-700);">Course</a></li>
             <li><a href="index.html#seekers">Job Seekers</a></li>
-            <li><a href="index.html#employers">Employers</a></li>
             <li><a href="index.html#about">About</a></li>
             <li><a href="index.html#contact">Contact</a></li>
         </ul>
         <div class="nav-cta">
-            <a href="index.html#contact" class="btn btn-secondary">Hire Talent</a>
-            <a href="jobs.html" class="btn btn-primary">Find Jobs</a>
+            <a href="course.html" class="btn btn-primary">Enrol in Course</a>
         </div>
         <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
             <span class="iconify" data-icon="mdi:menu" style="font-size:28px" id="menuIcon"></span>
@@ -269,11 +268,11 @@
 <div class="mobile-menu" id="mobileMenu">
     <a href="index.html">Home</a>
     <a href="jobs.html">Jobs</a>
+    <a href="course.html" style="font-weight: 600; color: var(--blue-700);">Course</a>
     <a href="index.html#seekers">Job Seekers</a>
-    <a href="index.html#employers">Employers</a>
     <a href="index.html#about">About</a>
     <a href="index.html#contact">Contact</a>
-    <a href="jobs.html" class="btn btn-primary btn-lg">Find Remote Jobs</a>
+    <a href="course.html" class="btn btn-primary btn-lg">Enrol in Course</a>
 </div>
 
 <!-- JOBS HERO -->
@@ -860,184 +859,16 @@ function openJobModal(id) {
                 ${j.tags.map(t => `<span class="tag">${t}</span>`).join('')}
             </div>
             <hr class="modal-divider">
-            <h4 style="font-size:1.1rem;font-weight:800;color:var(--slate-900);margin-bottom:20px">
-                <span class="iconify" data-icon="mdi:send" style="color:var(--blue-600);vertical-align:middle;margin-right:6px"></span>
-                Apply for this Position
-            </h4>
-
-            <div class="app-steps">
-                <div class="app-step active" id="stepLabel1">1. Personal</div>
-                <div class="app-step" id="stepLabel2">2. Professional</div>
-                <div class="app-step" id="stepLabel3">3. Documents</div>
-                <div class="app-step" id="stepLabel4">4. Submit</div>
-            </div>
-
-            <!-- Step 1 -->
-            <div class="step-content active" id="step1">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>First Name <span class="required">*</span></label>
-                        <input type="text" class="form-input" id="appFirst" placeholder="Sarah">
-                    </div>
-                    <div class="form-group">
-                        <label>Last Name <span class="required">*</span></label>
-                        <input type="text" class="form-input" id="appLast" placeholder="Mitchell">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Email Address <span class="required">*</span></label>
-                    <input type="email" class="form-input" id="appEmail" placeholder="sarah@example.com">
-                </div>
-                <div class="form-group">
-                    <label>Phone Number <span class="required">*</span></label>
-                    <input type="tel" class="form-input" id="appPhone" placeholder="+44 7700 900000">
-                </div>
-                <div class="form-group">
-                    <label>Right to Work in the UK <span class="required">*</span></label>
-                    <select class="form-select" id="appRight">
-                        <option value="">Select...</option>
-                        <option value="british">British/Irish Citizen</option>
-                        <option value="settled">Settled/Pre-settled Status (EU)</option>
-                        <option value="visa">Skilled Worker Visa</option>
-                        <option value="health">Health & Care Visa</option>
-                        <option value="dependent">Dependent Visa</option>
-                        <option value="other">Other — please specify in cover letter</option>
-                    </select>
-                </div>
-                <div class="app-nav">
-                    <div></div>
-                    <button class="btn btn-primary" onclick="nextStep(2)">Continue <span class="iconify" data-icon="mdi:arrow-right"></span></button>
-                </div>
-            </div>
-
-            <!-- Step 2 -->
-            <div class="step-content" id="step2">
-                <div class="form-group">
-                    <label>Professional Registration <span class="required">*</span></label>
-                    <select class="form-select" id="appReg">
-                        <option value="">Select your registration...</option>
-                        <option value="nmc">NMC (Nursing & Midwifery Council)</option>
-                        <option value="gmc">GMC (General Medical Council)</option>
-                        <option value="gphc">GPhC (General Pharmaceutical Council)</option>
-                        <option value="hcpc">HCPC (Health & Care Professions Council)</option>
-                        <option value="rccp">RCCP (Register of Clinical Physiologists)</option>
-                        <option value="none">No professional registration (non-clinical)</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Registration Number</label>
-                    <input type="text" class="form-input" id="appRegNum" placeholder="e.g. 12345678">
-                    <div class="form-hint">Leave blank if not applicable</div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Years of Experience <span class="required">*</span></label>
-                        <select class="form-select" id="appExp">
-                            <option value="">Select...</option>
-                            <option value="0-2">0 – 2 years</option>
-                            <option value="3-5">3 – 5 years</option>
-                            <option value="6-10">6 – 10 years</option>
-                            <option value="10+">10+ years</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Notice Period</label>
-                        <select class="form-select" id="appNotice">
-                            <option value="immediate">Immediately available</option>
-                            <option value="1week">1 week</option>
-                            <option value="2weeks">2 weeks</option>
-                            <option value="1month">1 month</option>
-                            <option value="3months">3 months</option>
-                            <option value="longer">Longer — please specify</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Cover Letter / Supporting Statement <span class="required">*</span></label>
-                    <textarea class="form-textarea" id="appCover" placeholder="Explain why you're a great fit for this role. Highlight relevant experience, skills, and your motivation for remote work in healthcare..."></textarea>
-                    <div class="form-hint">Minimum 100 characters recommended</div>
-                </div>
-                <div class="app-nav">
-                    <button class="btn btn-ghost" onclick="nextStep(1)"><span class="iconify" data-icon="mdi:arrow-left"></span> Back</button>
-                    <button class="btn btn-primary" onclick="nextStep(3)">Continue <span class="iconify" data-icon="mdi:arrow-right"></span></button>
-                </div>
-            </div>
-
-            <!-- Step 3 -->
-            <div class="step-content" id="step3">
-                <div class="form-group">
-                    <label>Upload CV / Resume <span class="required">*</span></label>
-                    <div class="file-upload" id="cvUpload">
-                        <input type="file" accept=".pdf,.doc,.docx" onchange="handleFile(this,'cvName')">
-                        <div class="file-upload-icon"><span class="iconify" data-icon="mdi:cloud-upload"></span></div>
-                        <div class="file-upload-text"><strong>Click to upload</strong> or drag & drop<br>PDF, DOC, DOCX (max 5MB)</div>
-                        <div class="file-upload-text" id="cvName" style="color:var(--green-600);font-weight:600;margin-top:8px;display:none"></div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Upload Cover Letter (optional)</label>
-                    <div class="file-upload" id="clUpload">
-                        <input type="file" accept=".pdf,.doc,.docx" onchange="handleFile(this,'clName')">
-                        <div class="file-upload-icon"><span class="iconify" data-icon="mdi:cloud-upload"></span></div>
-                        <div class="file-upload-text"><strong>Click to upload</strong> or drag & drop<br>PDF, DOC, DOCX (max 5MB)</div>
-                        <div class="file-upload-text" id="clName" style="color:var(--green-600);font-weight:600;margin-top:8px;display:none"></div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Upload Registration Certificate (optional)</label>
-                    <div class="file-upload">
-                        <input type="file" accept=".pdf,.jpg,.png" onchange="handleFile(this,'regName')">
-                        <div class="file-upload-icon"><span class="iconify" data-icon="mdi:cloud-upload"></span></div>
-                        <div class="file-upload-text"><strong>Click to upload</strong><br>NMC, GMC, GPhC, or HCPC certificate</div>
-                        <div class="file-upload-text" id="regName" style="color:var(--green-600);font-weight:600;margin-top:8px;display:none"></div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>LinkedIn Profile URL (optional)</label>
-                    <input type="url" class="form-input" id="appLinkedin" placeholder="https://linkedin.com/in/yourprofile">
-                </div>
-                <div class="app-nav">
-                    <button class="btn btn-ghost" onclick="nextStep(2)"><span class="iconify" data-icon="mdi:arrow-left"></span> Back</button>
-                    <button class="btn btn-primary" onclick="nextStep(4)">Review & Submit <span class="iconify" data-icon="mdi:arrow-right"></span></button>
-                </div>
-            </div>
-
-            <!-- Step 4 -->
-            <div class="step-content" id="step4">
-                <div style="background:var(--slate-50);border-radius:12px;padding:24px;margin-bottom:20px">
-                    <h4 style="font-size:.9rem;font-weight:700;color:var(--slate-900);margin-bottom:16px">Application Summary</h4>
-                    <div id="appSummary" style="font-size:.85rem;color:var(--slate-600);line-height:1.8"></div>
-                </div>
-                <div class="form-group">
-                    <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer">
-                        <input type="checkbox" id="appConsent" style="width:18px;height:18px;accent-color:var(--blue-600);margin-top:2px;flex-shrink:0">
-                        <span style="font-size:.82rem;color:var(--slate-600);line-height:1.5">I consent to RemoteMedicalJobs.co.uk storing and processing my personal data for the purpose of this job application, in accordance with the Privacy Policy. I confirm that the information provided is accurate and complete. <span class="required">*</span></span>
-                    </label>
-                </div>
-                <div class="form-group">
-                    <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer">
-                        <input type="checkbox" id="appGDPR" style="width:18px;height:18px;accent-color:var(--blue-600);margin-top:2px;flex-shrink:0">
-                        <span style="font-size:.82rem;color:var(--slate-600);line-height:1.5">I agree to receive relevant job alerts and career resources from RemoteMedicalJobs.co.uk. You can unsubscribe at any time. (Optional)</span>
-                    </label>
-                </div>
-                <div class="app-nav">
-                    <button class="btn btn-ghost" onclick="nextStep(3)"><span class="iconify" data-icon="mdi:arrow-left"></span> Back</button>
-                    <button class="btn btn-green btn-lg" onclick="submitApplication(${j.id})" id="submitBtn">
-                        <span class="iconify" data-icon="mdi:send"></span> Submit Application
-                    </button>
-                </div>
-            </div>
-
-            <!-- Success -->
-            <div class="step-content" id="stepSuccess">
-                <div class="app-success">
-                    <div class="app-success-icon"><span class="iconify" data-icon="mdi:check-circle"></span></div>
-                    <h3>Application Submitted!</h3>
-                    <p>Your application for <strong>${j.title}</strong> at <strong>${j.company}</strong> has been received. Our team will review your application and get back to you within 2 business days.</p>
-                    <div style="margin-top:24px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-                        <button class="btn btn-primary" onclick="closeModal()">Browse More Jobs</button>
-                        <button class="btn btn-secondary" onclick="closeModal()">Back to Top</button>
-                    </div>
+            <div style="background:var(--blue-50);border:1.5px solid var(--blue-200);border-radius:12px;padding:24px 32px;text-align:center;margin-top:20px">
+                <span class="iconify" data-icon="mdi:alert-circle-outline" style="font-size:36px;color:var(--blue-600);margin-bottom:12px"></span>
+                <h4 style="font-size:1.15rem;font-weight:800;color:var(--slate-900);margin-bottom:8px">Course Completion Required</h4>
+                <p style="font-size:0.875rem;color:var(--slate-600);line-height:1.6;margin-bottom:20px;max-width:480px;margin-left:auto;margin-right:auto">
+                    To apply for <strong>${j.title}</strong>, all candidates are required to complete the <strong>Remote Healthcare Career Accelerator</strong> course. This ensures proper verification of digital competencies, data governance, and remote assessment skills before onboarding.
+                </p>
+                <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+                    <a href="course.html" class="btn btn-green btn-lg" style="box-shadow:0 4px 14px rgba(5,150,105,0.25)">
+                        <span class="iconify" data-icon="mdi:school-outline"></span> Enroll in Course & Unlock Applications — $27
+                    </a>
                 </div>
             </div>
         </div>
