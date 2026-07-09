@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote Healthcare Career Accelerator — RemoteMedicalJobs.co.uk</title>
+    <meta name="description" content="The essential course for landing remote healthcare roles in the UK. 8 modules, expert instructors, certificate included. Enrol for just $27.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --blue-50:#EFF6FF;--blue-100:#DBEAFE;--blue-200:#BFDBFE;--blue-400:#60A5FA;
+            --blue-500:#3B82F6;--blue-600:#2563EB;--blue-700:#1D4ED8;--blue-800:#1E40AF;--blue-900:#1E3A8A;--blue-950:#172554;
+            --green-50:#ECFDF5;--green-100:#D1FAE5;--green-400:#34D399;--green-500:#10B981;--green-600:#059669;--green-700:#047857;
+            --amber-50:#FFFBEB;--amber-100:#FEF3C7;--amber-500:#F59E0B;--amber-600:#D97706;
+            --purple-50:#F3E8FF;--purple-100:#EDE9FE;--purple-600:#7C3AED;
+            --red-50:#FEF2F2;--red-500:#EF4444;--red-600:#DC2626;
+            --slate-50:#F8FAFC;--slate-100:#F1F5F9;--slate-200:#E2E8F0;--slate-300:#CBD5E1;--slate-400:#94A3B8;--slate-500:#64748B;--slate-600:#475569;--slate-700:#334155;--slate-800:#1E293B;--slate-900:#0F172A;
+            --white:#FFFFFF;
+            --radius:12px;--radius-lg:20px;
+            --shadow-sm:0 1px 2px rgba(0,0,0,.05);
+            --shadow:0 1px 3px rgba(0,0,0,.1),0 1px 2px rgba(0,0,0,.06);
+            --shadow-md:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);
+            --shadow-lg:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);
+            --shadow-xl:0 20px 25px -5px rgba(0,0,0,.1),0 8px 10px -6px rgba(0,0,0,.1);
+            --shadow-2xl:0 25px 50px -12px rgba(0,0,0,.25);
+        }
+        body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--slate-800);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+        .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 28px;border-radius:10px;font-size:.9rem;font-weight:600;text-decoration:none;border:none;cursor:pointer;transition:all .25s cubic-bezier(.16,1,.3,1);white-space:nowrap;font-family:inherit}
+        .btn-primary{background:linear-gradient(135deg,var(--blue-600),var(--blue-700));color:white;box-shadow:0 2px 8px rgba(37,99,235,.3)}
+        .btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,99,235,.4)}
+        .btn-green{background:linear-gradient(135deg,var(--green-600),var(--green-700));color:white;box-shadow:0 2px 8px rgba(5,150,105,.3)}
+        .btn-green:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(5,150,105,.4)}
+        .btn-secondary{background:var(--white);color:var(--blue-700);border:1.5px solid var(--blue-200)}
+        .btn-secondary:hover{background:var(--blue-50);border-color:var(--blue-400)}
+        .btn-outline-white{background:transparent;color:white;border:1.5px solid rgba(255,255,255,.4)}
+        .btn-outline-white:hover{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.7)}
+        .btn-ghost{background:transparent;color:var(--slate-600);padding:8px 16px}
+        .btn-ghost:hover{background:var(--slate-100);color:var(--slate-800)}
+        .btn-lg{padding:16px 36px;font-size:1rem;border-radius:12px}
+        .btn-xl{padding:20px 44px;font-size:1.1rem;border-radius:14px;font-weight:700}
+        .btn:disabled{opacity:.6;cursor:not-allowed;transform:none!important;box-shadow:none!important}
+
+        /* NAV */
+        .nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--slate-200);transition:box-shadow .3s}
+        .nav.scrolled{box-shadow:var(--shadow-md)}
+        .nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:72px}
+        .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:1.125rem;color:var(--blue-900)}
+        .nav-logo-icon{width:40px;height:40px;background:linear-gradient(135deg,var(--blue-600),var(--green-600));border-radius:10px;display:flex;align-items:center;justify-content:center;color:white;font-size:20px}
+        .nav-logo span{color:var(--green-600)}
+        .nav-links{display:flex;align-items:center;gap:4px;list-style:none}
+        .nav-links a{text-decoration:none;color:var(--slate-600);font-size:.875rem;font-weight:500;padding:8px 16px;border-radius:8px;transition:all .2s}
+        .nav-links a:hover{color:var(--blue-700);background:var(--blue-50)}
+        .nav-cta{display:flex;align-items:center;gap:12px}
+        .mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;color:var(--slate-700)}
+        .mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;bottom:0;background:rgba(255,255,255,.98);backdrop-filter:blur(20px);z-index:999;padding:24px;flex-direction:column;gap:8px;overflow-y:auto}
+        .mobile-menu.active{display:flex}
+        .mobile-menu a{display:block;padding:14px 20px;text-decoration:none;color:var(--slate-700);font-size:1rem;font-weight:500;border-radius:12px;transition:background .2s}
+        .mobile-menu a:hover{background:var(--blue-50);color:var(--blue-700)}
+
+        /* HERO */
+        .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:linear-gradient(160deg,var(--blue-950) 0%,var(--blue-900) 35%,#0c4a6e 65%,#064e3b 100%)}
+        .hero-bg{position:absolute;inset:0;opacity:.07;background-image:radial-gradient(circle at 25% 40%,rgba(255,255,255,.4) 0%,transparent 50%),radial-gradient(circle at 75% 20%,rgba(16,185,129,.5) 0%,transparent 40%),radial-gradient(circle at 50% 80%,rgba(59,130,246,.4) 0%,transparent 45%)}
+        .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:64px 64px}
+        .hero-inner{position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:120px 24px 80px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+        .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.3);color:var(--amber-500);padding:6px 16px;border-radius:50px;font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:24px}
+        .hero-badge-dot{width:6px;height:6px;background:var(--amber-500);border-radius:50%;animation:pulse-dot 2s ease-in-out infinite}
+        @keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.3}}
+        .hero h1{font-size:clamp(2.2rem,4.5vw,3.5rem);font-weight:900;color:white;line-height:1.1;letter-spacing:-.035em;margin-bottom:20px}
+        .hero h1 .grad{background:linear-gradient(135deg,var(--green-400),var(--amber-400));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero-sub{font-size:1.15rem;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:32px;max-width:540px}
+        .hero-price{display:flex;align-items:baseline;gap:12px;margin-bottom:32px}
+        .hero-price-old{font-size:1.4rem;color:rgba(255,255,255,.35);text-decoration:line-through;font-weight:500}
+        .hero-price-new{font-size:3rem;font-weight:900;color:var(--green-400);line-height:1}
+        .hero-price-label{font-size:.82rem;color:rgba(255,255,255,.4);margin-top:4px}
+        .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:40px}
+        .hero-guarantee{display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,.5);font-size:.82rem}
+        .hero-guarantee .iconify{color:var(--green-500);font-size:18px}
+
+        /* Hero Card */
+        .hero-card{background:rgba(255,255,255,.07);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-lg);padding:32px;width:100%;max-width:460px}
+        .hero-card-title{font-size:1rem;font-weight:700;color:white;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+        .hero-card-item{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+        .hero-card-item:last-child{border-bottom:none}
+        .hero-card-num{width:32px;height:32px;border-radius:8px;background:rgba(59,130,246,.2);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;color:var(--blue-400);flex-shrink:0}
+        .hero-card-text{color:rgba(255,255,255,.7);font-size:.84rem;line-height:1.5}
+        .hero-card-text strong{color:white;font-weight:600}
+        .hero-card-bottom{margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);display:flex;gap:20px;justify-content:center}
+        .hero-card-stat{text-align:center}
+        .hero-card-stat-val{font-size:1.3rem;font-weight:800;color:white}
+        .hero-card-stat-label{font-size:.7rem;color:rgba(255,255,255,.4);margin-top:2px}
+
+        /* SECTION COMMON */
+        section{padding:100px 24px}
+        .section-inner{max-width:1280px;margin:0 auto}
+        .section-badge{display:inline-flex;align-items:center;gap:6px;background:var(--blue-50);border:1px solid var(--blue-100);color:var(--blue-600);padding:6px 16px;border-radius:50px;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:16px}
+        .section-badge.green{background:var(--green-50);border-color:var(--green-100);color:var(--green-600)}
+        .section-badge.amber{background:var(--amber-50);border-color:var(--amber-100);color:var(--amber-600)}
+        .section-badge.purple{background:var(--purple-50);border-color:var(--purple-100);color:var(--purple-600)}
+        .section-title{font-size:clamp(2rem,4vw,2.75rem);font-weight:800;color:var(--slate-900);line-height:1.15;letter-spacing:-.03em;margin-bottom:16px}
+        .section-sub{font-size:1.05rem;color:var(--slate-500);max-width:640px;line-height:1.7}
+        .section-header{margin-bottom:56px}
+        .section-header.center{text-align:center}
+        .section-header.center .section-sub{margin:0 auto}
+
+        /* SOCIAL PROOF BAR */
+        .proof-bar{background:var(--slate-50);border-bottom:1px solid var(--slate-200);padding:28px 24px}
+        .proof-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap}
+        .proof-item{display:flex;align-items:center;gap:10px;font-size:.88rem;color:var(--slate-600)}
+        .proof-item .iconify{font-size:22px}
+        .proof-item strong{color:var(--slate-900);font-weight:700}
+
+        /* OVERVIEW */
+        .overview-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+        .overview-image{border-radius:var(--radius-lg);overflow:hidden;position:relative}
+        .overview-image img{width:100%;height:440px;object-fit:cover;display:block}
+        .overview-image-badge{position:absolute;bottom:20px;left:20px;background:rgba(15,23,42,.85);backdrop-filter:blur(10px);border-radius:12px;padding:16px 20px;color:white;display:flex;align-items:center;gap:12px}
+        .overview-image-badge-icon{width:44px;height:44px;border-radius:10px;background:rgba(16,185,129,.2);display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--green-400)}
+        .overview-image-badge-val{font-size:1.1rem;font-weight:800}
+        .overview-image-badge-label{font-size:.72rem;opacity:.6}
+        .overview-points{display:flex;flex-direction:column;gap:16px;margin-top:28px}
+        .overview-point{display:flex;gap:14px;align-items:flex-start}
+        .overview-point-icon{width:28px;height:28px;border-radius:8px;background:var(--green-50);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+        .overview-point-icon .iconify{color:var(--green-600);font-size:16px}
+        .overview-point-text{font-size:.92rem;color:var(--slate-600);line-height:1.6}
+        .overview-point-text strong{color:var(--slate-800)}
+
+        /* OBJECTIVES */
+        .objectives-section{background:var(--slate-50)}
+        .objectives-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+        .objective-card{background:white;border:1px solid var(--slate-200);border-radius:var(--radius-lg);padding:28px;display:flex;gap:16px;align-items:flex-start;transition:all .3s}
+        .objective-card:hover{border-color:var(--blue-200);box-shadow:var(--shadow-lg);transform:translateY(-2px)}
+        .objective-num{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--blue-600),var(--blue-700));color:white;display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:800;flex-shrink:0}
+        .objective-text h4{font-size:.95rem;font-weight:700;color:var(--slate-900);margin-bottom:4px}
+        .objective-text p{font-size:.84rem;color:var(--slate-500);line-height:1.6}
+
+        /* MODULES */
+        .modules-list{max-width:860px;margin:0 auto}
+        .module{background:white;border:1px solid var(--slate-200);border-radius:var(--radius-lg);margin-bottom:16px;overflow:hidden;transition:all .3s}
+        .module:hover{border-color:var(--blue-200);box-shadow:var(--shadow-md)}
+        .module.open{border-color:var(--blue-300);box-shadow:var(--shadow-lg)}
+        .module-header{padding:24px 28px;display:flex;align-items:center;gap:16px;cursor:pointer;transition:background .15s;user-select:none}
+        .module-header:hover{background:var(--slate-50)}
+        .module-num{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:800;color:white;flex-shrink:0}
+        .module-info{flex:1}
+        .module-title{font-size:1.05rem;font-weight:700;color:var(--slate-900)}
+        .module-meta{font-size:.8rem;color:var(--slate-400);margin-top:2px;display:flex;gap:16px;flex-wrap:wrap}
+        .module-toggle{width:36px;height:36px;border-radius:8px;border:1px solid var(--slate-200);background:white;display:flex;align-items:center;justify-content:center;transition:all .3s;flex-shrink:0;color:var(--slate-400)}
+        .module.open .module-toggle{transform:rotate(180deg);background:var(--blue-50);border-color:var(--blue-200);color:var(--blue-600)}
+        .module-body{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.16,1,.3,1)}
+        .module.open .module-body{max-height:600px}
+        .module-body-inner{padding:0 28px 24px;border-top:1px solid var(--slate-100)}
+        .module-lessons{list-style:none;padding-top:16px}
+        .module-lessons li{display:flex;align-items:center;gap:12px;padding:8px 0;font-size:.88rem;color:var(--slate-600)}
+        .module-lessons li .iconify{color:var(--green-500);font-size:18px;flex-shrink:0}
+        .module-lessons li .lesson-duration{margin-left:auto;font-size:.75rem;color:var(--slate-400);flex-shrink:0}
+
+        /* INSTRUCTORS */
+        .instructors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+        .instructor-card{background:white;border:1px solid var(--slate-200);border-radius:var(--radius-lg);padding:32px;text-align:center;transition:all .3s}
+        .instructor-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+        .instructor-avatar{width:100px;height:100px;border-radius:50%;object-fit:cover;margin:0 auto 16px;display:block;border:4px solid var(--blue-100)}
+        .instructor-name{font-size:1.1rem;font-weight:700;color:var(--slate-900);margin-bottom:2px}
+        .instructor-role{font-size:.82rem;color:var(--blue-600);font-weight:600;margin-bottom:12px}
+        .instructor-bio{font-size:.84rem;color:var(--slate-500);line-height:1.7;margin-bottom:16px}
+        .instructor-stats{display:flex;justify-content:center;gap:24px;padding-top:16px;border-top:1px solid var(--slate-100)}
+        .instructor-stat-val{font-size:1rem;font-weight:800;color:var(--slate-900)}
+        .instructor-stat-label{font-size:.7rem;color:var(--slate-400)}
+
+        /* TESTIMONIALS */
+        .testimonials-track{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:16px;scrollbar-width:none}
+        .testimonials-track::-webkit-scrollbar{display:none}
+        .testimonial-card{min-width:380px;max-width:380px;scroll-snap-align:start;background:white;border:1px solid var(--slate-200);border-radius:var(--radius-lg);padding:32px;flex-shrink:0}
+        .testimonial-stars{color:var(--amber-500);font-size:14px;margin-bottom:14px;display:flex;gap:2px}
+        .testimonial-text{font-size:.92rem;color:var(--slate-700);line-height:1.7;margin-bottom:20px;font-style:italic}
+        .testimonial-result{display:inline-flex;align-items:center;gap:6px;background:var(--green-50);color:var(--green-700);font-size:.78rem;font-weight:600;padding:4px 12px;border-radius:50px;margin-bottom:16px}
+        .testimonial-author{display:flex;align-items:center;gap:12px}
+        .testimonial-avatar{width:44px;height:44px;border-radius:50%;object-fit:cover}
+        .testimonial-name{font-weight:600;font-size:.9rem;color:var(--slate-900)}
+        .testimonial-info{font-size:.78rem;color:var(--slate-500)}
+
+        /* PRICING / ENROLLMENT */
+        .enroll-section{background:linear-gradient(160deg,var(--blue-950),var(--blue-900),#0c4a6e);color:white;position:relative;overflow:hidden}
+        .enroll-bg{position:absolute;inset:0;background-image:radial-gradient(circle at 70% 30%,rgba(16,185,129,.12) 0%,transparent 50%),radial-gradient(circle at 20% 70%,rgba(59,130,246,.1) 0%,transparent 40%)}
+        .enroll-section *{position:relative}
+        .enroll-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+        .enroll-benefits{display:flex;flex-direction:column;gap:16px;margin-top:28px}
+        .enroll-benefit{display:flex;align-items:center;gap:12px;font-size:.92rem;color:rgba(255,255,255,.8)}
+        .enroll-benefit .iconify{color:var(--green-400);font-size:20px;flex-shrink:0}
+        .enroll-card{background:rgba(255,255,255,.07);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius-lg);padding:40px;text-align:center}
+        .enroll-card-label{font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--amber-400);margin-bottom:20px}
+        .enroll-card-price{display:flex;align-items:baseline;justify-content:center;gap:12px;margin-bottom:4px}
+        .enroll-card-old{font-size:1.3rem;color:rgba(255,255,255,.3);text-decoration:line-through}
+        .enroll-card-new{font-size:3.5rem;font-weight:900;color:var(--green-400);line-height:1}
+        .enroll-card-period{font-size:.9rem;color:rgba(255,255,255,.4);margin-bottom:28px}
+        .enroll-card-features{list-style:none;text-align:left;margin-bottom:32px}
+        .enroll-card-features li{display:flex;align-items:center;gap:10px;padding:8px 0;font-size:.88rem;color:rgba(255,255,255,.7);border-bottom:1px solid rgba(255,255,255,.05)}
+        .enroll-card-features li:last-child{border-bottom:none}
+        .enroll-card-features li .iconify{color:var(--green-400);font-size:18px;flex-shrink:0}
+        .enroll-guarantee{display:flex;align-items:center;gap:10px;justify-content:center;margin-top:20px;font-size:.8rem;color:rgba(255,255,255,.4)}
+        .enroll-guarantee .iconify{color:var(--amber-500);font-size:20px}
+
+        /* FAQ */
+        .faq-list{max-width:860px;margin:0 auto}
+        .faq-item{border:1px solid var(--slate-200);border-radius:var(--radius-lg);margin-bottom:12px;overflow:hidden;background:white;transition:all .3s}
+        .faq-item.open{border-color:var(--blue-200);box-shadow:var(--shadow-md)}
+        .faq-q{padding:20px 24px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none;font-weight:600;font-size:.95rem;color:var(--slate-900);transition:background .15s}
+        .faq-q:hover{background:var(--slate-50)}
+        .faq-q .iconify{color:var(--slate-400);transition:transform .3s;font-size:20px;flex-shrink:0}
+        .faq-item.open .faq-q .iconify{transform:rotate(180deg);color:var(--blue-600)}
+        .faq-a{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.16,1,.3,1)}
+        .faq-item.open .faq-a{max-height:400px}
+        .faq-a-inner{padding:0 24px 20px;font-size:.88rem;color:var(--slate-600);line-height:1.7}
+
+        /* FINAL CTA */
+        .final-cta{background:linear-gradient(135deg,var(--green-700),var(--blue-700));padding:80px 24px;text-align:center;position:relative;overflow:hidden}
+        .final-cta-bg{position:absolute;inset:0;background-image:radial-gradient(circle at 40% 50%,rgba(255,255,255,.08) 0%,transparent 50%)}
+        .final-cta *{position:relative}
+        .final-cta h2{font-size:clamp(1.75rem,3.5vw,2.5rem);font-weight:800;color:white;margin-bottom:12px}
+        .final-cta p{font-size:1.05rem;color:rgba(255,255,255,.8);margin-bottom:32px;max-width:560px;margin-left:auto;margin-right:auto}
+
+        /* FOOTER */
+        .footer{background:var(--slate-900);color:rgba(255,255,255,.6);padding:48px 24px 24px}
+        .footer-inner{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+        .footer-brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:1rem;color:white}
+        .footer-brand-icon{width:32px;height:32px;background:linear-gradient(135deg,var(--blue-600),var(--green-600));border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-size:16px}
+        .footer-brand span{color:var(--green-500)}
+        .footer-copy{font-size:.78rem}
+        .footer-links{display:flex;gap:24px}
+        .footer-links a{font-size:.78rem;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s}
+        .footer-links a:hover{color:white}
+
+        /* MODAL */
+        .modal-overlay{position:fixed;inset:0;z-index:2000;background:rgba(15,23,42,.6);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:24px;overflow-y:auto}
+        .modal-overlay.active{display:flex}
+        .modal{background:var(--white);border-radius:var(--radius-lg);width:100%;max-width:520px;box-shadow:var(--shadow-2xl);overflow:hidden}
+        .modal-header{padding:28px 28px 0;display:flex;justify-content:space-between;align-items:center}
+        .modal-header h3{font-size:1.2rem;font-weight:800;color:var(--slate-900)}
+        .modal-close{width:36px;height:36px;border-radius:10px;border:1px solid var(--slate-200);background:white;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--slate-500);font-size:20px;transition:all .2s}
+        .modal-close:hover{background:var(--slate-100);color:var(--slate-800)}
+        .modal-body{padding:24px 28px 28px}
+        .modal-body .form-group{margin-bottom:18px}
+        .modal-body label{display:block;font-size:.82rem;font-weight:600;color:var(--slate-700);margin-bottom:6px}
+        .modal-body label .req{color:var(--red-500)}
+        .form-input,.form-select{width:100%;padding:12px 16px;border:1px solid var(--slate-200);border-radius:10px;font-size:.9rem;font-family:inherit;color:var(--slate-800);background:var(--slate-50);outline:none;transition:all .2s}
+        .form-input:focus,.form-select:focus{border-color:var(--blue-400);background:white;box-shadow:0 0 0 3px rgba(59,130,246,.1)}
+        .form-select{appearance:none;cursor:pointer}
+        .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+        .modal-divider{border:none;border-top:1px solid var(--slate-200);margin:20px 0}
+        .pay-methods{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+        .pay-method{display:flex;align-items:center;gap:6px;padding:8px 14px;border:1px solid var(--slate-200);border-radius:8px;font-size:.78rem;color:var(--slate-600);font-weight:500}
+        .pay-method .iconify{font-size:20px}
+        .modal-secure{display:flex;align-items:center;gap:6px;justify-content:center;font-size:.75rem;color:var(--slate-400);margin-top:16px}
+
+        /* SUCCESS MODAL */
+        .success-content{text-align:center;padding:20px 0}
+        .success-icon{width:80px;height:80px;border-radius:50%;background:var(--green-50);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:40px;color:var(--green-600)}
+        .success-content h3{font-size:1.3rem;font-weight:800;color:var(--slate-900);margin-bottom:8px}
+        .success-content p{font-size:.9rem;color:var(--slate-500);line-height:1.7;max-width:380px;margin:0 auto}
+
+        /* TOAST */
+        .toast{position:fixed;top:90px;right:24px;z-index:9999;background:var(--slate-900);color:white;padding:16px 24px;border-radius:12px;font-size:.875rem;font-weight:500;box-shadow:var(--shadow-xl);transform:translateX(calc(100% + 40px));transition:transform .4s cubic-bezier(.16,1,.3,1);display:flex;align-items:center;gap:10px}
+        .toast.show{transform:translateX(0)}
+        .toast .iconify{font-size:20px}
+        .toast-success .iconify{color:var(--green-500)}
+        .toast-error .iconify{color:var(--red-500)}
+
+        /* RESPONSIVE */
+        @media(max-width:1024px){
+            .hero-inner{grid-template-columns:1fr;text-align:center}
+            .hero-sub{margin:0 auto 32px}
+            .hero-ctas{justify-content:center}
+            .hero-price{justify-content:center}
+            .hero-guarantee{justify-content:center}
+            .hero-card{display:none}
+            .overview-grid{grid-template-columns:1fr}
+            .objectives-grid{grid-template-columns:1fr}
+            .instructors-grid{grid-template-columns:1fr 1fr}
+            .enroll-grid{grid-template-columns:1fr}
+        }
+        @media(max-width:768px){
+            .nav-links,.nav-cta{display:none}
+            .mobile-toggle{display:block}
+            section{padding:64px 24px}
+            .instructors-grid{grid-template-columns:1fr}
+            .form-row{grid-template-columns:1fr}
+            .proof-inner{gap:20px}
+            .testimonial-card{min-width:300px;max-width:300px}
+            .module-header{padding:18px 20px}
+            .module-body-inner{padding:0 20px 20px}
+            .module-num{width:40px;height:40px;font-size:.85rem}
+        }
+        @media(max-width:480px){
+            .hero h1{font-size:2rem}
+            .hero-price-new{font-size:2.5rem}
+            .enroll-card-new{font-size:2.8rem}
+        }
+
+        .fade-up{opacity:0;transform:translateY(24px);transition:all .7s cubic-bezier(.16,1,.3,1)}
+        .fade-up.visible{opacity:1;transform:translateY(0)}
+        .stagger-1{transition-delay:.1s}.stagger-2{transition-delay:.2s}.stagger-3{transition-delay:.3s}.stagger-4{transition-delay:.4s}
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-logo">
+            <div class="nav-logo-icon"><span class="iconify" data-icon="mdi:stethoscope"></span></div>
+            RemoteMedical<span>Jobs</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="jobs.html">Jobs</a></li>
+            <li><a href="course.html" style="color:var(--blue-700);background:var(--blue-50);font-weight:600;border-radius:8px">Course</a></li>
+            <li><a href="index.html#seekers">Job Seekers</a></li>
+            <li><a href="index.html#employers">Employers</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="nav-cta">
+            <a href="jobs.html" class="btn btn-secondary">Browse Jobs</a>
+            <a href="#" class="btn btn-primary" onclick="openEnroll()">Enrol — $27</a>
+        </div>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+            <span class="iconify" data-icon="mdi:menu" style="font-size:28px" id="menuIcon"></span>
+        </button>
+    </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="jobs.html">Jobs</a>
+    <a href="course.html">Course</a>
+    <a href="index.html#seekers">Job Seekers</a>
+    <a href="index.html#employers">Employers</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="#" class="btn btn-primary btn-lg" onclick="openEnroll()">Enrol — $27</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-inner">
+        <div>
+            <div class="hero-badge fade-up">
+                <span class="hero-badge-dot"></span>
+                Essential Course for Remote Healthcare Job Seekers
+            </div>
+            <h1 class="fade-up stagger-1">Remote Healthcare <span class="grad">Career Accelerator</span></h1>
+            <p class="hero-sub fade-up stagger-2">The only course designed specifically to help UK healthcare professionals land vetted remote roles — faster, with confidence, and with the skills employers actually demand.</p>
+            <div class="hero-price fade-up stagger-2">
+                <span class="hero-price-old">$197</span>
+                <span class="hero-price-new">$27</span>
+            </div>
+            <p class="hero-price-label fade-up stagger-2">One-time payment · Lifetime access · Certificate included</p>
+            <div class="hero-ctas fade-up stagger-3">
+                <a href="#" class="btn btn-green btn-xl" onclick="openEnroll()">
+                    <span class="iconify" data-icon="mdi:rocket-launch"></span>
+                    Enrol Now — $27
+                </a>
+                <a href="#modules" class="btn btn-outline-white btn-lg">
+                    <span class="iconify" data-icon="mdi:eye"></span>
+                    View Curriculum
+                </a>
+            </div>
+            <div class="hero-guarantee fade-up stagger-4">
+                <span class="iconify" data-icon="mdi:shield-check"></span>
+                30-day money-back guarantee — No questions asked
+            </div>
+        </div>
+        <div class="hero-card fade-up stagger-3">
+            <div class="hero-card-title">
+                <span class="iconify" data-icon="mdi:school" style="color:var(--amber-400);font-size:22px"></span>
+                What You'll Master
+            </div>
+            <div class="hero-card-item">
+                <div class="hero-card-num">01</div>
+                <div class="hero-card-text"><strong>Remote Clinical Skills</strong> — Telephone triage, video consultations, digital patient assessment</div>
+            </div>
+            <div class="hero-card-item">
+                <div class="hero-card-num">02</div>
+                <div class="hero-card-text"><strong>Digital Health Literacy</strong> — NHS systems, EPRs, telehealth platforms, data governance</div>
+            </div>
+            <div class="hero-card-item">
+                <div class="hero-card-num">03</div>
+                <div class="hero-card-text"><strong>Job-Ready Application</strong> — ATS-optimised CV, remote interview techniques, portfolio building</div>
+            </div>
+            <div class="hero-card-item">
+                <div class="hero-card-num">04</div>
+                <div class="hero-card-text"><strong>Compliance & Registration</strong> — NMC, GMC, HCPC remote practice requirements</div>
+            </div>
+            <div class="hero-card-bottom">
+                <div class="hero-card-stat">
+                    <div class="hero-card-stat-val">8</div>
+                    <div class="hero-card-stat-label">Modules</div>
+                </div>
+                <div class="hero-card-stat">
+                    <div class="hero-card-stat-val">42</div>
+                    <div class="hero-card-stat-label">Lessons</div>
+                </div>
+                <div class="hero-card-stat">
+                    <div class="hero-card-stat-val">6hr</div>
+                    <div class="hero-card-stat-label">Content</div>
+                </div>
+                <div class="hero-card-stat">
+                    <div class="hero-card-stat-val">∞</div>
+                    <div class="hero-card-stat-label">Access</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SOCIAL PROOF BAR -->
+<div class="proof-bar">
+    <div class="proof-inner">
+        <div class="proof-item fade-up">
+            <span class="iconify" data-icon="mdi:account-group" style="color:var(--blue-600)"></span>
+            <strong>2,400+</strong> enrolments
+        </div>
+        <div class="proof-item fade-up stagger-1">
+            <span class="iconify" data-icon="mdi:star" style="color:var(--amber-500)"></span>
+            <strong>4.9/5</strong> average rating
+        </div>
+        <div class="proof-item fade-up stagger-2">
+            <span class="iconify" data-icon="mdi:certificate" style="color:var(--green-600)"></span>
+            <strong>CPD Certified</strong> certificate
+        </div>
+        <div class="proof-item fade-up stagger-3">
+            <span class="iconify" data-icon="mdi:trophy" style="color:var(--amber-600)"></span>
+            <strong>89%</strong> land roles within 60 days
+        </div>
+    </div>
+</div>
+
+<!-- COURSE OVERVIEW -->
+<section id="overview">
+    <div class="section-inner">
+        <div class="overview-grid">
+            <div class="overview-image fade-up">
+                <img src="https://picsum.photos/seed/remote-healthcare-learning/800/600.jpg" alt="Healthcare professional learning online">
+                <div class="overview-image-badge">
+                    <div class="overview-image-badge-icon">
+                        <span class="iconify" data-icon="mdi:certificate"></span>
+                    </div>
+                    <div>
+                        <div class="overview-image-badge-val">CPD Certified</div>
+                        <div class="overview-image-badge-label">6 CPD Hours · Recognised by NHS Employers</div>
+                    </div>
+                </div>
+            </div>
+            <div class="fade-up stagger-2">
+                <div class="section-badge green">
+                    <span class="iconify" data-icon="mdi:information"></span>
+                    Course Overview
+                </div>
+                <h2 class="section-title">The Bridge Between Clinical Expertise and Remote Opportunity</h2>
+                <p class="section-sub" style="margin-bottom:0">The UK healthcare sector is undergoing a digital transformation. Remote and hybrid roles in telehealth, digital health, and virtual care are growing at an unprecedented rate — but most healthcare professionals aren't prepared for the unique demands of remote practice.</p>
+                <div class="overview-points">
+                    <div class="overview-point">
+                        <div class="overview-point-icon"><span class="iconify" data-icon="mdi:check-bold"></span></div>
+                        <div class="overview-point-text"><strong>Designed by hiring managers</strong> — Built with input from NHS Workforce Alliance recruiters who told us exactly what they look for in remote healthcare candidates.</div>
+                    </div>
+                    <div class="overview-point">
+                        <div class="overview-point-icon"><span class="iconify" data-icon="mdi:check-bold"></span></div>
+                        <div class="overview-point-text"><strong>Not generic online learning</strong> — Every module is specific to UK healthcare remote work. No fluff, no filler — only actionable, job-relevant content.</div>
+                    </div>
+                    <div class="overview-point">
+                        <div class="overview-point-icon"><span class="iconify" data-icon="mdi:check-bold"></span></div>
+                        <div class="overview-point-text"><strong>Results-driven</strong> — 89% of graduates land a remote healthcare role within 60 days of completing the course and applying through our platform.</div>
+                    </div>
+                    <div class="overview-point">
+                        <div class="overview-point-icon"><span class="iconify" data-icon="mdi:check-bold"></span></div>
+                        <div class="overview-point-text"><strong>For all healthcare professionals</strong> — Whether you're a nurse, pharmacist, AHP, doctor, or non-clinical professional — there's a pathway for you.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- LEARNING OBJECTIVES -->
+<section class="objectives-section" id="objectives">
+    <div class="section-inner">
+        <div class="section-header center fade-up">
+            <div class="section-badge amber">
+                <span class="iconify" data-icon="mdi:target"></span>
+                Learning Objectives
+            </div>
+            <h2 class="section-title">What You'll Achieve</h2>
+            <p class="section-sub">By the end of this course, you'll have the complete toolkit to confidently apply for, interview for, and excel in remote healthcare roles across the UK.</p>
+        </div>
+        <div class="objectives-grid">
+            <div class="objective-card fade-up stagger-1">
+                <div class="objective-num">01</div>
+                <div class="objective-text">
+                    <h4>Master Remote Clinical Consultations</h4>
+                    <p>Conduct safe, effective telephone and video consultations using structured frameworks adapted from NHS Pathways and professional body guidelines.</p>
+                </div>
+            </div>
+            <div class="objective-card fade-up stagger-2">
+                <div class="objective-num">02</div>
+                <div class="objective-text">
+                    <h4>Navigate Digital Health Systems</h4>
+                    <p>Demonstrate proficiency with NHS digital tools, EPR systems, telehealth platforms, and understand data governance under UK GDPR and Caldicott principles.</p>
+                </div>
+            </div>
+            <div class="objective-card fade-up stagger-3">
+                <div class="objective-num">03</div>
+                <div class="objective-text">
+                    <h4>Build a Job-Ready Application</h4>
+                    <p>Create an ATS-optimised CV, compelling cover letter, and professional portfolio specifically tailored for remote healthcare roles.</p>
+                </div>
+            </div>
+            <div class="objective-card fade-up stagger-4">
+                <div class="objective-num">04</div>
+                <div class="objective-text">
+                    <h4>Ace Remote Interviews</h4>
+                    <p>Master virtual interview techniques, STAR method responses, and technical demonstrations that hiring managers in healthcare actually care about.</p>
+                </div>
+            </div>
+            <div class="objective-card fade-up stagger-1">
+                <div class="objective-num">05</div>
+                <div class="objective-text">
+                    <h4>Understand Compliance for Remote Practice</h4>
+                    <p>Navigate NMC, GMC, HCPC, and GPhC requirements for remote working, including indemnity, supervision, and professional accountability.</p>
+                </div>
+            </div>
+            <div class="objective-card fade-up stagger-2">
+                <div class="objective-num">06</div>
+                <div class="objective-text">
+                    <h4>Accelerate Your Remote Career</h4>
+                    <p>Develop a 30-60-90 day career plan, negotiate remote-friendly contracts, and position yourself for senior remote roles in healthcare.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COURSE MODULES -->
+<section id="modules">
+    <div class="section-inner">
+        <div class="section-header center fade-up">
+            <div class="section-badge purple">
+                <span class="iconify" data-icon="mdi:book-open-variant"></span>
+                Course Curriculum
+            </div>
+            <h2 class="section-title">8 Comprehensive Modules</h2>
+            <p class="section-sub">Each module includes video lessons, downloadable resources, practical exercises, and knowledge checks. Complete at your own pace.</p>
+        </div>
+        <div class="modules-list" id="modulesList"></div>
+        <div style="text-align:center;margin-top:48px" class="fade-up">
+            <a href="#" class="btn btn-green btn-xl" onclick="openEnroll()">
+                <span class="iconify" data-icon="mdi:lock-open"></span>
+                Unlock All 8 Modules — $27
+            </a>
+            <p style="font-size:.82rem;color:var(--slate-400);margin-top:12px">One-time payment · No subscription · Lifetime updates</p>
+        </div>
+    </div>
+</section>
+
+<!-- INSTRUCTORS -->
+<section id="instructors" style="background:var(--slate-50)">
+    <div class="section-inner">
+        <div class="section-header center fade-up">
+            <div class="section-badge green">
+                <span class="iconify" data-icon="mdi:account-tie"></span>
+                Your Instructors
+            </div>
+            <h2 class="section-title">Learn from Practising Experts</h2>
+            <p class="section-sub">Not academics — practising healthcare professionals and recruiters who work in remote healthcare every day.</p>
+        </div>
+        <div class="instructors-grid">
+            <div class="instructor-card fade-up stagger-1">
+                <img src="https://picsum.photos/seed/instructor-sarah-nurse/200/200.jpg" alt="Sarah Mitchell" class="instructor-avatar">
+                <div class="instructor-name">Sarah Mitchell, RGN, MSc</div>
+                <div class="instructor-role">Lead Clinical Instructor</div>
+                <div class="instructor-bio">Former NHS Telehealth Lead with 15 years of clinical experience. Sarah designed the remote consultation frameworks used in Modules 1–3 and has personally trained over 500 nurses in telehealth practice.</div>
+                <div class="instructor-stats">
+                    <div><div class="instructor-stat-val">15yr</div><div class="instructor-stat-label">Experience</div></div>
+                    <div><div class="instructor-stat-val">500+</div><div class="instructor-stat-label">Trained</div></div>
+                    <div><div class="instructor-stat-val">4.9</div><div class="instructor-stat-label">Rating</div></div>
+                </div>
+            </div>
+            <div class="instructor-card fade-up stagger-2">
+                <img src="https://picsum.photos/seed/instructor-james-doctor/200/200.jpg" alt="Dr. James Okonkwo" class="instructor-avatar">
+                <div class="instructor-name">Dr. James Okonkwo, MBBS, MRCGP</div>
+                <div class="instructor-role">Digital Health & Compliance Lead</div>
+                <div class="instructor-bio">Practising GP and Clinical Director at RemoteMedicalJobs.co.uk. James leads Modules 4–5, bringing real-world insights on digital health systems, data governance, and regulatory compliance for remote practice.</div>
+                <div class="instructor-stats">
+                    <div><div class="instructor-stat-val">12yr</div><div class="instructor-stat-label">Experience</div></div>
+                    <div><div class="instructor-stat-val">NHS</div><div class="instructor-stat-label">Background</div></div>
+                    <div><div class="instructor-stat-val">4.8</div><div class="instructor-stat-label">Rating</div></div>
+                </div>
+            </div>
+            <div class="instructor-card fade-up stagger-3">
+                <img src="https://picsum.photos/seed/instructor-emma-recruiter/200/200.jpg" alt="Emma Rahman" class="instructor-avatar">
+                <div class="instructor-name">Emma Rahman, CIPD, MSc</div>
+                <div class="instructor-role">Career Strategy & Recruitment Lead</div>
+                <div class="instructor-bio">Head of Operations and former senior recruiter for NHS workforce programmes. Emma leads Modules 6–8, teaching the exact strategies that have helped 89% of our course graduates land remote roles.</div>
+                <div class="instructor-stats">
+                    <div><div class="instructor-stat-val">10yr</div><div class="instructor-stat-label">Recruitment</div></div>
+                    <div><div class="instructor-stat-val">89%</div><div class="instructor-stat-label">Success Rate</div></div>
+                    <div><div class="instructor-stat-val">5.0</div><div class="instructor-stat-label">Rating</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+    <div class="section-inner">
+        <div class="section-header center fade-up">
+            <div class="section-badge amber">
+                <span class="iconify" data-icon="mdi:format-quote-close"></span>
+                Student Success Stories
+            </div>
+            <h2 class="section-title">Real Results from Real Professionals</h2>
+            <p class="section-sub">Hear from healthcare professionals who transformed their careers after completing the Remote Healthcare Career Accelerator.</p>
+        </div>
+        <div class="testimonials-track fade-up">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <span class="iconify" data-icon="mdi:star"></span><span class="iconify" data-icon="mdi:star"></span><span class="iconify" data-icon="mdi:star"></span><span class="iconify" data-icon="mdi:star"></span><span class="iconify" data-icon="mdi:star"></span>
+                </div>
+                <div class="testimonial-result"><span class="iconify" data-icon="mdi:check-circle"></span> Landed Telehealth Nurse role in 3 weeks</div>
+                <p class="testimonial-text">"This course changed everything. I'd been applying for remote nursing roles for 6 months with no luck. After completing the course, I rewrote my CV using their ATS template, aced the video interview, and got an offer within 3 weeks. The consultation frameworks in Module 2 are worth 10x the price alone."</p>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/test-course-nurse-1/88/88.jpg" alt="Rachel" class="testimonial-avatar">
+                    <div><div class="testimonial-name">Rachel Thompson, RGN</div><div class="testimonial-info">Telehealth Nurse — NHS Digital</div></div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <span class="iconify" data-icon="mdi:star"></span><span class="iconify" data-icon="mdi:star"></span><span class="iconify" data-icon="mdi:star"></span><span class="iconify" data-icon="mdi:star"></span><span class="iconify" data-icon="mdi:star"></span>
+                </div>
+                <div class="testimonial-result"><span class="iconify" data-icon="mdi:check-circle"></span> £15k salary increase — fully remote</div>
+                <p class="testimonial-text">"I was a hospital pharmacist earning £42k. After the course, I landed a remote clinical pharmacist role at £57k. The digital health systems module gave me the confidence to talk about EPRs and NHS App integration in my interview. Genuinely the best £27 I've ever spent."</p>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/test-course-pharmacist/88/88.jpg" alt="Amit" class="testimonial-avatar">
+                    <div><div class="testimonial-name">Amit Patel, MPharm</div><div class="testimonial-info">Clinical Pharmacist — Digital Health Platform</div></div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <span class="iconify" data-icon="mdi:star"></span><span class="iconify" data-icon="mdi:star"></span><span class="iconify" data-icon="mdi:star"></span><span class="iconify" data-icon="mdi:star"></span><span class="iconify" data-icon="mdi:star-half-full"></span>
+                </div>
+                <div class="testimonial-result"><span class="iconify" data-icon="mdi:check-circle"></span> Career pivot from ward to remote coding</div>
+                <p class="testimonial-text">"As a nurse wanting to transition to medical coding, I had no idea where to start. The compliance module clarified everything about remote practice requirements, and the CV section helped me reframe my clinical experience for coding roles. Got hired within 45 days."</p>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/test-course-coder/88/88.jpg" alt="Grace" class="testimonial-avatar">
+                    <div><div class="testimonial-name">Grace Okafor, RGN, CPC</div><div class="testimonial-info">Medical Coder — Private Hospital Group</div></div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <span class="iconify" data-icon="mdi:star"></span><span class="iconify" data-icon="mdi:star"></span><span class="iconify" data-icon="mdi:star"></span><span class="iconify" data-icon="mdi:star"></span><span class="iconify" data-icon="mdi:star"></span>
+                </div>
+                <div class="testimonial-result"><span class="iconify" data-icon="mdi:check-circle"></span> International nurse — role secured from abroad</div>
+                <p class="testimonial-text">"I was still in the Philippines when I took this course. The compliance module on NMC remote practice requirements was incredibly detailed. I completed the course, passed my OSCE, and had a remote telehealth role lined up before I even flew to the UK. Life-changing."</p>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/test-course-intl/88/88.jpg" alt="Maria" class="testimonial-avatar">
+                    <div><div class="testimonial-name">Maria Santos, RGN</div><div class="testimonial-info">Telehealth Nurse — Private Healthcare Provider</div></div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <span class="iconify" data-icon="mdi:star"></span><span class="iconify" data-icon="mdi:star"></span><span class="iconify" data-icon="mdi:star"></span><span class="iconify" data-icon="mdi:star"></span><span class="iconify" data-icon="mdi:star"></span>
+                </div>
+                <div class="testimonial-result"><span class="iconify" data-icon="mdi:check-circle"></span> Promoted to remote team lead in 8 months</div>
+                <p class="testimonial-text">"I took the course as a newly qualified physiotherapist. Not only did it help me land my first remote role, but the career planning module (Module 8) gave me a clear roadmap. 8 months later, I'm leading a team of 6 remote AHPs. The 30-60-90 day plan template was gold."</p>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/test-course-physio/88/88.jpg" alt="Daniel" class="testimonial-avatar">
+                    <div><div class="testimonial-name">Daniel Brooks, MSc MCSP</div><div class="testimonial-info">Remote AHP Team Lead — MSK Service</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ENROLLMENT SECTION -->
+<section class="enroll-section" id="enroll">
+    <div class="enroll-bg"></div>
+    <div class="section-inner">
+        <div class="enroll-grid">
+            <div class="fade-up">
+                <div class="section-badge" style="background:rgba(245,158,11,.15);border-color:rgba(245,158,11,.3);color:var(--amber-400)">
+                    <span class="iconify" data-icon="mdi:tag"></span>
+                    Limited-Time Offer
+                </div>
+                <h2 class="section-title" style="color:white">Invest in Your Remote Healthcare Career</h2>
+                <p class="section-sub" style="color:rgba(255,255,255,.5)">For less than the cost of a single interview outfit, get the complete toolkit that has helped 2,400+ healthcare professionals land remote roles. This discounted price won't last.</p>
+                <div class="enroll-benefits">
+                    <div class="enroll-benefit"><span class="iconify" data-icon="mdi:check-circle"></span> 8 modules with 42 video lessons — self-paced</div>
+                    <div class="enroll-benefit"><span class="iconify" data-icon="mdi:check-circle"></span> Downloadable CV templates, checklists & frameworks</div>
+                    <div class="enroll-benefit"><span class="iconify" data-icon="mdi:check-circle"></span> CPD-certified certificate recognised by NHS employers</div>
+                    <div class="enroll-benefit"><span class="iconify" data-icon="mdi:check-circle"></span> Lifetime access including all future updates</div>
+                    <div class="enroll-benefit"><span class="iconify" data-icon="mdi:check-circle"></span> Priority access to new remote job postings</div>
+                    <div class="enroll-benefit"><span class="iconify" data-icon="mdi:check-circle"></span> Private community of 2,400+ remote healthcare professionals</div>
+                    <div class="enroll-benefit"><span class="iconify" data-icon="mdi:check-circle"></span> 30-day money-back guarantee — zero risk</div>
+                </div>
+            </div>
+            <div class="fade-up stagger-2">
+                <div class="enroll-card">
+                    <div class="enroll-card-label">⚡ 86% Discount — This Week Only</div>
+                    <div class="enroll-card-price">
+                        <span class="enroll-card-old">$197</span>
+                        <span class="enroll-card-new">$27</span>
+                    </div>
+                    <div class="enroll-card-period">One-time payment · No recurring fees</div>
+                    <ul class="enroll-card-features">
+                        <li><span class="iconify" data-icon="mdi:check-circle"></span> Full course — 8 modules, 42 lessons</li>
+                        <li><span class="iconify" data-icon="mdi:check-circle"></span> CPD Certificate (6 hours)</li>
+                        <li><span class="iconify" data-icon="mdi:check-circle"></span> 12 downloadable resources & templates</li>
+                        <li><span class="iconify" data-icon="mdi:check-circle"></span> 3 practice interview recordings</li>
+                        <li><span class="iconify" data-icon="mdi:check-circle"></span> Lifetime access & updates</li>
+                        <li><span class="iconify" data-icon="mdi:check-circle"></span> Community access</li>
+                        <li><span class="iconify" data-icon="mdi:check-circle"></span> Priority job alerts</li>
+                    </ul>
+                    <button class="btn btn-green btn-xl" style="width:100%" onclick="openEnroll()">
+                        <span class="iconify" data-icon="mdi:lock-open"></span>
+                        Enrol Now — $27
+                    </button>
+                    <div class="enroll-guarantee">
+                        <span class="iconify" data-icon="mdi:shield-check"></span>
+                        30-day money-back guarantee
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background:var(--slate-50)">
+    <div class="section-inner">
+        <div class="section-header center fade-up">
+            <div class="section-badge">
+                <span class="iconify" data-icon="mdi:frequently-asked-questions"></span>
+                FAQ
+            </div>
+            <h2 class="section-title">Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-list" id="faqList"></div>
+    </div>
+</section>
+
+<!-- FINAL CTA -->
+<div class="final-cta">
+    <div class="final-cta-bg"></div>
+    <h2 class="fade-up">Your Remote Healthcare Career Starts Here</h2>
+    <p class="fade-up stagger-1">Join 2,400+ healthcare professionals who've already transformed their careers. Don't let another job application go unanswered.</p>
+    <div class="fade-up stagger-2" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+        <a href="#" class="btn btn-white btn-xl" onclick="openEnroll()">
+            <span class="iconify" data-icon="mdi:rocket-launch"></span>
+            Get Instant Access — $27
+        </a>
+    </div>
+    <p class="fade-up stagger-3" style="font-size:.82rem;color:rgba(255,255,255,.5);margin-top:16px">30-day money-back guarantee · Secure checkout · Instant access</p>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-inner">
+        <a href="index.html" class="footer-brand">
+            <div class="footer-brand-icon"><span class="iconify" data-icon="mdi:stethoscope"></span></div>
+            RemoteMedical<span>Jobs</span>
+        </a>
+        <p class="footer-copy">© 2025 RemoteMedicalJobs.co.uk. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="jobs.html">Jobs</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+        </div>
+    </div>
+</footer>
+
+<!-- ENROLLMENT MODAL -->
+<div class="modal-overlay" id="enrollModal">
+    <div class="modal" id="enrollModalContent"></div>
+</div>
+
+<!-- TOAST -->
+<div class="toast toast-success" id="toast">
+    <span class="iconify" data-icon="mdi:check-circle"></span>
+    <span id="toastMsg">Success!</span>
+</div>
+
+<script>
+// ===== MODULES DATA =====
+const modules = [
+    {
+        num:"01", title:"The Remote Healthcare Landscape in the UK", duration:"45 min", lessons:5,
+        color:"linear-gradient(135deg,#2563EB,#1D4ED8)",
+        lessonsList:[
+            {name:"Why Remote Healthcare is Growing — and Why Now",dur:"8 min"},
+            {name:"Types of Remote Healthcare Roles (Clinical & Non-Clinical)",dur:"10 min"},
+            {name:"The NHS Digital Transformation Strategy Explained",dur:"9 min"},
+            {name:"Private Sector & Start-up Opportunities",dur:"8 min"},
+            {name:"Module 1 Knowledge Check",dur:"10 min"}
+        ]
+    },
+    {
+        num:"02", title:"Mastering Remote Clinical Consultations", duration:"60 min", lessons:6,
+        color:"linear-gradient(135deg,#059669,#047857)",
+        lessonsList:[
+            {name:"Telephone Consultation Framework (SBAR-Remote)",dur:"12 min"},
+            {name:"Video Consultation Best Practices & Setup",dur:"10 min"},
+            {name:"Clinical Assessment Without Physical Examination",dur:"11 min"},
+            {name:"Remote Triage & Escalation Protocols",dur:"9 min"},
+            {name:"Managing Complex Patients Remotely",dur:"10 min"},
+            {name:"Module 2 Practical Exercise",dur:"8 min"}
+        ]
+    },
+    {
+        num:"03", title:"Communication Skills for Remote Practice", duration:"50 min", lessons:5,
+        color:"linear-gradient(135deg,#7C3AED,#6D28D9)",
+        lessonsList:[
+            {name:"Building Rapport Through a Screen",dur:"10 min"},
+            {name:"Active Listening in Telephone & Video Consultations",dur:"9 min"},
+            {name:"Breaking Bad News Remotely — Ethical Considerations",dur:"12 min"},
+            {name:"Managing Difficult Conversations & Patient Anxiety",dur:"10 min"},
+            {name:"Module 3 Role-Play Scenarios",dur:"9 min"}
+        ]
+    },
+    {
+        num:"04", title:"Digital Health Systems & Data Governance", duration:"55 min", lessons:5,
+        color:"linear-gradient(135deg,#D97706,#B45309)",
+        lessonsList:[
+            {name:"NHS Digital Tools: NHS App, ERS, e-Referrals, Summary Care Records",dur:"12 min"},
+            {name:"Electronic Patient Record (EPR) Systems Overview",dur:"10 min"},
+            {name:"Telehealth Platforms: Attend Anywhere, Qure4u, Livi, Kry",dur:"11 min"},
+            {name:"Data Governance: UK GDPR, Caldicott Principles, IG Toolkit",dur:"12 min"},
+            {name:"Module 4 Knowledge Check",dur:"10 min"}
+        ]
+    },
+    {
+        num:"05", title:"Compliance & Regulatory Requirements", duration:"50 min", lessons:5,
+        color:"linear-gradient(135deg,#DC2626,#B91C1C)",
+        lessonsList:[
+            {name:"NMC Standards for Remote & Digital Practice",dur:"11 min"},
+            {name:"GMC Guidance on Remote Consultations",dur:"9 min"},
+            {name:"HCPC & GPhC Remote Practice Requirements",dur:"10 min"},
+            {name:"Professional Indemnity for Remote Work",dur:"10 min"},
+            {name:"Clinical Supervision & Governance in Remote Teams",dur:"10 min"}
+        ]
+    },
+    {
+        num:"06", title:"Building Your Remote Healthcare CV & Portfolio", duration:"45 min", lessons:5,
+        color:"linear-gradient(135deg,#2563EB,#1D4ED8)",
+        lessonsList:[
+            {name:"ATS-Optimised CV Writing for Healthcare Roles",dur:"10 min"},
+            {name:"Reframing Clinical Experience for Remote Positions",dur:"9 min"},
+            {name:"Creating a Digital Portfolio That Stands Out",dur:"10 min"},
+            {name:"LinkedIn Optimisation for Healthcare Professionals",dur:"8 min"},
+            {name:"Module 6 Workshop: CV Makeover",dur:"8 min"}
+        ]
+    },
+    {
+        num:"07", title:"Acing the Remote Healthcare Interview", duration:"55 min", lessons:6,
+        color:"linear-gradient(135deg,#059669,#047857)",
+        lessonsList:[
+            {name:"Remote Interview Formats: What to Expect",dur:"8 min"},
+            {name:"The STAR Method for Healthcare Interview Questions",dur:"10 min"},
+            {name:"Common Remote Healthcare Interview Questions & Model Answers",dur:"12 min"},
+            {name:"Technical Demonstrations & Scenario-Based Assessments",dur:"10 min"},
+            {name:"Presentation Skills for Virtual Panel Interviews",dur:"8 min"},
+            {name:"Module 7 Mock Interview Recordings",dur:"7 min"}
+        ]
+    },
+    {
+        num:"08", title:"Your 90-Day Remote Career Launch Plan", duration:"40 min", lessons:5,
+        color:"linear-gradient(135deg,#7C3AED,#6D28D9)",
+        lessonsList:[
+            {name:"Setting Up Your Remote Healthcare Home Office",dur:"8 min"},
+            {name:"Your 30-60-90 Day Plan Template (Downloadable)",dur:"9 min"},
+            {name:"Negotiating Remote-Friendly Contracts & Salaries",dur:"8 min"},
+            {name:"Building Your Professional Network in Digital Health",dur:"8 min"},
+            {name:"Career Progression: From Remote Practitioner to Remote Leader",dur:"7 min"}
+        ]
+    }
+];
+
+// ===== RENDER MODULES =====
+function renderModules(){
+    const list = document.getElementById('modulesList');
+    list.innerHTML = modules.map((m,i) => `
+        <div class="module fade-up ${i<2?'open':''}" id="module${i}">
+            <div class="module-header" onclick="toggleModule(${i})">
+                <div class="module-num" style="background:${m.color}">${m.num}</div>
+                <div class="module-info">
+                    <div class="module-title">${m.title}</div>
+                    <div class="module-meta">
+                        <span><span class="iconify" data-icon="mdi:play-circle" style="font-size:14px"></span> ${m.lessons} lessons</span>
+                        <span><span class="iconify" data-icon="mdi:clock-outline" style="font-size:14px"></span> ${m.duration}</span>
+                    </div>
+                </div>
+                <div class="module-toggle"><span class="iconify" data-icon="mdi:chevron-down" style="font-size:20px"></span></div>
+            </div>
+            <div class="module-body">
+                <div class="module-body-inner">
+                    <ul class="module-lessons">
+                        ${m.lessonsList.map(l => `
+                            <li>
+                                <span class="iconify" data-icon="mdi:play-circle-outline"></span>
+                                ${l.name}
+                                <span class="lesson-duration">${l.dur}</span>
+                            </li>
+                        `).join('')}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+function toggleModule(i){
+    document.getElementById('module'+i).classList.toggle('open');
+}
+
+// ===== FAQ DATA =====
+const faqs = [
+    {q:"Who is this course for?", a:"This course is designed for any UK healthcare professional seeking remote or hybrid work — including nurses (RGN, RMN, RSCN), pharmacists, GPs and consultants, allied health professionals (physiotherapists, OTs, dietitians, audiologists, psychologists), medical coders, health informatics specialists, compliance officers, and medical writers. Whether you're clinical or non-clinical, there's a clear pathway for you."},
+    {q:"Do I need remote healthcare experience to take this course?", a:"No. The course is designed for professionals at all levels — from those who have never worked remotely to those with some telehealth experience who want to formalise their skills and improve their job applications. Module 1 starts with the fundamentals and builds progressively."},
+    {q:"How long do I have access to the course?", a:"Lifetime access. Once you enrol, you can revisit all modules, lessons, and downloadable resources at any time. You'll also receive all future content updates for free — we add new lessons as the remote healthcare landscape evolves."},
+    {q:"Is the certificate recognised by NHS employers?", a:"Yes. The course is CPD-certified for 6 CPD hours. Our certificate is recognised by NHS Trusts, private healthcare providers, and recruitment agencies as evidence of continuing professional development in remote and digital healthcare practice."},
+    {q:"Can I complete the course at my own pace?", a:"Absolutely. The course is entirely self-paced. With approximately 6 hours of video content plus exercises, most professionals complete it in 1–2 weeks studying part-time, but you can take as long as you need."},
+    {q:"Is the $27 price a one-time payment or a subscription?", a:"One-time payment of $27 (approximately £21). No subscriptions, no hidden fees, no upsells. You pay once and get lifetime access to everything."},
+    {q:"What if I'm not satisfied with the course?", a:"We offer a full 30-day money-back guarantee, no questions asked. If the course doesn't meet your expectations, simply email us within 30 days for a complete refund."},
+    {q:"Does completing this course guarantee me a remote job?", a:"No course can guarantee employment, but 89% of our graduates who actively apply through our platform land a remote healthcare role within 60 days. The course gives you the skills, knowledge, and application materials that significantly increase your chances — but you still need to put in the effort to apply."},
+    {q:"I'm an international healthcare professional — is this course relevant?", a:"Yes, very much so. Modules 4 and 5 cover UK-specific systems and regulatory requirements that international professionals need to understand. Many of our international graduates have used this course to prepare for remote roles alongside their NMC OSCE or GMC registration."},
+    {q:"Can my employer pay for this course?", a:"Yes. Many NHS Trusts and private employers have CPD budgets that can cover this course. We can provide an invoice and course outline for your employer — simply contact us at hello@remotemedicaljobs.co.uk after enrolment."}
+];
+
+function renderFAQs(){
+    document.getElementById('faqList').innerHTML = faqs.map((f,i) => `
+        <div class="faq-item fade-up" id="faq${i}">
+            <div class="faq-q" onclick="toggleFAQ(${i})">
+                <span>${f.q}</span>
+                <span class="iconify" data-icon="mdi:chevron-down"></span>
+            </div>
+            <div class="faq-a"><div class="faq-a-inner">${f.a}</div></div>
+        </div>
+    `).join('');
+}
+
+function toggleFAQ(i){
+    document.getElementById('faq'+i).classList.toggle('open');
+}
+
+// ===== ENROLLMENT MODAL =====
+function openEnroll(){
+    const modal = document.getElementById('enrollModalContent');
+    modal.innerHTML = `
+        <div class="modal-header">
+            <h3>
+                <span class="iconify" data-icon="mdi:lock-open" style="color:var(--green-600);vertical-align:middle;margin-right:6px"></span>
+                Enrol — $27
+            </h3>
+            <button class="modal-close" onclick="closeEnroll()"><span class="iconify" data-icon="mdi:close"></span></button>
+        </div>
+        <div class="modal-body" id="enrollForm">
+            <div style="background:var(--green-50);border:1px solid var(--green-100);border-radius:10px;padding:14px 16px;margin-bottom:20px;display:flex;align-items:center;gap:10px">
+                <span class="iconify" data-icon="mdi:shield-check" style="color:var(--green-600);font-size:22px;flex-shrink:0"></span>
+                <div style="font-size:.82rem;color:var(--green-700)"><strong>Secure Checkout</strong> — 256-bit SSL encryption. Your payment details are safe.</div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>First Name <span class="req">*</span></label>
+                    <input type="text" class="form-input" id="payFirst" placeholder="Sarah">
+                </div>
+                <div class="form-group">
+                    <label>Last Name <span class="req">*</span></label>
+                    <input type="text" class="form-input" id="payLast" placeholder="Mitchell">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Email Address <span class="req">*</span></label>
+                <input type="email" class="form-input" id="payEmail" placeholder="sarah@example.com">
+            </div>
+            <div class="form-group">
+                <label>Profession <span class="req">*</span></label>
+                <select class="form-select" id="payProfession">
+                    <option value="">Select your profession...</option>
+                    <option value="nurse">Nurse (RGN / RMN / RSCN)</option>
+                    <option value="pharmacist">Pharmacist</option>
+                    <option value="gp">GP / Physician</option>
+                    <option value="ahp">Allied Health Professional</option>
+                    <option value="coder">Medical Coder</option>
+                    <option value="informatics">Health Informatics / IT</option>
+                    <option value="compliance">Compliance / Regulatory</option>
+                    <option value="writer">Medical Writer</option>
+                    <option value="coordinator">Patient Coordinator</option>
+                    <option value="student">Healthcare Student</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <hr class="modal-divider">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+                <div>
+                    <div style="font-size:.8rem;color:var(--slate-500);text-decoration:line-through">Original Price: $197</div>
+                    <div style="font-size:1.3rem;font-weight:800;color:var(--slate-900)">Today's Price: <span style="color:var(--green-600)">$27.00</span></div>
+                </div>
+                <div style="background:var(--red-50);color:var(--red-600);font-size:.72rem;font-weight:700;padding:4px 10px;border-radius:50px">SAVE $170</div>
+            </div>
+            <div class="form-group">
+                <label>Card Number <span class="req">*</span></label>
+                <input type="text" class="form-input" id="payCard" placeholder="1234 5678 9012 3456" maxlength="19" oninput="formatCard(this)">
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Expiry Date <span class="req">*</span></label>
+                    <input type="text" class="form-input" id="payExpiry" placeholder="MM/YY" maxlength="5" oninput="formatExpiry(this)">
+                </div>
+                <div class="form-group">
+                    <label>CVC <span class="req">*</span></label>
+                    <input type="text" class="form-input" id="payCVC" placeholder="123" maxlength="4">
+                </div>
+            </div>
+            <button class="btn btn-green btn-lg" style="width:100%;margin-top:8px" id="payBtn" onclick="processPayment()">
+                <span class="iconify" data-icon="mdi:lock"></span>
+                Pay $27 — Get Instant Access
+            </button>
+            <div class="pay-methods">
+                <div class="pay-method"><span class="iconify" data-icon="mdi:credit-card"></span> Visa</div>
+                <div class="pay-method"><span class="iconify" data-icon="mdi:credit-card"></span> Mastercard</div>
+                <div class="pay-method"><span class="iconify" data-icon="mdi:apple"></span> Apple Pay</div>
+                <div class="pay-method"><span class="iconify" data-icon="mdi:google"></span> Google Pay</div>
+            </div>
+            <div class="modal-secure">
+                <span class="iconify" data-icon="mdi:shield-lock" style="font-size:14px"></span>
+                Payments processed securely via Stripe. 30-day money-back guarantee.
+            </div>
+        </div>
+    `;
+    document.getElementById('enrollModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeEnroll(){
+    document.getElementById('enrollModal').classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function formatCard(input){
+    let v = input.value.replace(/\D/g,'').substring(0,16);
+    input.value = v.replace(/(.{4})/g,'$1 ').trim();
+}
+
+function formatExpiry(input){
+    let v = input.value.replace(/\D/g,'').substring(0,4);
+    if(v.length >= 2) v = v.substring(0,2) + '/' + v.substring(2);
+    input.value = v;
+}
+
+function processPayment(){
+    const f = document.getElementById('payFirst').value.trim();
+    const l = document.getElementById('payLast').value.trim();
+    const e = document.getElementById('payEmail').value.trim();
+    const p = document.getElementById('payProfession').value;
+    const c = document.getElementById('payCard').value.replace(/\s/g,'');
+    const ex = document.getElementById('payExpiry').value;
+    const cvc = document.getElementById('payCVC').value;
+
+    if(!f||!l||!e||!p||!c||!ex||!cvc){
+        showToast('Please fill in all required fields','error');return;
+    }
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)){
+        showToast('Please enter a valid email address','error');return;
+    }
+    if(c.length < 13){
+        showToast('Please enter a valid card number','error');return;
+    }
+    if(!/^\d{2}\/\d{2}$/.test(ex)){
+        showToast('Please enter a valid expiry date (MM/YY)','error');return;
+    }
+    if(cvc.length < 3){
+        showToast('Please enter a valid CVC','error');return;
+    }
+
+    const btn = document.getElementById('payBtn');
+    btn.disabled = true;
+    btn.innerHTML = '<span class="iconify" data-icon="mdi:loading" style="animation:spin 1s linear infinite"></span> Processing payment...';
+
+    setTimeout(() => {
+        document.getElementById('enrollForm').innerHTML = `
+            <div class="success-content">
+                <div class="success-icon"><span class="iconify" data-icon="mdi:check-circle"></span></div>
+                <h3>Welcome to the Course, ${f}! 🎉</h3>
+                <p>Your payment of <strong>$27.00</strong> has been processed successfully. You now have <strong>lifetime access</strong> to all 8 modules.</p>
+                <p style="margin-top:12px">A confirmation email has been sent to <strong>${e}</strong> with your login details and CPD certificate information.</p>
+                <div style="margin-top:24px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+                    <button class="btn btn-green btn-lg" onclick="closeEnroll();showToast('Redirecting to your course dashboard...','success')">
+                        <span class="iconify" data-icon="mdi:play-circle"></span> Start Learning Now
+                    </button>
+                    <button class="btn btn-secondary" onclick="closeEnroll()">Close</button>
+                </div>
+            </div>
+        `;
+    }, 2200);
+}
+
+// ===== TOAST =====
+function showToast(msg, type='success'){
+    const t = document.getElementById('toast');
+    const m = document.getElementById('toastMsg');
+    t.className = 'toast toast-'+type;
+    t.querySelector('.iconify').setAttribute('data-icon', type==='error'?'mdi:alert-circle':'mdi:check-circle');
+    m.textContent = msg;
+    t.classList.add('show');
+    setTimeout(()=>t.classList.remove('show'),3500);
+}
+
+// ===== MOBILE MENU =====
+const mobileToggle = document.getElementById('mobileToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+const menuIcon = document.getElementById('menuIcon');
+let menuOpen = false;
+mobileToggle.addEventListener('click',()=>{
+    menuOpen=!menuOpen;
+    mobileMenu.classList.toggle('active',menuOpen);
+    menuIcon.setAttribute('data-icon',menuOpen?'mdi:close':'mdi:menu');
+    document.body.style.overflow=menuOpen?'hidden':'';
+});
+document.querySelectorAll('.mobile-menu a').forEach(a=>a.addEventListener('click',()=>{
+    menuOpen=false;mobileMenu.classList.remove('active');
+    menuIcon.setAttribute('data-icon','mdi:menu');document.body.style.overflow='';
+}));
+
+// ===== NAV SCROLL =====
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20));
+
+// ===== MODAL CLOSE =====
+document.getElementById('enrollModal').addEventListener('click',e=>{if(e.target===e.currentTarget)closeEnroll()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeEnroll()});
+
+// ===== INTERSECTION OBSERVER =====
+const obs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+
+// ===== INIT =====
+renderModules();
+renderFAQs();
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+
+<style>@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}</style>
+</body>
+</html>
