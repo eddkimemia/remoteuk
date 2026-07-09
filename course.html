@@ -1011,23 +1011,9 @@ function openEnroll(){
                 </div>
                 <div style="background:var(--red-50);color:var(--red-600);font-size:.72rem;font-weight:700;padding:4px 10px;border-radius:50px">SAVE $170</div>
             </div>
-            <div class="form-group">
-                <label>Card Number <span class="req">*</span></label>
-                <input type="text" class="form-input" id="payCard" placeholder="1234 5678 9012 3456" maxlength="19" oninput="formatCard(this)">
-            </div>
-            <div class="form-row">
-                <div class="form-group">
-                    <label>Expiry Date <span class="req">*</span></label>
-                    <input type="text" class="form-input" id="payExpiry" placeholder="MM/YY" maxlength="5" oninput="formatExpiry(this)">
-                </div>
-                <div class="form-group">
-                    <label>CVC <span class="req">*</span></label>
-                    <input type="text" class="form-input" id="payCVC" placeholder="123" maxlength="4">
-                </div>
-            </div>
-            <button class="btn btn-green btn-lg" style="width:100%;margin-top:8px" id="payBtn" onclick="processPayment()">
+            <button class="btn btn-green btn-lg" style="width:100%;margin-top:8px;" id="payBtn" onclick="processPayment()">
                 <span class="iconify" data-icon="mdi:lock"></span>
-                Pay $27 — Get Instant Access
+                Pay $27 — Proceed to Secure Paystack Checkout
             </button>
             <div class="pay-methods">
                 <div class="pay-method"><span class="iconify" data-icon="mdi:credit-card"></span> Visa</div>
@@ -1037,7 +1023,7 @@ function openEnroll(){
             </div>
             <div class="modal-secure">
                 <span class="iconify" data-icon="mdi:shield-lock" style="font-size:14px"></span>
-                Payments processed securely via Stripe. 30-day money-back guarantee.
+                Payments processed securely via Paystack. 30-day money-back guarantee.
             </div>
         </div>
     `;
@@ -1061,51 +1047,51 @@ function formatExpiry(input){
     input.value = v;
 }
 
-function processPayment(){
+async function processPayment(){
     const f = document.getElementById('payFirst').value.trim();
     const l = document.getElementById('payLast').value.trim();
     const e = document.getElementById('payEmail').value.trim();
     const p = document.getElementById('payProfession').value;
-    const c = document.getElementById('payCard').value.replace(/\s/g,'');
-    const ex = document.getElementById('payExpiry').value;
-    const cvc = document.getElementById('payCVC').value;
 
-    if(!f||!l||!e||!p||!c||!ex||!cvc){
+    if(!f||!l||!e||!p){
         showToast('Please fill in all required fields','error');return;
     }
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)){
         showToast('Please enter a valid email address','error');return;
     }
-    if(c.length < 13){
-        showToast('Please enter a valid card number','error');return;
-    }
-    if(!/^\d{2}\/\d{2}$/.test(ex)){
-        showToast('Please enter a valid expiry date (MM/YY)','error');return;
-    }
-    if(cvc.length < 3){
-        showToast('Please enter a valid CVC','error');return;
-    }
 
     const btn = document.getElementById('payBtn');
     btn.disabled = true;
-    btn.innerHTML = '<span class="iconify" data-icon="mdi:loading" style="animation:spin 1s linear infinite"></span> Processing payment...';
+    btn.innerHTML = '<span class="iconify" data-icon="mdi:loading" style="animation:spin 1s linear infinite"></span> Redirecting to Checkout...';
 
-    setTimeout(() => {
-        document.getElementById('enrollForm').innerHTML = `
-            <div class="success-content">
-                <div class="success-icon"><span class="iconify" data-icon="mdi:check-circle"></span></div>
-                <h3>Welcome to the Course, ${f}! 🎉</h3>
-                <p>Your payment of <strong>$27.00</strong> has been processed successfully. You now have <strong>lifetime access</strong> to all 8 modules.</p>
-                <p style="margin-top:12px">A confirmation email has been sent to <strong>${e}</strong> with your login details and CPD certificate information.</p>
-                <div style="margin-top:24px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-                    <button class="btn btn-green btn-lg" onclick="closeEnroll();showToast('Redirecting to your course dashboard...','success')">
-                        <span class="iconify" data-icon="mdi:play-circle"></span> Start Learning Now
-                    </button>
-                    <button class="btn btn-secondary" onclick="closeEnroll()">Close</button>
-                </div>
-            </div>
-        `;
-    }, 2200);
+    try {
+        const response = await fetch('/api/payment/initialize', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                first_name: f,
+                last_name: l,
+                email: e,
+                profession: p,
+                amount: 27
+            })
+        });
+
+        const result = await response.json();
+
+        if (response.ok && result.status && result.data && result.data.authorization_url) {
+            showToast('Redirecting to secure Paystack checkout...');
+            setTimeout(() => {
+                window.location.href = result.data.authorization_url;
+            }, 1000);
+        } else {
+            throw new Error(result.message || 'Failed to initialize Paystack checkout.');
+        }
+    } catch (err) {
+        showToast(err.message || 'An error occurred during checkout initialization.', 'error');
+        btn.disabled = false;
+        btn.innerHTML = '<span class="iconify" data-icon="mdi:lock"></span> Pay $27 — Get Instant Access';
+    }
 }
 
 // ===== TOAST =====
