@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Job Seekers — RemoteMedicalJobs</title>
+    <meta name="description" content="Find the perfect remote healthcare job, access CPD certified certification and ATS resume templates.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-logo">
+            <div class="nav-logo-icon"><span class="iconify" data-icon="mdi:stethoscope"></span></div>
+            RemoteMedical<span>Jobs</span>
+        </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="course.html">Course</a></li>
+                <li><a href="jobseekers.html">Job Seekers</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="compliance.html">Compliance</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        <div class="nav-cta">
+            <a href="course.html" class="btn btn-primary">Course Accelerator</a>
+        </div>
+    </div>
+</nav>
+
+<!-- CONTENT -->
+<div class="container max-w-5xl mx-auto my-32 px-6">
+    <div class="bg-white border border-slate-200 rounded-3xl p-10 shadow-lg">
+        <div class="mb-10 text-center">
+            <span class="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-600 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-4">
+                <span class="iconify" data-icon="mdi:account-search"></span> For Job Seekers
+            </span>
+            <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">Find Your Perfect Remote Healthcare Role</h1>
+            <p class="text-slate-500 mt-2 max-w-xl mx-auto">Advanced filters and direct-to-course compliance pathways designed specifically for international medical professionals.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+            <!-- Search Widget -->
+            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 shadow-sm">
+                <h2 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2"><span class="iconify text-blue-600" data-icon="mdi:magnify"></span> Quick Job Search</h2>
+                <div class="space-y-4">
+                    <input type="text" class="w-100 p-3 border border-slate-200 rounded-lg w-full outline-none" placeholder="Job title, keyword, or speciality..." id="searchInput">
+                    <select class="w-100 p-3 border border-slate-200 rounded-lg w-full outline-none" id="searchLocation">
+                        <option>Anywhere (Remote)</option>
+                        <option>Worldwide / Global</option>
+                    </select>
+                    <button class="btn btn-primary w-full" onclick="showToast('Searching active remote healthcare roles...')">
+                        <span class="iconify" data-icon="mdi:magnify"></span> Search Jobs
+                    </button>
+                </div>
+            </div>
+
+            <!-- Academy Hub -->
+            <div>
+                <h2 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2"><span class="iconify text-blue-600" data-icon="mdi:school"></span> Resource Hub — The Academy</h2>
+                <div class="space-y-4">
+                    <a href="course.html" class="flex gap-4 p-4 bg-white border border-slate-200 rounded-xl hover:border-blue-200 hover:shadow-md transition">
+                        <div class="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-content-center text-lg flex-shrink-0"><span class="iconify" data-icon="mdi:rocket-launch"></span></div>
+                        <div>
+                            <div class="font-bold text-sm text-slate-900">Remote Healthcare Career Accelerator <span class="bg-amber-500 text-white text-xs px-2 py-0.5 rounded ml-2">Hot</span></div>
+                            <div class="text-xs text-slate-500 mt-1">Master remote clinical consultations, digital health systems, and secure your certified compliance. Enrol for just $27.</div>
+                        </div>
+                    </a>
+                    <a href="course.html" class="flex gap-4 p-4 bg-white border border-slate-200 rounded-xl hover:border-blue-200 hover:shadow-md transition">
+                        <div class="w-10 h-10 rounded-lg bg-green-50 text-green-600 flex items-center justify-content-center text-lg flex-shrink-0"><span class="iconify" data-icon="mdi:book-open-variant"></span></div>
+                        <div>
+                            <div class="font-bold text-sm text-slate-900">Free CV Template for Remote Professionals</div>
+                            <div class="text-xs text-slate-500 mt-1">ATS-optimized resume structures designed specifically for telehealth and remote patient monitoring roles.</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-inner">
+        <a href="index.html" class="footer-brand">
+            <div class="footer-brand-icon"><span class="iconify" data-icon="mdi:stethoscope"></span></div>
+            RemoteMedical<span>Jobs</span>
+        </a>
+        <p class="footer-copy">© 2025 RemoteMedicalJobs. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+        </div>
+    </div>
+</footer>
+
+<!-- TOAST -->
+<div class="toast toast-success" id="toast">
+    <span class="iconify" data-icon="mdi:check-circle"></span>
+    <span id="toastMsg">Success!</span>
+</div>
+
+<script>
+function showToast(msg) {
+    const t = document.getElementById('toast');
+    const m = document.getElementById('toastMsg');
+    m.textContent = msg;
+    t.classList.add('show');
+    setTimeout(()=>t.classList.remove('show'),3500);
+}
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20));
+</script>
+</body>
+</html>

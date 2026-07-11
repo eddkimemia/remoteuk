@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Check Your Eligibility — RemoteMedicalJobs.co.uk</title>
+    <title>Check Your Eligibility — RemoteMedicalJobs</title>
     <meta name="description" content="Check your eligibility for remote healthcare roles. Quick validation check.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/style.css">
     <style>
         *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
         :root{
@@ -275,14 +277,15 @@
             <div class="nav-logo-icon"><span class="iconify" data-icon="mdi:stethoscope"></span></div>
             RemoteMedical<span>Jobs</span>
         </a>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="jobs.html">Jobs</a></li>
-            <li><a href="course.html">Course</a></li>
-            <li><a href="index.html#seekers">Job Seekers</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
-        </ul>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="course.html">Course</a></li>
+                <li><a href="jobseekers.html">Job Seekers</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="compliance.html">Compliance</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         <div class="nav-cta">
             <a href="course.html" class="btn btn-primary">Course Accelerator</a>
         </div>
@@ -291,15 +294,17 @@
         </button>
     </div>
 </nav>
-<div class="mobile-menu" id="mobileMenu">
-    <a href="index.html">Home</a>
-    <a href="jobs.html">Jobs</a>
-    <a href="course.html">Course</a>
-    <a href="index.html#seekers">Job Seekers</a>
-    <a href="index.html#about">About</a>
-    <a href="index.html#contact">Contact</a>
-    <a href="course.html" class="btn btn-primary btn-lg">Course Accelerator</a>
-</div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="mobile-link">Home</a>
+        <a href="jobs.html" class="mobile-link">Jobs</a>
+        <a href="course.html" class="mobile-link">Course</a>
+        <a href="jobseekers.html" class="mobile-link">Job Seekers</a>
+        <a href="about.html" class="mobile-link">About</a>
+        <a href="compliance.html" class="mobile-link">Compliance</a>
+        <a href="contact.html" class="mobile-link">Contact</a>
+        <a href="course.html" class="btn btn-primary btn-lg mobile-link">Enrol in Course</a>
+    </div>
 
 <!-- MAIN LAYOUT -->
 <div class="container">
