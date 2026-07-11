@@ -285,7 +285,7 @@
     <div class="jobs-hero-grid"></div>
     <div class="jobs-hero-inner fade-up">
         <h1>Browse Remote Healthcare Jobs</h1>
-        <p>347+ vetted remote and hybrid roles from NHS Trusts, private providers, and digital health innovators. Every role is legitimate — guaranteed.</p>
+        <p>Curated remote and hybrid healthcare roles from digital clinics, healthtech, and global care teams. Apply free — optional career training available.</p>
         <div class="search-bar">
             <div class="search-bar-wrap">
                 <span class="iconify" data-icon="mdi:magnify"></span>
@@ -366,8 +366,8 @@
         <div class="sidebar-card">
             <h3>Min. Salary</h3>
             <div class="salary-range">
-                <input type="range" min="25000" max="120000" step="5000" value="25000" id="salaryRange" oninput="updateSalary();filterJobs()">
-                <div class="salary-value" id="salaryValue">£25,000+</div>
+                <input type="range" min="0" max="150" step="5" value="0" id="salaryRange" oninput="updateSalary();filterJobs()">
+                <div class="salary-value" id="salaryValue">$0+ / hour</div>
             </div>
         </div>
         <button class="btn btn-secondary sidebar-apply" onclick="clearAllFilters()">
@@ -429,7 +429,7 @@
             </div>
         </div>
         <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
-            <p style="font-size: 0.78rem;">© 2025 RemoteMedicalJobs.co.uk. All rights reserved. Registered in England & Wales.</p>
+            <p style="font-size: 0.78rem;">© 2026 RemoteMedicalJobs. Remote healthcare careers worldwide.</p>
             <div style="display: flex; gap: 24px;">
                 <a href="privacy.html" style="font-size: 0.78rem; color: rgba(255,255,255,0.4); text-decoration: none;">Privacy</a>
                 <a href="terms.html" style="font-size: 0.78rem; color: rgba(255,255,255,0.4); text-decoration: none;">Terms</a>
@@ -462,57 +462,111 @@
 const jobs = [
     {
         id:1, title:"Telehealth Nurse Specialist", company:"Global Digital Health", location:"Remote (Worldwide)", type:"clinical", mode:"remote", contract:"permanent", speciality:"nursing",
-        salary:"$32.00 / hour", salaryNum:32, posted:"2 hours ago", badge:["remote","featured"],
+        salary:"$32–45 / hour", salaryNum:32, posted:"2 hours ago", badge:["remote","featured"],
         tags:["Registered Nurse","Telehealth","Full-time"],
-        desc:"Provide remote clinical triage and telephone consultations for patients globally. You'll use digital health platforms to assess, advise, and manage patient pathways remotely, working as part of a worldwide multidisciplinary team.",
-        requirements:["Valid Registered Nurse license","Minimum 2 years post-qualification experience","Experience with digital health tools or willingness to learn","Excellent communication skills","High-speed internet connection"],
-        benefits:["Comprehensive health insurance","Flexible working hours","CPD funding available","Remote work equipment stipend"],
+        desc:"Provide remote clinical triage and video consultations for patients across multiple regions. Use digital health platforms to assess, advise, and manage pathways with a distributed multidisciplinary team.",
+        requirements:["Valid nursing license in your practicing country","Minimum 2 years post-qualification experience","Comfort with video consult tools","Excellent written & verbal English","Stable high-speed internet"],
+        benefits:["Flexible shifts","Remote equipment stipend","CPD support","Global team culture"],
         logo:"mdi:stethoscope", logoBg:"#EFF6FF", logoColor:"#2563EB"
     },
     {
-        id:2, title:"Clinical Pharmacist Consultations", company:"MedGroup", location:"Remote", type:"clinical", mode:"remote", contract:"part-time", speciality:"pharmacy",
-        salary:"$28.50 / hour", salaryNum:28.5, posted:"5 hours ago", badge:["remote"],
-        tags:["Registered Pharmacist","Prescriber","Part-time"],
-        desc:"Deliver remote pharmaceutical consultations via video and telephone. Review medication, provide clinical advice to patients and healthcare professionals, and support medicines optimisation initiatives globally.",
-        requirements:["Registered pharmacist license","Independent Prescriber qualification desirable","Experience in clinical pharmacy","Strong IT and digital communication skills"],
-        benefits:["Competitive hourly rate","Flexible 3-day week","Professional development budget","Employee assistance programme"],
+        id:2, title:"Clinical Pharmacist — Remote Consults", company:"MedGroup Virtual Care", location:"Remote (US / UK / EU preferred)", type:"clinical", mode:"remote", contract:"part-time", speciality:"pharmacy",
+        salary:"$28–40 / hour", salaryNum:28, posted:"5 hours ago", badge:["remote"],
+        tags:["Pharmacist","Prescribing","Part-time"],
+        desc:"Deliver remote medication reviews and clinical advice via video and phone. Support medicines optimisation for digital clinics worldwide.",
+        requirements:["Licensed pharmacist","Clinical pharmacy experience","Strong digital communication skills"],
+        benefits:["Flexible 3-day week option","Professional development budget","Remote-first culture"],
         logo:"mdi:pill", logoBg:"#ECFDF5", logoColor:"#059669"
     },
     {
-        id:3, title:"Health Informatics Specialist", company:"MedTech Group", location:"Fully Remote", type:"non-clinical", mode:"remote", contract:"permanent", speciality:"informatics",
-        salary:"$42.00 / hour", salaryNum:42, posted:"1 day ago", badge:["remote","new"],
-        tags:["Healthcare Data","SQL & Python","FHIR/HL7"],
-        desc:"Lead data analytics and informatics projects for health clients. Transform complex healthcare datasets into actionable insights, build dashboards, and support digital transformation initiatives.",
-        requirements:["Degree in Health Informatics, Computer Science, or related field","Proficiency in SQL, Python, and data visualisation tools","Experience with health data systems (FHIR, HL7)","Understanding of data protection and privacy"],
-        benefits:["Fully remote with home office budget","Unlimited holiday policy","Regular team retreats","Learning budget of $2,000/year"],
+        id:3, title:"Health Informatics Specialist", company:"MedTech Analytics", location:"Fully Remote", type:"non-clinical", mode:"remote", contract:"permanent", speciality:"informatics",
+        salary:"$40–55 / hour", salaryNum:42, posted:"1 day ago", badge:["remote","new"],
+        tags:["Healthcare Data","SQL","FHIR/HL7"],
+        desc:"Lead data analytics and informatics projects for health clients. Build dashboards and support digital transformation for care delivery networks.",
+        requirements:["Degree or experience in informatics / CS / health data","SQL and visualisation tools","Familiarity with health data standards"],
+        benefits:["Home office budget","Learning stipend $2,000/year","Async-friendly culture"],
         logo:"mdi:monitor-cellphone", logoBg:"#F3E8FF", logoColor:"#7C3AED"
     },
     {
-        id:4, title:"Medical Coding Expert", company:"Clinical Services Inc.", location:"Remote", type:"non-clinical", mode:"remote", contract:"permanent", speciality:"coding",
-        salary:"$24.50 / hour", salaryNum:24.5, posted:"1 day ago", badge:["remote"],
-        tags:["Certified Coder","ICD-10","OPCS-4"],
-        desc:"Code clinical diagnoses and procedures accurately from remote locations. Ensure compliance with international coding standards, support clinical audits, and contribute to quality improvement data.",
-        requirements:["CPC or equivalent medical coding certification","Strong knowledge of ICD-10 coding systems","Minimum 2 years medical coding experience","Attention to detail and analytical mindset"],
-        benefits:["Remote-first culture","Quarterly coding training updates","Paid time off","Health insurance plans"],
+        id:4, title:"Medical Coding Specialist", company:"Clinical Services Global", location:"Remote", type:"non-clinical", mode:"remote", contract:"permanent", speciality:"coding",
+        salary:"$22–32 / hour", salaryNum:24, posted:"1 day ago", badge:["remote"],
+        tags:["ICD-10","Coding","RCM"],
+        desc:"Code diagnoses and procedures remotely with accuracy. Support audits and quality data for multi-country revenue cycle teams.",
+        requirements:["CPC or equivalent certification preferred","ICD-10 proficiency","2+ years coding experience"],
+        benefits:["Remote-first","Paid training updates","Health benefits (region-dependent)"],
         logo:"mdi:file-document-edit", logoBg:"#FFFBEB", logoColor:"#D97706"
     },
     {
-        id:5, title:"Telemedicine Physician (MD / GP)", company:"Digital Health Platform", location:"Fully Remote", type:"clinical", mode:"remote", contract:"locum", speciality:"medicine",
-        salary:"$110.00 / hour", salaryNum:110, posted:"2 days ago", badge:["remote","urgent"],
-        tags:["Licensed MD","Primary Care","Flexible Hours"],
-        desc:"Provide remote physician consultations via video and telephone for a leading global digital health platform. Manage patient queries, prescribe where appropriate, and refer to specialists when needed.",
-        requirements:["Fully licensed MD / Doctor","Specialisation in General Practice or Internal Medicine","Malpractice indemnity insurance","Experience in telemedicine","Strong digital literacy"],
-        benefits:["Choose your own hours — minimum 10 hours/week","Competitive hourly rates","No overhead costs","Clinical support and peer network"],
+        id:5, title:"Telemedicine Physician (MD / GP)", company:"Horizon Digital Care", location:"Fully Remote", type:"clinical", mode:"remote", contract:"locum", speciality:"medicine",
+        salary:"$90–130 / hour", salaryNum:110, posted:"2 days ago", badge:["remote","urgent"],
+        tags:["Licensed MD","Primary Care","Flexible"],
+        desc:"Provide remote physician consultations for a digital health platform. Manage queries, prescribe where licensed, and coordinate referrals.",
+        requirements:["Active medical license","Primary care or internal medicine background","Telemedicine experience preferred","Malpractice cover as required by market"],
+        benefits:["Choose your hours","Competitive rates","Peer clinical network"],
         logo:"mdi:doctor", logoBg:"#EFF6FF", logoColor:"#2563EB"
     },
     {
-        id:6, title:"Patient Coordination Lead", company:"Healthcare Provider", location:"Remote", type:"non-clinical", mode:"remote", contract:"permanent", speciality:"compliance",
-        salary:"$26.00 / hour", salaryNum:26, posted:"2 days ago", badge:["remote"],
-        tags:["Leadership","Patient Care","Permanent"],
-        desc:"Lead a remote patient coordination team managing end-to-end patient pathways. Optimise referral processes, liaise with clinical teams, and ensure seamless patient experiences.",
-        requirements:["Experience in patient coordination or healthcare admin","Leadership or team management experience","Knowledge of electronic medical records systems (EMR)","Excellent communication and organisational skills"],
-        benefits:["Fully remote role","Paid time off + holidays","Comprehensive health insurance","Career progression opportunities"],
+        id:6, title:"Patient Coordination Lead", company:"CarePath Remote", location:"Remote", type:"non-clinical", mode:"remote", contract:"permanent", speciality:"compliance",
+        salary:"$24–35 / hour", salaryNum:26, posted:"2 days ago", badge:["remote"],
+        tags:["Leadership","Coordination","EMR"],
+        desc:"Lead a remote coordination team managing end-to-end patient pathways across time zones.",
+        requirements:["Healthcare admin or coordination experience","Team leadership","EMR familiarity"],
+        benefits:["Fully remote","PTO","Career progression"],
         logo:"mdi:account-heart", logoBg:"#ECFDF5", logoColor:"#059669"
+    },
+    {
+        id:7, title:"Remote Medical Scheduler", company:"ClinicLink Worldwide", location:"Remote (Worldwide)", type:"non-clinical", mode:"remote", contract:"permanent", speciality:"compliance",
+        salary:"$18–28 / hour", salaryNum:20, posted:"3 hours ago", badge:["remote","featured"],
+        tags:["Scheduling","Call Center","Healthcare Admin"],
+        desc:"Schedule appointments, manage calendars, and support patients for multi-site virtual clinics. Ideal entry point into remote healthcare ops.",
+        requirements:["Strong communication","Customer service or admin experience","Reliable internet","Typing accuracy"],
+        benefits:["Weekly pay options","Training provided","Growth into coordination roles"],
+        logo:"mdi:calendar-clock", logoBg:"#DBEAFE", logoColor:"#1D4ED8"
+    },
+    {
+        id:8, title:"Mental Health Teletherapist", company:"MindBridge Telehealth", location:"Remote", type:"clinical", mode:"remote", contract:"part-time", speciality:"nursing",
+        salary:"$45–75 / hour", salaryNum:50, posted:"6 hours ago", badge:["remote","new"],
+        tags:["Therapy","Licensed","Video"],
+        desc:"Deliver remote counseling/therapy sessions to clients via secure video. Flexible caseload for licensed mental health professionals.",
+        requirements:["Active license to practice psychotherapy/counseling","2+ years clinical experience","Private workspace"],
+        benefits:["Set your schedule","No commute","Clinical supervision available"],
+        logo:"mdi:brain", logoBg:"#F3E8FF", logoColor:"#7C3AED"
+    },
+    {
+        id:9, title:"Healthcare Customer Success Manager", company:"VitalSoft", location:"Remote (Americas / EMEA)", type:"non-clinical", mode:"remote", contract:"permanent", speciality:"informatics",
+        salary:"$35–50 / hour", salaryNum:40, posted:"1 day ago", badge:["remote"],
+        tags:["SaaS","Healthcare IT","CSM"],
+        desc:"Own relationships with hospital and clinic customers using a digital health product. Drive adoption, training, and renewals.",
+        requirements:["B2B SaaS or healthcare ops experience","Excellent stakeholder management","CRM fluency"],
+        benefits:["Remote team offsites","Equity eligibility","Learning budget"],
+        logo:"mdi:handshake", logoBg:"#ECFDF5", logoColor:"#059669"
+    },
+    {
+        id:10, title:"Remote Case Manager (RN)", company:"Continuum Care Virtual", location:"Remote", type:"clinical", mode:"remote", contract:"permanent", speciality:"nursing",
+        salary:"$30–42 / hour", salaryNum:34, posted:"4 days ago", badge:["remote"],
+        tags:["Case Management","RN","Chronic Care"],
+        desc:"Coordinate care plans for chronic patients via phone and digital tools. Bridge patients, providers, and payers remotely.",
+        requirements:["RN license","Case management or discharge planning experience","Empathetic communication"],
+        benefits:["Stable daytime shifts","Health benefits","Career ladder"],
+        logo:"mdi:clipboard-pulse", logoBg:"#FEF3C7", logoColor:"#D97706"
+    },
+    {
+        id:11, title:"Medical Writer (Remote)", company:"Apex Clinical Content", location:"Remote (Worldwide)", type:"non-clinical", mode:"remote", contract:"contract", speciality:"coding",
+        salary:"$35–60 / hour", salaryNum:45, posted:"3 days ago", badge:["remote","new"],
+        tags:["Writing","Regulatory","Content"],
+        desc:"Produce clear clinical and patient education content for digital health brands and medical affairs teams.",
+        requirements:["Life sciences or clinical background","Strong writing portfolio","Attention to scientific accuracy"],
+        benefits:["Project-based flexibility","Global clients","Reference letters"],
+        logo:"mdi:pencil-box", logoBg:"#EFF6FF", logoColor:"#2563EB"
+    },
+    {
+        id:12, title:"Revenue Cycle Specialist", company:"PayHealth Ops", location:"Remote", type:"non-clinical", mode:"remote", contract:"permanent", speciality:"coding",
+        salary:"$20–30 / hour", salaryNum:22, posted:"5 days ago", badge:["remote"],
+        tags:["RCM","Billing","Claims"],
+        desc:"Support claims follow-up, denials, and patient billing queries for US-focused telehealth groups (training provided for strong admins).",
+        requirements:["Healthcare billing exposure preferred","Detail-oriented","Comfortable with ticketing systems"],
+        benefits:["Full training","Performance bonuses","Remote US hours"],
+        logo:"mdi:cash-multiple", logoBg:"#ECFDF5", logoColor:"#047857"
     }
 ];
 
@@ -647,7 +701,9 @@ function renderJobs(filtered) {
 
 function goPage(p) {
     currentPage = p;
-    filterJobs();
+    // Prefill search from ?q=
+(function(){ try{ const q=new URLSearchParams(location.search).get('q'); if(q){ const el=document.getElementById('mainSearch'); if(el){ el.value=q; }} }catch(e){} })();
+filterJobs();
     window.scrollTo({top: 340, behavior:'smooth'});
 }
 
@@ -661,7 +717,239 @@ function setView(v) {
 
 function updateSalary() {
     const v = document.getElementById('salaryRange').value;
-    document.getElementById('salaryValue').textContent = '£' + parseInt(v).toLocaleString() + '+';
+    document.getElementById('salaryValue').textContent = '
+}
+
+function clearAllFilters() {
+    document.getElementById('mainSearch').value = '';
+    document.getElementById('mainCategory').value = '';
+    document.getElementById('mainContract').value = '';
+    document.getElementById('salaryRange').value = 0;
+    updateSalary();
+    document.getElementById('sortSelect').value = 'featured';
+    document.querySelectorAll('.sidebar-card input[type="checkbox"]').forEach(c => c.checked = false);
+    filterJobs();
+    showToast('All filters cleared', 'info');
+}
+
+function toggleSave(id, btn) {
+    if (savedJobs.has(id)) {
+        savedJobs.delete(id);
+        btn.classList.remove('saved');
+        btn.querySelector('.iconify').setAttribute('data-icon','mdi:heart-outline');
+        showToast('Job removed from saved', 'info');
+    } else {
+        savedJobs.add(id);
+        btn.classList.add('saved');
+        btn.querySelector('.iconify').setAttribute('data-icon','mdi:heart');
+        showToast('Job saved to your favourites', 'success');
+    }
+}
+
+// ===== JOB MODAL =====
+function openJobModal(id) {
+    const j = jobs.find(x => x.id === id);
+    if (!j) return;
+    const modal = document.getElementById('modal');
+    modal.innerHTML = `
+        <div class="modal-header">
+            <div>
+                <div class="modal-job-title">${j.title}</div>
+                <div class="modal-job-company">
+                    <span class="iconify" data-icon="mdi:office-building" style="font-size:14px"></span>
+                    ${j.company} · ${j.location}
+                </div>
+            </div>
+            <button class="modal-close" onclick="closeModal()"><span class="iconify" data-icon="mdi:close"></span></button>
+        </div>
+        <div class="modal-body">
+            <div class="modal-detail-grid">
+                <div class="modal-detail">
+                    <div class="modal-detail-icon"><span class="iconify" data-icon="mdi:currency-gbp"></span></div>
+                    <div class="modal-detail-value">${j.salary}</div>
+                    <div class="modal-detail-label">Salary</div>
+                </div>
+                <div class="modal-detail">
+                    <div class="modal-detail-icon"><span class="iconify" data-icon="${j.mode==='remote'?'mdi:home':'mdi:office-building'}"></span></div>
+                    <div class="modal-detail-value">${j.mode==='remote'?'Fully Remote':'Hybrid'}</div>
+                    <div class="modal-detail-label">Work Mode</div>
+                </div>
+                <div class="modal-detail">
+                    <div class="modal-detail-icon"><span class="iconify" data-icon="mdi:file-sign"></span></div>
+                    <div class="modal-detail-value">${j.contract.charAt(0).toUpperCase()+j.contract.slice(1)}</div>
+                    <div class="modal-detail-label">Contract</div>
+                </div>
+                <div class="modal-detail">
+                    <div class="modal-detail-icon"><span class="iconify" data-icon="mdi:clock-outline"></span></div>
+                    <div class="modal-detail-value">${j.posted}</div>
+                    <div class="modal-detail-label">Posted</div>
+                </div>
+            </div>
+            <div class="modal-section">
+                <h4><span class="iconify" data-icon="mdi:text-box-outline"></span> About the Role</h4>
+                <p>${j.desc}</p>
+            </div>
+            <div class="modal-section">
+                <h4><span class="iconify" data-icon="mdi:check-circle"></span> Requirements</h4>
+                <ul>${j.requirements.map(r => `<li>${r}</li>`).join('')}</ul>
+            </div>
+            <div class="modal-section">
+                <h4><span class="iconify" data-icon="mdi:gift-outline"></span> Benefits</h4>
+                <ul>${j.benefits.map(b => `<li>${b}</li>`).join('')}</ul>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:24px">
+                ${j.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+            </div>
+            <hr class="modal-divider">
+            <div style="background:var(--blue-50);border:1.5px solid var(--blue-200);border-radius:12px;padding:24px 32px;text-align:center;margin-top:20px">
+                <span class="iconify" data-icon="mdi:fire" style="font-size:36px;color:var(--amber-500);margin-bottom:12px"></span>
+                <h4 style="font-size:1.15rem;font-weight:800;color:var(--slate-900);margin-bottom:8px">Apply for ${j.title}</h4>
+                <p style="font-size:0.875rem;color:var(--slate-600);line-height:1.6;margin-bottom:20px;max-width:480px;margin-left:auto;margin-right:auto">
+                    There are currently high volumes of applicants for this clinical position. Submit your eligibility details immediately to lock in your priority spot.
+                </p>
+                <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+                    <a href="apply.html?job_title=${encodeURIComponent(j.title)}" class="btn btn-green btn-lg" style="box-shadow:0 4px 14px rgba(5,150,105,0.25); font-weight: 800;">
+                        Apply Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    `;
+    document.getElementById('modalOverlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    document.getElementById('modalOverlay').classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function nextStep(step) {
+    // Validation
+    if (step === 2) {
+        const f = document.getElementById('appFirst').value.trim();
+        const l = document.getElementById('appLast').value.trim();
+        const e = document.getElementById('appEmail').value.trim();
+        const p = document.getElementById('appPhone').value.trim();
+        const r = document.getElementById('appRight').value;
+        if (!f || !l || !e || !p || !r) { showToast('Please fill in all required fields', 'error'); return; }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)) { showToast('Please enter a valid email address', 'error'); return; }
+    }
+    if (step === 3) {
+        const reg = document.getElementById('appReg').value;
+        const exp = document.getElementById('appExp').value;
+        const cover = document.getElementById('appCover').value.trim();
+        if (!reg || !exp || !cover) { showToast('Please fill in all required fields', 'error'); return; }
+        if (cover.length < 50) { showToast('Please provide a more detailed cover letter (min 50 characters)', 'error'); return; }
+    }
+    if (step === 4) {
+        const cv = document.getElementById('cvName').textContent;
+        if (!cv) { showToast('Please upload your CV', 'error'); return; }
+        // Build summary
+        const regLabels = {nmc:'NMC',gmc:'GMC',gphc:'GPhC',hcpc:'HCPC',rccp:'RCCP',none:'N/A (Non-clinical)'};
+        const rightLabels = {british:'British/Irish Citizen',settled:'Settled/Pre-settled Status',visa:'Skilled Worker Visa',health:'Health & Care Visa',dependent:'Dependent Visa',other:'Other'};
+        document.getElementById('appSummary').innerHTML = `
+            <div><strong>Name:</strong> ${document.getElementById('appFirst').value} ${document.getElementById('appLast').value}</div>
+            <div><strong>Email:</strong> ${document.getElementById('appEmail').value}</div>
+            <div><strong>Phone:</strong> ${document.getElementById('appPhone').value}</div>
+            <div><strong>Right to Work:</strong> ${rightLabels[document.getElementById('appRight').value] || 'Not specified'}</div>
+            <div><strong>Registration:</strong> ${regLabels[document.getElementById('appReg').value] || 'Not specified'} ${document.getElementById('appRegNum').value ? '(' + document.getElementById('appRegNum').value + ')' : ''}</div>
+            <div><strong>Experience:</strong> ${document.getElementById('appExp').value} years</div>
+            <div><strong>Notice Period:</strong> ${document.getElementById('appNotice').value}</div>
+            <div><strong>CV:</strong> ${cv}</div>
+            ${document.getElementById('appLinkedin').value ? '<div><strong>LinkedIn:</strong> ' + document.getElementById('appLinkedin').value + '</div>' : ''}
+        `;
+    }
+
+    // Switch steps
+    for (let i = 1; i <= 4; i++) {
+        document.getElementById('step' + i).classList.toggle('active', i === step);
+        const label = document.getElementById('stepLabel' + i);
+        label.classList.toggle('active', i === step);
+        if (i < step) label.classList.add('completed');
+        else label.classList.remove('completed');
+    }
+}
+
+function handleFile(input, nameId) {
+    if (input.files.length) {
+        const file = input.files[0];
+        if (file.size > 5 * 1024 * 1024) { showToast('File too large — maximum 5MB', 'error'); input.value = ''; return; }
+        const el = document.getElementById(nameId);
+        el.textContent = '✓ ' + file.name;
+        el.style.display = 'block';
+    }
+}
+
+function submitApplication(jobId) {
+    if (!document.getElementById('appConsent').checked) {
+        showToast('Please consent to data processing to continue', 'error');
+        return;
+    }
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.innerHTML = '<span class="iconify" data-icon="mdi:loading" style="animation:spin 1s linear infinite"></span> Submitting...';
+
+    setTimeout(() => {
+        for (let i = 1; i <= 4; i++) document.getElementById('step' + i).classList.remove('active');
+        document.getElementById('stepSuccess').classList.add('active');
+        for (let i = 1; i <= 4; i++) {
+            document.getElementById('stepLabel' + i).classList.remove('active');
+            document.getElementById('stepLabel' + i).classList.add('completed');
+        }
+    }, 1500);
+}
+
+// ===== TOAST =====
+function showToast(msg, type = 'success') {
+    const t = document.getElementById('toast');
+    const m = document.getElementById('toastMsg');
+    t.className = 'toast toast-' + type;
+    const icons = {success:'mdi:check-circle',info:'mdi:information',error:'mdi:alert-circle'};
+    t.querySelector('.iconify').setAttribute('data-icon', icons[type] || icons.success);
+    m.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3500);
+}
+
+// ===== MOBILE MENU =====
+const mobileToggle = document.getElementById('mobileToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+const menuIcon = document.getElementById('menuIcon');
+let menuOpen = false;
+mobileToggle.addEventListener('click', () => {
+    menuOpen = !menuOpen;
+    mobileMenu.classList.toggle('active', menuOpen);
+    menuIcon.setAttribute('data-icon', menuOpen ? 'mdi:close' : 'mdi:menu');
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+});
+document.querySelectorAll('.mobile-menu a').forEach(a => a.addEventListener('click', () => {
+    menuOpen = false; mobileMenu.classList.remove('active');
+    menuIcon.setAttribute('data-icon','mdi:menu'); document.body.style.overflow = '';
+}));
+
+// ===== NAV SCROLL =====
+window.addEventListener('scroll', () => document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20));
+
+// ===== MODAL CLOSE ON OVERLAY CLICK =====
+document.getElementById('modalOverlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// ===== INTERSECTION OBSERVER =====
+const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+// ===== INIT =====
+filterJobs();
+</script>
+
+<style>
+@keyframes spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+</style>
+</body>
+</html> + parseInt(v) + '+ / hour';
 }
 
 function clearAllFilters() {

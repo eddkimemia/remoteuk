@@ -1,121 +1,77 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For Job Seekers — RemoteMedicalJobs</title>
-    <meta name="description" content="Find the perfect remote healthcare job, access CPD certified certification and ATS resume templates.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/style.css">
+    <style>
+        body{font-family:Inter,system-ui,sans-serif;background:#f8fafc;color:#1e293b;margin:0}
+        .nav{background:#fff;border-bottom:1px solid #e2e8f0;padding:16px 24px;display:flex;justify-content:space-between;align-items:center}
+        .nav a.brand{font-weight:700;color:#1e3a8a;text-decoration:none}
+        .nav a.brand span{color:#059669}
+        .wrap{max-width:900px;margin:40px auto;padding:0 24px 80px}
+        .card{background:#fff;border:1px solid #e2e8f0;border-radius:20px;padding:36px}
+        h1{font-size:1.8rem;font-weight:800;margin:0 0 8px}
+        .lead{color:#64748b;margin-bottom:28px}
+        .grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+        .panel{background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;padding:20px}
+        input,select{width:100%;padding:12px;border:1px solid #e2e8f0;border-radius:10px;margin-bottom:12px;font:inherit;box-sizing:border-box}
+        .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:12px;border:none;border-radius:10px;background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;font-weight:600;cursor:pointer;text-decoration:none;font-family:inherit}
+        .link-card{display:block;padding:16px;border:1px solid #e2e8f0;border-radius:12px;text-decoration:none;color:inherit;background:#fff;margin-bottom:12px}
+        .link-card:hover{border-color:#93c5fd}
+        .link-card strong{display:block;margin-bottom:4px}
+        .link-card span{font-size:.85rem;color:#64748b}
+        @media(max-width:700px){.grid{grid-template-columns:1fr}}
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-800">
-
-<!-- NAV -->
-<nav class="nav" id="nav">
-    <div class="nav-inner">
-        <a href="index.html" class="nav-logo">
-            <div class="nav-logo-icon"><span class="iconify" data-icon="mdi:stethoscope"></span></div>
-            RemoteMedical<span>Jobs</span>
-        </a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="jobs.html">Jobs</a></li>
-                <li><a href="course.html">Course</a></li>
-                <li><a href="jobseekers.html">Job Seekers</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="compliance.html">Compliance</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        <div class="nav-cta">
-            <a href="course.html" class="btn btn-primary">Course Accelerator</a>
-        </div>
-    </div>
-</nav>
-
-<!-- CONTENT -->
-<div class="container max-w-5xl mx-auto my-32 px-6">
-    <div class="bg-white border border-slate-200 rounded-3xl p-10 shadow-lg">
-        <div class="mb-10 text-center">
-            <span class="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-600 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-4">
-                <span class="iconify" data-icon="mdi:account-search"></span> For Job Seekers
-            </span>
-            <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">Find Your Perfect Remote Healthcare Role</h1>
-            <p class="text-slate-500 mt-2 max-w-xl mx-auto">Advanced filters and direct-to-course compliance pathways designed specifically for international medical professionals.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-            <!-- Search Widget -->
-            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 shadow-sm">
-                <h2 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2"><span class="iconify text-blue-600" data-icon="mdi:magnify"></span> Quick Job Search</h2>
-                <div class="space-y-4">
-                    <input type="text" class="w-100 p-3 border border-slate-200 rounded-lg w-full outline-none" placeholder="Job title, keyword, or speciality..." id="searchInput">
-                    <select class="w-100 p-3 border border-slate-200 rounded-lg w-full outline-none" id="searchLocation">
-                        <option>Anywhere (Remote)</option>
-                        <option>Worldwide / Global</option>
-                    </select>
-                    <button class="btn btn-primary w-full" onclick="showToast('Searching active remote healthcare roles...')">
-                        <span class="iconify" data-icon="mdi:magnify"></span> Search Jobs
-                    </button>
-                </div>
-            </div>
-
-            <!-- Academy Hub -->
-            <div>
-                <h2 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2"><span class="iconify text-blue-600" data-icon="mdi:school"></span> Resource Hub — The Academy</h2>
-                <div class="space-y-4">
-                    <a href="course.html" class="flex gap-4 p-4 bg-white border border-slate-200 rounded-xl hover:border-blue-200 hover:shadow-md transition">
-                        <div class="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-content-center text-lg flex-shrink-0"><span class="iconify" data-icon="mdi:rocket-launch"></span></div>
-                        <div>
-                            <div class="font-bold text-sm text-slate-900">Remote Healthcare Career Accelerator <span class="bg-amber-500 text-white text-xs px-2 py-0.5 rounded ml-2">Hot</span></div>
-                            <div class="text-xs text-slate-500 mt-1">Master remote clinical consultations, digital health systems, and secure your certified compliance. Enrol for just $27.</div>
-                        </div>
-                    </a>
-                    <a href="course.html" class="flex gap-4 p-4 bg-white border border-slate-200 rounded-xl hover:border-blue-200 hover:shadow-md transition">
-                        <div class="w-10 h-10 rounded-lg bg-green-50 text-green-600 flex items-center justify-content-center text-lg flex-shrink-0"><span class="iconify" data-icon="mdi:book-open-variant"></span></div>
-                        <div>
-                            <div class="font-bold text-sm text-slate-900">Free CV Template for Remote Professionals</div>
-                            <div class="text-xs text-slate-500 mt-1">ATS-optimized resume structures designed specifically for telehealth and remote patient monitoring roles.</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+<body>
+<div class="nav">
+    <a class="brand" href="index.html">RemoteMedical<span>Jobs</span></a>
+    <a href="course.html" style="font-size:.875rem;font-weight:600;color:#2563eb;text-decoration:none">Course</a>
 </div>
-
-<!-- FOOTER -->
-<footer class="footer">
-    <div class="footer-inner">
-        <a href="index.html" class="footer-brand">
-            <div class="footer-brand-icon"><span class="iconify" data-icon="mdi:stethoscope"></span></div>
-            RemoteMedical<span>Jobs</span>
-        </a>
-        <p class="footer-copy">© 2025 RemoteMedicalJobs. All rights reserved.</p>
-        <div class="footer-links">
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="terms.html">Terms of Service</a>
+<div class="wrap"><div class="card">
+    <h1>For job seekers worldwide</h1>
+    <p class="lead">Search remote healthcare roles, join the free talent pool, and optionally unlock the Career Accelerator (access emailed after payment).</p>
+    <div class="grid">
+        <div class="panel">
+            <h2 style="font-size:1.1rem;margin:0 0 12px">Quick job search</h2>
+            <input id="q" placeholder="Job title, keyword, speciality…">
+            <select id="loc">
+                <option value="">Anywhere (Remote)</option>
+                <option>Worldwide / Global</option>
+                <option>Americas</option>
+                <option>Europe / UK</option>
+                <option>Africa</option>
+                <option>Asia-Pacific</option>
+            </select>
+            <button class="btn" type="button" id="searchBtn">Search jobs</button>
+        </div>
+        <div>
+            <h2 style="font-size:1.1rem;margin:0 0 12px">Resources</h2>
+            <a class="link-card" href="course.html">
+                <strong>Career Accelerator — from $27</strong>
+                <span>8 modules + templates. Portal link emailed after checkout.</span>
+            </a>
+            <a class="link-card" href="apply.html">
+                <strong>Free talent-pool application</strong>
+                <span>Submit your profile — course is optional.</span>
+            </a>
+            <a class="link-card" href="jobs.html">
+                <strong>Browse all listings</strong>
+                <span>Filters for role type, specialty, and hourly rate (USD).</span>
+            </a>
         </div>
     </div>
-</footer>
-
-<!-- TOAST -->
-<div class="toast toast-success" id="toast">
-    <span class="iconify" data-icon="mdi:check-circle"></span>
-    <span id="toastMsg">Success!</span>
-</div>
-
+</div></div>
 <script>
-function showToast(msg) {
-    const t = document.getElementById('toast');
-    const m = document.getElementById('toastMsg');
-    m.textContent = msg;
-    t.classList.add('show');
-    setTimeout(()=>t.classList.remove('show'),3500);
-}
-window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20));
+document.getElementById('searchBtn').addEventListener('click', ()=>{
+    const q = document.getElementById('q').value.trim();
+    const url = 'jobs.html' + (q ? ('?q=' + encodeURIComponent(q)) : '');
+    location.href = url;
+});
+// Prefill jobs search if supported later
 </script>
 </body>
 </html>

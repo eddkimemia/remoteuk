@@ -1,157 +1,169 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us — RemoteMedicalJobs</title>
-    <meta name="description" content="Reach out to RemoteMedicalJobs. Professional clinical placement support and AI assistance.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="description" content="Contact RemoteMedicalJobs for job seeker support, employer partnerships, or course help. We serve candidates worldwide.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/style.css">
+    <style>
+        body{font-family:Inter,system-ui,sans-serif;background:#f8fafc;color:#1e293b;margin:0}
+        .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.94);border-bottom:1px solid #e2e8f0}
+        .nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;height:72px;display:flex;align-items:center;justify-content:space-between}
+        .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;color:#1e3a8a}
+        .nav-logo-icon{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#2563eb,#059669);color:#fff;display:flex;align-items:center;justify-content:center}
+        .nav-logo span{color:#059669}
+        .nav-links{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+        .nav-links a{text-decoration:none;color:#475569;font-size:.875rem;font-weight:500;padding:8px 14px;border-radius:8px}
+        .nav-links a:hover{background:#eff6ff;color:#1d4ed8}
+        .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:10px;font-weight:600;border:none;cursor:pointer;font-family:inherit;text-decoration:none}
+        .btn-primary{background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;width:100%;justify-content:center}
+        .btn:disabled{opacity:.6}
+        .wrap{max-width:960px;margin:110px auto 60px;padding:0 24px}
+        .card{background:#fff;border:1px solid #e2e8f0;border-radius:20px;padding:40px;box-shadow:0 10px 25px rgba(0,0,0,.05)}
+        h1{font-size:2rem;font-weight:800;margin:0 0 8px}
+        .lead{color:#64748b;margin-bottom:28px}
+        .grid{display:grid;grid-template-columns:1fr 1.2fr;gap:32px}
+        label{display:block;font-size:.78rem;font-weight:600;margin-bottom:6px}
+        input,select,textarea{width:100%;padding:12px 14px;border:1px solid #e2e8f0;border-radius:10px;font:inherit;background:#f8fafc;box-sizing:border-box}
+        .form-group{margin-bottom:14px}
+        .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+        .info-item{display:flex;gap:14px;margin-bottom:18px}
+        .ico{width:44px;height:44px;border-radius:12px;background:#eff6ff;color:#2563eb;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+        .toast{position:fixed;top:90px;right:20px;background:#0f172a;color:#fff;padding:14px 18px;border-radius:12px;transform:translateX(120%);transition:.3s;z-index:99;max-width:320px;font-size:.875rem}
+        .toast.show{transform:translateX(0)}
+        .footer{text-align:center;padding:24px;color:#94a3b8;font-size:.8rem}
+        .footer a{color:#64748b;margin:0 8px}
+        @media(max-width:800px){.grid,.row,.nav-links{display:none}.grid{display:block}.row{display:grid}}
+        @media(max-width:800px){.nav-links{display:none}}
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-800">
-
-<!-- NAV -->
-<nav class="nav" id="nav">
+<body>
+<nav class="nav">
     <div class="nav-inner">
         <a href="index.html" class="nav-logo">
             <div class="nav-logo-icon"><span class="iconify" data-icon="mdi:stethoscope"></span></div>
             RemoteMedical<span>Jobs</span>
         </a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="jobs.html">Jobs</a></li>
-                <li><a href="course.html">Course</a></li>
-                <li><a href="jobseekers.html">Job Seekers</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="compliance.html">Compliance</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        <div class="nav-cta">
-            <a href="course.html" class="btn btn-primary">Course Accelerator</a>
-        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="jobs.html">Jobs</a></li>
+            <li><a href="course.html">Course</a></li>
+            <li><a href="jobseekers.html">Job Seekers</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="course.html" class="btn btn-primary" style="width:auto">Course</a>
     </div>
 </nav>
 
-<!-- CONTENT -->
-<div class="container max-w-5xl mx-auto my-32 px-6">
-    <div class="bg-white border border-slate-200 rounded-3xl p-10 shadow-lg">
-        <div class="mb-10 text-center">
-            <span class="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-600 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-4">
-                <span class="iconify" data-icon="mdi:message-text"></span> Get In Touch
-            </span>
-            <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">Let's Start a Conversation</h1>
-            <p class="text-slate-500 mt-2 max-w-xl mx-auto">Whether you're a healthcare professional looking for your next role or an employer seeking top remote talent, we're here to help.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <!-- Contact Info -->
-            <div class="space-y-6">
-                <div class="flex gap-4 items-start">
-                    <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl flex-shrink-0"><span class="iconify" data-icon="mdi:email-outline"></span></div>
+<div class="wrap">
+    <div class="card">
+        <h1>Contact us</h1>
+        <p class="lead">Job seekers, employers, and course students worldwide — we typically reply within 1 business day.</p>
+        <div class="grid">
+            <div>
+                <div class="info-item">
+                    <div class="ico"><span class="iconify" data-icon="mdi:email-outline"></span></div>
                     <div>
-                        <h4 class="font-bold text-slate-900">Email Us</h4>
-                        <p class="text-sm text-slate-500">hello@remotemedicaljobs.co.uk</p>
+                        <strong>Email</strong>
+                        <div style="color:#64748b;font-size:.9rem">hello@remotemedicaljobs.com</div>
                     </div>
                 </div>
-                <div class="flex gap-4 items-start">
-                    <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl flex-shrink-0"><span class="iconify" data-icon="mdi:phone-outline"></span></div>
+                <div class="info-item">
+                    <div class="ico"><span class="iconify" data-icon="mdi:earth"></span></div>
                     <div>
-                        <h4 class="font-bold text-slate-900">Call Us</h4>
-                        <p class="text-sm text-slate-500">+44 20 4587 1234 (Mon-Fri, 9am-6pm GMT)</p>
+                        <strong>Serving candidates globally</strong>
+                        <div style="color:#64748b;font-size:.9rem">Remote roles & training across time zones</div>
                     </div>
                 </div>
-                <div class="flex gap-4 items-start">
-                    <div class="w-12 h-12 rounded-xl bg-green-50 text-green-600 flex items-center justify-center text-xl flex-shrink-0"><span class="iconify" data-icon="mdi:robot-happy-outline"></span></div>
+                <div class="info-item">
+                    <div class="ico" style="background:#ecfdf5;color:#059669"><span class="iconify" data-icon="mdi:school-outline"></span></div>
                     <div>
-                        <h4 class="font-bold text-slate-900">AI Assistant</h4>
-                        <p class="text-sm text-slate-500">24/7 instant chat support accessible on all pages.</p>
+                        <strong>Course access issues?</strong>
+                        <div style="color:#64748b;font-size:.9rem">Include your payment reference so we can resend your portal link.</div>
                     </div>
-                </div>
-
-                <div class="p-6 bg-blue-50 border border-blue-100 rounded-2xl">
-                    <div class="font-bold text-blue-800 text-sm mb-1 flex items-center gap-1">
-                        <span class="iconify" data-icon="mdi:clock-fast"></span> Average Response Time
-                    </div>
-                    <div class="text-xs text-blue-600">Under 2 hours during business hours. AI responds instantly 24/7.</div>
                 </div>
             </div>
-
-            <!-- Form -->
-            <form class="bg-slate-50 border border-slate-200 rounded-2xl p-8 shadow-sm" onsubmit="handleFormSubmit(event)">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <form id="contactForm">
+                <div class="row">
                     <div class="form-group">
-                        <label class="block text-xs font-semibold text-slate-700 mb-1">First Name *</label>
-                        <input type="text" id="firstName" class="form-input" placeholder="Sarah" required>
+                        <label>First name *</label>
+                        <input id="first_name" required>
                     </div>
                     <div class="form-group">
-                        <label class="block text-xs font-semibold text-slate-700 mb-1">Last Name *</label>
-                        <input type="text" id="lastName" class="form-input" placeholder="Mitchell" required>
+                        <label>Last name *</label>
+                        <input id="last_name" required>
                     </div>
                 </div>
-                <div class="form-group mb-4">
-                    <label class="block text-xs font-semibold text-slate-700 mb-1">Email Address *</label>
-                    <input type="email" id="email" class="form-input" placeholder="sarah@example.com" required>
+                <div class="form-group">
+                    <label>Email *</label>
+                    <input type="email" id="email" required>
                 </div>
-                <div class="form-group mb-4">
-                    <label class="block text-xs font-semibold text-slate-700 mb-1">I am a... *</label>
-                    <select id="inquiryType" class="form-select" style="width: 100%; padding: 12px 16px; border: 1px solid var(--slate-200); border-radius: 10px; background: var(--slate-50); outline: none;" required>
-                        <option value="">Select your role</option>
-                        <option value="seeker">Job Seeker</option>
-                        <option value="employer">Employer / Partner Clinic</option>
+                <div class="form-group">
+                    <label>I am a… *</label>
+                    <select id="inquiry_type" required>
+                        <option value="">Select…</option>
+                        <option value="seeker">Job seeker</option>
+                        <option value="employer">Employer / clinic</option>
+                        <option value="student">Course student</option>
                         <option value="other">Other</option>
                     </select>
                 </div>
-                <div class="form-group mb-6">
-                    <label class="block text-xs font-semibold text-slate-700 mb-1">How can we help? *</label>
-                    <textarea id="message" class="form-textarea" placeholder="Describe your query..." required></textarea>
+                <div class="form-group">
+                    <label>Message *</label>
+                    <textarea id="message" rows="5" required placeholder="How can we help?"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary w-full">
-                    <span class="iconify" data-icon="mdi:send"></span> Send Message
+                <button class="btn btn-primary" type="submit" id="sendBtn">
+                    <span class="iconify" data-icon="mdi:send"></span> Send message
                 </button>
             </form>
         </div>
     </div>
 </div>
-
-<!-- FOOTER -->
-<footer class="footer">
-    <div class="footer-inner">
-        <a href="index.html" class="footer-brand">
-            <div class="footer-brand-icon"><span class="iconify" data-icon="mdi:stethoscope"></span></div>
-            RemoteMedical<span>Jobs</span>
-        </a>
-        <p class="footer-copy">© 2025 RemoteMedicalJobs. All rights reserved.</p>
-        <div class="footer-links">
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="terms.html">Terms of Service</a>
-        </div>
-    </div>
-</footer>
-
-<!-- TOAST -->
-<div class="toast toast-success" id="toast">
-    <span class="iconify" data-icon="mdi:check-circle"></span>
-    <span id="toastMsg">Success!</span>
+<div class="footer">
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <div style="margin-top:8px">© <span id="y"></span> RemoteMedicalJobs</div>
 </div>
-
+<div class="toast" id="toast"></div>
 <script>
-function handleFormSubmit(e) {
-    e.preventDefault();
-    const firstName = document.getElementById('firstName').value;
-    showToast(`Thank you, ${firstName}! We will be in touch within 2 hours.`);
-    e.target.reset();
-}
-function showToast(msg) {
-    const t = document.getElementById('toast');
-    const m = document.getElementById('toastMsg');
-    m.textContent = msg;
+document.getElementById('y').textContent = new Date().getFullYear();
+function toast(msg){
+    const t=document.getElementById('toast');
+    t.textContent=msg;
     t.classList.add('show');
-    setTimeout(()=>t.classList.remove('show'),3500);
+    setTimeout(()=>t.classList.remove('show'),4000);
 }
-window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20));
+document.getElementById('contactForm').addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    const btn=document.getElementById('sendBtn');
+    btn.disabled=true;
+    btn.textContent='Sending…';
+    try{
+        const res=await fetch('/api/contact',{
+            method:'POST',
+            headers:{'Content-Type':'application/json'},
+            body:JSON.stringify({
+                first_name:document.getElementById('first_name').value.trim(),
+                last_name:document.getElementById('last_name').value.trim(),
+                email:document.getElementById('email').value.trim(),
+                inquiry_type:document.getElementById('inquiry_type').value,
+                message:document.getElementById('message').value.trim()
+            })
+        });
+        const json=await res.json();
+        if(!res.ok||!json.status) throw new Error(json.message||'Failed');
+        toast(json.message||'Message sent');
+        e.target.reset();
+    }catch(err){
+        toast(err.message||'Could not send');
+    }
+    btn.disabled=false;
+    btn.innerHTML='<span class="iconify" data-icon="mdi:send"></span> Send message';
+});
 </script>
 </body>
 </html>

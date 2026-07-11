@@ -1,498 +1,250 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Check Your Eligibility — RemoteMedicalJobs</title>
-    <meta name="description" content="Check your eligibility for remote healthcare roles. Quick validation check.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Apply & Get Career-Ready — RemoteMedicalJobs</title>
+    <meta name="description" content="Apply for remote healthcare roles worldwide. Optional Career Accelerator course with telehealth skills, compliance, and CV tools — delivered by email.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/style.css">
     <style>
-        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-        :root{
-            --blue-50:#EFF6FF;--blue-100:#DBEAFE;--blue-200:#BFDBFE;--blue-400:#60A5FA;
-            --blue-500:#3B82F6;--blue-600:#2563EB;--blue-700:#1D4ED8;--blue-800:#1E40AF;--blue-900:#1E3A8A;--blue-950:#172554;
-            --green-50:#ECFDF5;--green-100:#D1FAE5;--green-400:#34D399;--green-500:#10B981;--green-600:#059669;--green-700:#047857;
-            --amber-50:#FFFBEB;--amber-100:#FEF3C7;--amber-500:#F59E0B;--amber-600:#D97706;
-            --purple-50:#F3E8FF;--purple-100:#EDE9FE;--purple-600:#7C3AED;
-            --red-50:#FEF2F2;--red-500:#EF4444;--red-600:#DC2626;
-            --slate-50:#F8FAFC;--slate-100:#F1F5F9;--slate-200:#E2E8F0;--slate-300:#CBD5E1;--slate-400:#94A3B8;--slate-500:#64748B;--slate-600:#475569;--slate-700:#334155;--slate-800:#1E293B;--slate-900:#0F172A;
-            --white:#FFFFFF;
-            --radius:12px;--radius-lg:20px;
-            --shadow-sm:0 1px 2px rgba(0,0,0,.05);
-            --shadow:0 1px 3px rgba(0,0,0,.1),0 1px 2px rgba(0,0,0,.06);
-            --shadow-md:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);
-            --shadow-lg:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);
-            --shadow-xl:0 20px 25px -5px rgba(0,0,0,.1),0 8px 10px -6px rgba(0,0,0,.1);
-            --shadow-2xl:0 25px 50px -12px rgba(0,0,0,.25);
-        }
-        body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--slate-800);background:var(--slate-50);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-
-        /* NAV */
-        .nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--slate-200);transition:box-shadow .3s}
-        .nav.scrolled{box-shadow:var(--shadow-md)}
-        .nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:72px}
-        .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:1.125rem;color:var(--blue-900)}
-        .nav-logo-icon{width:40px;height:40px;background:linear-gradient(135deg,var(--blue-600),var(--green-600));border-radius:10px;display:flex;align-items:center;justify-content:center;color:white;font-size:20px}
-        .nav-logo span{color:var(--green-600)}
-        .nav-links{display:flex;align-items:center;gap:4px;list-style:none}
-        .nav-links a{text-decoration:none;color:var(--slate-600);font-size:.875rem;font-weight:500;padding:8px 16px;border-radius:8px;transition:all .2s}
-        .nav-links a:hover{color:var(--blue-700);background:var(--blue-50)}
-        .nav-cta{display:flex;align-items:center;gap:12px}
-
-        .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 28px;border-radius:10px;font-size:.9rem;font-weight:600;text-decoration:none;border:none;cursor:pointer;transition:all .25s cubic-bezier(.16,1,.3,1);white-space:nowrap;font-family:inherit}
-        .btn-primary{background:linear-gradient(135deg,var(--blue-600),var(--blue-700));color:white;box-shadow:0 2px 8px rgba(37,99,235,.3)}
-        .btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,99,235,.4)}
-        .btn-green{background:linear-gradient(135deg,var(--green-600),var(--green-700));color:white;box-shadow:0 2px 8px rgba(5,150,105,.3)}
-        .btn-green:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(5,150,105,.4)}
-        .btn-secondary{background:var(--white);color:var(--blue-700);border:1.5px solid var(--blue-200)}
-        .btn-secondary:hover{background:var(--blue-50);border-color:var(--blue-400)}
-        .btn-lg{padding:16px 36px;font-size:1rem;border-radius:12px}
-        .btn-xl{padding:20px 44px;font-size:1.1rem;border-radius:14px;font-weight:700}
-        .btn:disabled{opacity:.6;cursor:not-allowed;transform:none!important;box-shadow:none!important}
-
-        /* MOBILE MENU */
-        .mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;color:var(--slate-700)}
-        .mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;bottom:0;background:rgba(255,255,255,.98);backdrop-filter:blur(20px);z-index:999;padding:24px;flex-direction:column;gap:8px;overflow-y:auto}
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:Inter,system-ui,sans-serif;background:#f8fafc;color:#1e293b;line-height:1.6}
+        .nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-bottom:1px solid #e2e8f0}
+        .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:72px;display:flex;align-items:center;justify-content:space-between}
+        .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;color:#1e3a8a}
+        .nav-logo-icon{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#2563eb,#059669);color:#fff;display:flex;align-items:center;justify-content:center}
+        .nav-logo span{color:#059669}
+        .nav-links{display:flex;gap:4px;list-style:none}
+        .nav-links a{text-decoration:none;color:#475569;font-size:.875rem;font-weight:500;padding:8px 14px;border-radius:8px}
+        .nav-links a:hover{background:#eff6ff;color:#1d4ed8}
+        .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 24px;border-radius:10px;font-weight:600;border:none;cursor:pointer;font-family:inherit;text-decoration:none;font-size:.9rem}
+        .btn-primary{background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff}
+        .btn-green{background:linear-gradient(135deg,#059669,#047857);color:#fff;box-shadow:0 4px 14px rgba(5,150,105,.25)}
+        .btn-secondary{background:#fff;color:#1d4ed8;border:1.5px solid #bfdbfe}
+        .btn-lg{padding:16px 28px;font-size:1rem;width:100%}
+        .btn:disabled{opacity:.6;cursor:not-allowed}
+        .mobile-toggle{display:none;background:none;border:none;font-size:28px;color:#334155}
+        .mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;bottom:0;background:#fff;z-index:999;padding:24px;flex-direction:column;gap:8px}
         .mobile-menu.active{display:flex}
-        .mobile-menu a{display:block;padding:14px 20px;text-decoration:none;color:var(--slate-700);font-size:1rem;font-weight:500;border-radius:12px;transition:background .2s}
-        .mobile-menu a:hover{background:var(--blue-50);color:var(--blue-700)}
-
-        /* CONTENT LAYOUT */
-        .container {
-            max-width: 900px;
-            margin: 120px auto 80px;
-            padding: 0 24px;
-        }
-
-        .apply-card {
-            background: var(--white);
-            border: 1px solid var(--slate-200);
-            border-radius: var(--radius-lg);
-            padding: 40px;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .apply-title {
-            font-size: 1.75rem;
-            font-weight: 800;
-            color: var(--slate-900);
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .apply-subtitle {
-            font-size: 0.95rem;
-            color: var(--slate-500);
-            margin-bottom: 32px;
-        }
-
-        /* FORM */
-        .form-group {
-            margin-bottom: 20px;
-        }
-        .form-group label {
-            display: block;
-            font-size: 0.82rem;
-            font-weight: 600;
-            color: var(--slate-700);
-            margin-bottom: 6px;
-        }
-        .form-group label .req {
-            color: var(--red-500);
-        }
-        .form-input, .form-select, .form-textarea {
-            width: 100%;
-            padding: 12px 16px;
-            border: 1px solid var(--slate-200);
-            border-radius: 10px;
-            font-size: .9rem;
-            font-family: inherit;
-            color: var(--slate-800);
-            background: var(--slate-50);
-            outline: none;
-            transition: all .2s;
-        }
-        .form-input:focus, .form-select:focus, .form-textarea:focus {
-            border-color: var(--blue-400);
-            background: white;
-            box-shadow: 0 0 0 3px rgba(59,130,246,.1);
-        }
-        .form-select {
-            appearance: none;
-            cursor: pointer;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2364748B' viewBox='0 0 16 16'%3E%3Cpath d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 16px center;
-        }
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-
-        .file-upload {
-            border: 2px dashed var(--slate-200);
-            border-radius: 12px;
-            padding: 24px;
-            text-align: center;
-            cursor: pointer;
-            transition: all .2s;
-            position: relative;
-        }
-        .file-upload:hover {
-            border-color: var(--blue-400);
-            background: var(--blue-50);
-        }
-        .file-upload input {
-            position: absolute;
-            inset: 0;
-            opacity: 0;
-            cursor: pointer;
-        }
-        .file-upload-icon {
-            font-size: 28px;
-            color: var(--slate-300);
-            margin-bottom: 6px;
-        }
-        .file-upload-text {
-            font-size: .82rem;
-            color: var(--slate-500);
-        }
-        .file-upload-text strong {
-            color: var(--blue-600);
-        }
-
-        /* TOAST */
-        .toast{position:fixed;top:90px;right:24px;z-index:9999;background:var(--slate-900);color:white;padding:16px 24px;border-radius:12px;font-size:.875rem;font-weight:500;box-shadow:var(--shadow-xl);transform:translateX(calc(100% + 40px));transition:transform .4s cubic-bezier(.16,1,.3,1);display:flex;align-items:center;gap:10px}
+        .mobile-menu a{padding:14px 16px;text-decoration:none;color:#334155;border-radius:10px;font-weight:500}
+        .container{max-width:720px;margin:100px auto 60px;padding:0 24px}
+        .card{background:#fff;border:1px solid #e2e8f0;border-radius:20px;padding:36px;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+        h1{font-size:1.6rem;font-weight:800;margin-bottom:8px;line-height:1.25}
+        .subtitle{color:#64748b;margin-bottom:28px;font-size:.95rem}
+        .form-group{margin-bottom:16px}
+        label{display:block;font-size:.8rem;font-weight:600;color:#334155;margin-bottom:6px}
+        .req{color:#ef4444}
+        .form-input,.form-select,.form-textarea{width:100%;padding:12px 14px;border:1px solid #e2e8f0;border-radius:10px;font:inherit;background:#f8fafc;color:#1e293b}
+        .form-input:focus,.form-select:focus,.form-textarea:focus{outline:none;border-color:#60a5fa;background:#fff;box-shadow:0 0 0 3px rgba(59,130,246,.12)}
+        .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+        .hint{font-size:.78rem;color:#94a3b8;margin-top:4px}
+        .screen{display:none}
+        .screen.active{display:block}
+        .offer{background:linear-gradient(180deg,#f0fdf4,#fff);border:1px solid #bbf7d0;border-radius:16px;padding:24px;margin-top:8px}
+        .offer h2{font-size:1.2rem;font-weight:800;margin-bottom:10px;color:#065f46}
+        .offer ul{margin:12px 0 20px 18px;color:#334155;font-size:.9rem}
+        .pricing{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0 20px}
+        .price-card{border:2px solid #e2e8f0;border-radius:14px;padding:16px;cursor:pointer;background:#fff;text-align:left}
+        .price-card.selected{border-color:#059669;background:#ecfdf5}
+        .price-card strong{display:block;font-size:1.25rem;color:#047857}
+        .price-card span{font-size:.8rem;color:#64748b}
+        .trust{font-size:.78rem;color:#64748b;text-align:center;margin-top:12px}
+        .toast{position:fixed;top:90px;right:24px;z-index:9999;background:#0f172a;color:#fff;padding:14px 20px;border-radius:12px;transform:translateX(120%);transition:transform .35s;font-size:.875rem;max-width:320px}
         .toast.show{transform:translateX(0)}
-        .toast-success .iconify{color:var(--green-500)}
-        .toast-error .iconify{color:var(--red-500)}
-
-        /* FOOTER */
-        .footer{background:var(--slate-900);color:rgba(255,255,255,.6);padding:48px 24px 24px}
-        .footer-inner{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
-        .footer-brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:1rem;color:white}
-        .footer-brand-icon{width:32px;height:32px;background:linear-gradient(135deg,var(--blue-600),var(--green-600));border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-size:16px}
-        .footer-brand span{color:var(--green-500)}
-        .footer-copy{font-size:.78rem}
-        .footer-links{display:flex;gap:24px}
-        .footer-links a{font-size:.78rem;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s}
-        .footer-links a:hover{color:white}
-
-        /* PIVOT MODAL POPUP */
-        .pivot-box {
-            display: none;
-            margin-top: 10px;
-            animation: fadeIn 0.4s ease-out forwards;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .pivot-header {
-            background: #FEF3C7;
-            border: 1px solid #FCD34D;
-            border-radius: 12px;
-            padding: 20px 24px;
-            color: #92400E;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 24px;
-            font-size: 1.2rem;
-        }
-
-        .pivot-quote {
-            background: var(--slate-100);
-            border-left: 4px solid var(--blue-600);
-            padding: 16px 20px;
-            font-style: italic;
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: var(--slate-700);
-            margin: 20px 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 24px 0 32px;
-        }
-        .comparison-table th, .comparison-table td {
-            border: 1px solid var(--slate-200);
-            padding: 14px 18px;
-            font-size: 0.875rem;
-            text-align: left;
-        }
-        .comparison-table th {
-            background: var(--slate-50);
-            font-weight: 700;
-            color: var(--slate-900);
-        }
-        .comparison-table td.option-col {
-            font-weight: 700;
-            width: 140px;
-        }
-        .comparison-table tr.highlighted {
-            background: var(--green-50);
-        }
-
-        .offer-footer {
-            font-size: 0.8rem;
-            color: var(--slate-400);
-            text-align: center;
-            margin-top: 12px;
-            font-weight: 500;
-        }
-
-        @media(max-width: 600px) {
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-            .comparison-table th, .comparison-table td {
-                padding: 10px;
-                font-size: 0.8rem;
-            }
-            .comparison-table td.option-col {
-                width: auto;
-            }
+        .footer{background:#0f172a;color:rgba(255,255,255,.55);padding:32px 24px;margin-top:48px}
+        .footer-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;font-size:.8rem}
+        .footer a{color:rgba(255,255,255,.45);text-decoration:none;margin-left:12px}
+        @media(max-width:800px){
+            .nav-links,.nav-cta{display:none}
+            .mobile-toggle{display:block}
+            .form-row,.pricing{grid-template-columns:1fr}
+            .card{padding:24px}
         }
     </style>
 </head>
 <body>
-
-<!-- NAV -->
-<nav class="nav" id="nav">
+<nav class="nav">
     <div class="nav-inner">
         <a href="index.html" class="nav-logo">
             <div class="nav-logo-icon"><span class="iconify" data-icon="mdi:stethoscope"></span></div>
             RemoteMedical<span>Jobs</span>
         </a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="jobs.html">Jobs</a></li>
-                <li><a href="course.html">Course</a></li>
-                <li><a href="jobseekers.html">Job Seekers</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="compliance.html">Compliance</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        <div class="nav-cta">
-            <a href="course.html" class="btn btn-primary">Course Accelerator</a>
-        </div>
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
-            <span class="iconify" data-icon="mdi:menu" style="font-size:28px" id="menuIcon"></span>
-        </button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="jobs.html">Jobs</a></li>
+            <li><a href="course.html">Course</a></li>
+            <li><a href="jobseekers.html">Job Seekers</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-cta"><a href="course.html" class="btn btn-primary">Career Accelerator</a></div>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><span class="iconify" data-icon="mdi:menu" id="menuIcon"></span></button>
     </div>
 </nav>
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="index.html" class="mobile-link">Home</a>
-        <a href="jobs.html" class="mobile-link">Jobs</a>
-        <a href="course.html" class="mobile-link">Course</a>
-        <a href="jobseekers.html" class="mobile-link">Job Seekers</a>
-        <a href="about.html" class="mobile-link">About</a>
-        <a href="compliance.html" class="mobile-link">Compliance</a>
-        <a href="contact.html" class="mobile-link">Contact</a>
-        <a href="course.html" class="btn btn-primary btn-lg mobile-link">Enrol in Course</a>
-    </div>
+<div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="jobs.html">Jobs</a>
+    <a href="course.html">Course</a>
+    <a href="jobseekers.html">Job Seekers</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+</div>
 
-<!-- MAIN LAYOUT -->
 <div class="container">
-    <div class="apply-card" id="flowContainer">
-        <!-- SCREEN 1: ELIGIBILITY CHECK -->
-        <div id="screenEligibility">
-            <h1 class="apply-title">⚠️ Almost There! Let's Check Your Eligibility...</h1>
-            <p class="apply-subtitle">Please fill out this short form to evaluate your clinical qualifications and experience for remote clinical roles.</p>
-
-            <form id="eligibilityForm" onsubmit="submitEligibility(event)">
+    <div class="card">
+        <!-- Screen 1: free application -->
+        <div id="screenForm" class="screen active">
+            <h1 id="pageTitle">Apply for remote healthcare roles</h1>
+            <p class="subtitle">Tell us about your background. Your free application is saved to our talent pool for global remote matching. Optional career training is available after — never required to browse jobs.</p>
+            <form id="applyForm">
                 <div class="form-row">
                     <div class="form-group">
-                        <label>First Name <span class="req">*</span></label>
-                        <input type="text" class="form-input" id="first_name" placeholder="Sarah" required>
+                        <label>First name <span class="req">*</span></label>
+                        <input class="form-input" id="first_name" required autocomplete="given-name">
                     </div>
                     <div class="form-group">
-                        <label>Last Name <span class="req">*</span></label>
-                        <input type="text" class="form-input" id="last_name" placeholder="Mitchell" required>
+                        <label>Last name <span class="req">*</span></label>
+                        <input class="form-input" id="last_name" required autocomplete="family-name">
                     </div>
                 </div>
-
                 <div class="form-group">
-                    <label>Email Address <span class="req">*</span></label>
-                    <input type="email" class="form-input" id="email" placeholder="sarah@example.com" required>
+                    <label>Email <span class="req">*</span></label>
+                    <input type="email" class="form-input" id="email" required autocomplete="email">
+                    <p class="hint">Course access is delivered to this email after purchase.</p>
                 </div>
-
                 <div class="form-group">
-                    <label>WhatsApp Number (for fast interview scheduling) <span class="req">*</span></label>
-                    <input type="tel" class="form-input" id="phone" placeholder="+44 7700 900077" required>
+                    <label>Phone / WhatsApp</label>
+                    <input type="tel" class="form-input" id="phone" placeholder="+1 / +44 / +234 / +91 …" autocomplete="tel">
                 </div>
-
                 <div class="form-row">
                     <div class="form-group">
-                        <label>Country of Residence <span class="req">*</span></label>
-                        <input type="text" class="form-input" id="country" placeholder="United Kingdom" required>
+                        <label>Country / region <span class="req">*</span></label>
+                        <input class="form-input" id="country" required placeholder="e.g. United States, Nigeria, India, UK" autocomplete="country-name">
                     </div>
                     <div class="form-group">
-                        <label>Years of Clinical Experience <span class="req">*</span></label>
+                        <label>Years of experience <span class="req">*</span></label>
                         <select class="form-select" id="experience" required>
-                            <option value="">Select...</option>
-                            <option value="0-1">Under 1 Year</option>
-                            <option value="1-2">1 – 2 Years</option>
-                            <option value="3-5">3 – 5 Years</option>
-                            <option value="6-10">6 – 10 Years</option>
-                            <option value="10+">10+ Years</option>
+                            <option value="">Select…</option>
+                            <option value="0-1">Under 1 year</option>
+                            <option value="1-2">1–2 years</option>
+                            <option value="3-5">3–5 years</option>
+                            <option value="6-10">6–10 years</option>
+                            <option value="10+">10+ years</option>
                         </select>
                     </div>
                 </div>
-
                 <div class="form-group">
-                    <label>Profession / Speciality <span class="req">*</span></label>
+                    <label>Profession <span class="req">*</span></label>
                     <select class="form-select" id="profession" required>
-                        <option value="">Select your profession...</option>
-                        <option value="nurse">Nurse (RGN / RMN / RSCN)</option>
+                        <option value="">Select…</option>
+                        <option value="nurse">Nurse / RN / equivalent</option>
                         <option value="pharmacist">Pharmacist</option>
-                        <option value="gp">GP / Physician</option>
+                        <option value="gp">Physician / GP / MD</option>
                         <option value="ahp">Allied Health Professional</option>
-                        <option value="coder">Medical Coder</option>
+                        <option value="coder">Medical Coder / RCM</option>
                         <option value="informatics">Health Informatics / IT</option>
-                        <option value="compliance">Compliance / Regulatory</option>
+                        <option value="coordinator">Patient / Care Coordinator</option>
+                        <option value="scheduler">Medical Scheduler</option>
                         <option value="writer">Medical Writer</option>
-                        <option value="coordinator">Patient Coordinator</option>
-                        <option value="student">Healthcare Student</option>
+                        <option value="student">Student / Career switcher</option>
                         <option value="other">Other</option>
                     </select>
                 </div>
-
                 <div class="form-group">
-                    <label>Upload CV / Document (max 5MB) <span class="req">*</span></label>
-                    <div class="file-upload" id="cvUploadBox">
-                        <input type="file" id="cv_file" accept=".pdf,.doc,.docx" onchange="handleFile(this)" required>
-                        <div class="file-upload-icon"><span class="iconify" data-icon="mdi:file-document-outline"></span></div>
-                        <div class="file-upload-text"><strong>Click to upload</strong> or drag & drop CV</div>
-                        <div class="file-upload-text" id="cv_file_name" style="color:var(--green-600);font-weight:600;margin-top:6px;display:none"></div>
-                    </div>
+                    <label>Goals (optional)</label>
+                    <textarea class="form-textarea" id="goals" rows="3" placeholder="e.g. Fully remote telehealth role within 60 days"></textarea>
                 </div>
-
-                <button type="submit" class="btn btn-green btn-lg" style="width: 100%; margin-top: 16px;" id="submitBtn">
-                    Submit Eligibility Form & Continue <span class="iconify" data-icon="mdi:arrow-right"></span>
+                <button type="submit" class="btn btn-green btn-lg" id="submitBtn">
+                    Submit free application <span class="iconify" data-icon="mdi:arrow-right"></span>
                 </button>
             </form>
         </div>
 
-        <!-- SCREEN 2: THE PIVOT (POPUP EFFECT) -->
-        <div id="screenPivot" class="pivot-box">
-            <div class="pivot-header">
-                <span class="iconify" data-icon="mdi:clipboard-check-outline" style="font-size:28px"></span>
-                📋 Great News! You Qualify... BUT There's a Catch.
+        <!-- Screen 2: honest upsell -->
+        <div id="screenOffer" class="screen">
+            <h1>Application received ✓</h1>
+            <p class="subtitle" id="offerSub">You're in our talent pool. Optional next step: get remote-ready faster with the Career Accelerator.</p>
+            <div class="offer">
+                <h2>Stand out for global remote roles</h2>
+                <p style="font-size:.92rem;color:#334155">Many telehealth employers look for consultation skills, privacy awareness (HIPAA/GDPR-style practices), and a remote-ready CV. Our self-paced course is <strong>optional</strong> — not a barrier to browsing jobs — and is delivered to your email with lifetime portal access.</p>
+                <ul>
+                    <li>8 modules: telehealth skills, compliance, CV, interviews</li>
+                    <li>Downloadable templates & checklists</li>
+                    <li>Access link emailed instantly after payment</li>
+                    <li>Works worldwide · one-time payment in USD</li>
+                </ul>
+                <div class="pricing">
+                    <button type="button" class="price-card selected" data-product="standard" id="cardStandard">
+                        <div style="font-weight:700;margin-bottom:4px">Standard</div>
+                        <strong>$27</strong>
+                        <span>Full course + templates</span>
+                    </button>
+                    <button type="button" class="price-card" data-product="pro" id="cardPro">
+                        <div style="font-weight:700;margin-bottom:4px">Pro · Best value</div>
+                        <strong>$47</strong>
+                        <span>Course + interview bank + LinkedIn kit</span>
+                    </button>
+                </div>
+                <button type="button" class="btn btn-green btn-lg" id="purchaseBtn">
+                    Get course access — email delivery
+                </button>
+                <p class="trust">Secure checkout via Paystack · Instant email delivery · 30-day satisfaction policy</p>
             </div>
-
-            <p style="font-size: 0.95rem; color: var(--slate-700); line-height: 1.7; margin-bottom: 16px;">
-                Your profile matches what our partner clinics are looking for. However, our hiring partners have one mandatory requirement before they will interview you:
-            </p>
-
-            <div class="pivot-quote">
-                "All candidates must hold a valid Telehealth Compliance & Scheduling Certification to handle UK/US patient data (HIPAA/GDPR compliant)."
-            </div>
-
-            <h3 style="font-size: 1.1rem; font-weight: 800; color: var(--slate-900); margin: 28px 0 12px;">You have two options right now:</h3>
-
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>Option</th>
-                        <th>Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="option-col" style="color: var(--red-600);"><span class="iconify" data-icon="mdi:close-circle" style="vertical-align:middle;margin-right:4px"></span> Option 1</td>
-                        <td style="color: var(--slate-500);">Withdraw your application and wait for a job that doesn't require certification (you'll be waiting a long time).</td>
-                    </tr>
-                    <tr class="highlighted">
-                        <td class="option-col" style="color: var(--green-700);"><span class="iconify" data-icon="mdi:checkbox-marked-circle" style="vertical-align:middle;margin-right:4px"></span> Option 2</td>
-                        <td style="color: var(--slate-800); font-weight: 500;">Get certified in under 4 hours through our partner training portal and unlock instant access to the job board.</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <button onclick="triggerPurchase()" class="btn btn-green btn-xl" style="width: 100%; font-size: 1.15rem; box-shadow: 0 8px 24px rgba(5,150,105,0.3);" id="purchaseBtn">
-                🎓 GET COURSE NOW – ONLY $27
-            </button>
-            <div class="offer-footer">
-                Includes: Full training + CV template + Guaranteed interview slot
+            <div style="margin-top:20px;display:flex;flex-wrap:wrap;gap:10px;justify-content:center">
+                <a href="jobs.html" class="btn btn-secondary">Browse jobs without course</a>
+                <a href="course.html" class="btn btn-secondary">Full course details</a>
             </div>
         </div>
     </div>
 </div>
 
-<!-- FOOTER -->
 <footer class="footer">
     <div class="footer-inner">
-        <a href="index.html" class="footer-brand">
-            <div class="footer-brand-icon"><span class="iconify" data-icon="mdi:stethoscope"></span></div>
-            RemoteMedical<span>Jobs</span>
-        </a>
-        <p class="footer-copy">© 2025 RemoteMedicalJobs.co.uk. All rights reserved.</p>
-        <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="jobs.html">Jobs</a>
-            <a href="index.html#contact">Contact</a>
+        <div>© <span id="y"></span> RemoteMedicalJobs · Remote healthcare careers worldwide</div>
+        <div>
             <a href="privacy.html">Privacy</a>
             <a href="terms.html">Terms</a>
+            <a href="contact.html">Contact</a>
         </div>
     </div>
 </footer>
-
-<!-- TOAST -->
-<div class="toast toast-success" id="toast">
-    <span class="iconify" data-icon="mdi:check-circle"></span>
-    <span id="toastMsg">Success!</span>
-</div>
+<div class="toast" id="toast"></div>
 
 <script>
-// Keep candidate info in memory to submit with purchase initialization
-let candidateInfo = {};
-
-// Parse job_title query param to personalize the funnel
-window.addEventListener('DOMContentLoaded', () => {
-    const params = new URLSearchParams(window.location.search);
-    const jobTitle = params.get('job_title');
-    if (jobTitle) {
-        const titleEl = document.querySelector('.apply-title');
-        titleEl.innerHTML = `⚠️ Almost There! Let's Check Your Eligibility for <span style="color:var(--blue-600);text-decoration:underline;">${decodeURIComponent(jobTitle)}</span>...`;
-    }
-});
-
-// Handle CV file state
-function handleFile(input) {
-    if (input.files.length) {
-        const file = input.files[0];
-        if (file.size > 5 * 1024 * 1024) {
-            showToast('File too large — maximum 5MB', 'error');
-            input.value = '';
-            return;
-        }
-        const nameEl = document.getElementById('cv_file_name');
-        nameEl.textContent = '✓ ' + file.name;
-        nameEl.style.display = 'block';
-    }
+document.getElementById('y').textContent = new Date().getFullYear();
+let candidate = {};
+let selectedProduct = 'standard';
+const params = new URLSearchParams(location.search);
+const jobTitle = params.get('job_title');
+if (jobTitle) {
+    document.getElementById('pageTitle').textContent = 'Apply: ' + decodeURIComponent(jobTitle);
 }
 
-// Eligibility short form submission
-function submitEligibility(e) {
-    e.preventDefault();
+document.querySelectorAll('.price-card').forEach(card => {
+    card.addEventListener('click', () => {
+        document.querySelectorAll('.price-card').forEach(c => c.classList.remove('selected'));
+        card.classList.add('selected');
+        selectedProduct = card.dataset.product;
+        document.getElementById('purchaseBtn').textContent =
+            selectedProduct === 'pro'
+                ? 'Get Pro access ($47) — email delivery'
+                : 'Get course access ($27) — email delivery';
+    });
+});
 
-    // Save to candidateInfo object in memory
-    candidateInfo = {
+function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 4000);
+}
+
+document.getElementById('applyForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    candidate = {
         first_name: document.getElementById('first_name').value.trim(),
         last_name: document.getElementById('last_name').value.trim(),
         email: document.getElementById('email').value.trim(),
@@ -500,87 +252,63 @@ function submitEligibility(e) {
         country: document.getElementById('country').value.trim(),
         experience: document.getElementById('experience').value,
         profession: document.getElementById('profession').value,
-        goals: 'Eligibility application check.'
+        job_title: jobTitle ? decodeURIComponent(jobTitle) : null,
+        goals: document.getElementById('goals').value.trim() || 'Remote healthcare career application'
     };
-
-    const submitBtn = document.getElementById('submitBtn');
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = '<span class="iconify" data-icon="mdi:loading" style="animation:spin 1s linear infinite"></span> Checking eligibility...';
-
-    setTimeout(() => {
-        // Transition to pivot screen (Page 2 step 2)
-        document.getElementById('screenEligibility').style.display = 'none';
-        document.getElementById('screenPivot').style.display = 'block';
-        window.scrollTo({top: 100, behavior: 'smooth'});
-    }, 1500);
-}
-
-// Trigger Paystack Course Purchase
-async function triggerPurchase() {
-    const btn = document.getElementById('purchaseBtn');
     btn.disabled = true;
-    btn.innerHTML = '<span class="iconify" data-icon="mdi:loading" style="animation:spin 1s linear infinite"></span> Securing Connection to Paystack Checkout...';
-
+    btn.textContent = 'Saving application…';
     try {
-        const response = await fetch('/api/payment/initialize', {
+        const res = await fetch('/api/applications', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                ...candidateInfo,
-                amount: 27
-            })
+            body: JSON.stringify(candidate)
         });
-
-        const result = await response.json();
-
-        if (response.ok && result.status && result.data && result.data.authorization_url) {
-            showToast('Redirecting to secure Paystack checkout...');
-            setTimeout(() => {
-                window.location.href = result.data.authorization_url;
-            }, 1000);
-        } else {
-            throw new Error(result.message || 'Failed to initialize Paystack checkout.');
-        }
+        const json = await res.json();
+        if (!res.ok || !json.status) throw new Error(json.message || 'Could not save application');
+        document.getElementById('screenForm').classList.remove('active');
+        document.getElementById('screenOffer').classList.add('active');
+        document.getElementById('offerSub').textContent =
+            `Thanks ${candidate.first_name}! We saved your free application. Want structured training to compete for global remote roles?`;
+        window.scrollTo({ top: 80, behavior: 'smooth' });
     } catch (err) {
-        showToast(err.message || 'An error occurred during checkout initialization.', 'error');
+        showToast(err.message || 'Error saving application');
         btn.disabled = false;
-        btn.innerHTML = '🎓 GET COURSE NOW – ONLY $27';
+        btn.innerHTML = 'Submit free application <span class="iconify" data-icon="mdi:arrow-right"></span>';
     }
-}
+});
 
-// ===== TOAST =====
-function showToast(msg, type='success'){
-    const t = document.getElementById('toast');
-    const m = document.getElementById('toastMsg');
-    t.className = 'toast toast-'+type;
-    t.querySelector('.iconify').setAttribute('data-icon', type==='error'?'mdi:alert-circle':'mdi:check-circle');
-    m.textContent = msg;
-    t.classList.add('show');
-    setTimeout(()=>t.classList.remove('show'),4000);
-}
+document.getElementById('purchaseBtn').addEventListener('click', async () => {
+    const btn = document.getElementById('purchaseBtn');
+    btn.disabled = true;
+    btn.textContent = 'Redirecting to secure checkout…';
+    try {
+        const res = await fetch('/api/payment/initialize', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ ...candidate, product_id: selectedProduct })
+        });
+        const json = await res.json();
+        if (!res.ok || !json.status || !json.data?.authorization_url) {
+            throw new Error(json.message || 'Checkout failed');
+        }
+        showToast('Opening Paystack checkout…');
+        window.location.href = json.data.authorization_url;
+    } catch (err) {
+        showToast(err.message || 'Checkout error');
+        btn.disabled = false;
+        btn.textContent = selectedProduct === 'pro'
+            ? 'Get Pro access ($47) — email delivery'
+            : 'Get course access ($27) — email delivery';
+    }
+});
 
-// ===== MOBILE MENU =====
 const mobileToggle = document.getElementById('mobileToggle');
 const mobileMenu = document.getElementById('mobileMenu');
 const menuIcon = document.getElementById('menuIcon');
-let menuOpen = false;
-mobileToggle.addEventListener('click',()=>{
-    menuOpen=!menuOpen;
-    mobileMenu.classList.toggle('active',menuOpen);
-    menuIcon.setAttribute('data-icon',menuOpen?'mdi:close':'mdi:menu');
-    document.body.style.overflow=menuOpen?'hidden':'';
+mobileToggle.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('active');
+    menuIcon.setAttribute('data-icon', open ? 'mdi:close' : 'mdi:menu');
 });
-document.querySelectorAll('.mobile-menu a').forEach(a=>a.addEventListener('click',()=>{
-    menuOpen=false;mobileMenu.classList.remove('active');
-    menuIcon.setAttribute('data-icon','mdi:menu');document.body.style.overflow='';
-}));
-
-// ===== NAV SCROLL =====
-window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20));
 </script>
-
-<style>
-@keyframes spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
-</style>
 </body>
 </html>

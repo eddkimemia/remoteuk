@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Portal — RemoteMedicalJobs</title>
+    <meta name="robots" content="noindex,nofollow">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:Inter,system-ui,sans-serif;background:#f8fafc;color:#1e293b;line-height:1.6}
+        .top{background:linear-gradient(135deg,#172554,#0c4a6e,#064e3b);color:#fff;padding:28px 24px}
+        .top-inner{max-width:960px;margin:0 auto}
+        .brand{font-weight:700;font-size:1.1rem;margin-bottom:12px}
+        .brand span{color:#34d399}
+        h1{font-size:clamp(1.5rem,3vw,2rem);font-weight:800;margin-bottom:8px}
+        .sub{opacity:.8;font-size:.95rem}
+        .wrap{max-width:960px;margin:0 auto;padding:28px 24px 80px}
+        .card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:24px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+        .module{cursor:pointer;transition:border-color .2s}
+        .module:hover{border-color:#93c5fd}
+        .module.open{border-color:#60a5fa}
+        .module-h{display:flex;gap:14px;align-items:flex-start}
+        .num{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0}
+        .module-title{font-weight:700;font-size:1.05rem}
+        .module-meta{font-size:.82rem;color:#64748b;margin-top:2px}
+        .module-body{display:none;margin-top:14px;padding-top:14px;border-top:1px solid #f1f5f9;color:#475569;font-size:.92rem}
+        .module.open .module-body{display:block}
+        .module-body ul{margin:10px 0 0 18px}
+        .bonus pre{white-space:pre-wrap;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:16px;font-size:.82rem;line-height:1.55;color:#334155;overflow:auto}
+        .badge{display:inline-block;background:#ecfdf5;color:#047857;font-size:.72rem;font-weight:700;padding:4px 10px;border-radius:50px;margin-bottom:12px}
+        .err{text-align:center;padding:60px 20px}
+        .err h2{margin-bottom:12px}
+        .err p{color:#64748b;margin-bottom:20px}
+        .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:10px;background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;text-decoration:none;font-weight:600;border:none;cursor:pointer;font-family:inherit}
+        .btn-green{background:linear-gradient(135deg,#059669,#047857)}
+        .btn-secondary{background:#fff;color:#1d4ed8;border:1.5px solid #bfdbfe}
+        .loading{text-align:center;padding:80px 20px;color:#64748b}
+        .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+        .pro-tag{background:#fef3c7;color:#92400e;font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:50px;margin-left:8px}
+    </style>
+</head>
+<body>
+    <div class="top">
+        <div class="top-inner">
+            <div class="brand">RemoteMedical<span>Jobs</span> Academy</div>
+            <h1 id="welcomeTitle">Loading your course…</h1>
+            <p class="sub" id="welcomeSub">Please wait while we verify your access.</p>
+        </div>
+    </div>
+    <div class="wrap" id="app">
+        <div class="loading" id="loading">
+            <span class="iconify" data-icon="mdi:loading" style="font-size:40px;animation:spin 1s linear infinite"></span>
+            <p style="margin-top:12px">Verifying access token…</p>
+        </div>
+    </div>
+
+<script>
+function esc(s){
+    return String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+async function init(){
+    const params = new URLSearchParams(location.search);
+    const token = params.get('token');
+    const app = document.getElementById('app');
+    if(!token){
+        showError('Missing access token. Check the link in your course email.');
+        return;
+    }
+
+    try{
+        const res = await fetch('/api/course/access?token=' + encodeURIComponent(token));
+        const json = await res.json();
+        if(!res.ok || !json.status){
+            showError(json.message || 'Access denied. Complete payment or open the link from your email.');
+            return;
+        }
+        render(json.data, token);
+    }catch(e){
+        showError('Could not load course. Check your connection and try again.');
+    }
+}
+
+function showError(msg){
+    document.getElementById('welcomeTitle').textContent = 'Access unavailable';
+    document.getElementById('welcomeSub').textContent = '';
+    document.getElementById('app').innerHTML = `
+        <div class="card err">
+            <h2>We couldn't open your portal</h2>
+            <p>${esc(msg)}</p>
+            <div class="actions" style="justify-content:center">
+                <a class="btn" href="course.html">Get Course Access</a>
+                <a class="btn btn-secondary" href="contact.html">Contact Support</a>
+            </div>
+        </div>`;
+}
+
+function render(data, token){
+    const { student, product, modules, bonuses, reference } = data;
+    document.getElementById('welcomeTitle').textContent = `Welcome, ${student.first_name}!`;
+    document.getElementById('welcomeSub').textContent = `${product.name} · Ref ${reference} · Lifetime access`;
+
+    const modulesHtml = modules.map(m => `
+        <div class="card module" onclick="this.classList.toggle('open')">
+            <div class="module-h">
+                <div class="num">${m.id}</div>
+                <div>
+                    <div class="module-title">${esc(m.title)}</div>
+                    <div class="module-meta">${esc(m.duration)} · Click to expand lessons</div>
+                </div>
+            </div>
+            <div class="module-body">
+                <p>${esc(m.summary)}</p>
+                <ul>${(m.lessons||[]).map(l=>`<li>${esc(l)}</li>`).join('')}</ul>
+            </div>
+        </div>
+    `).join('');
+
+    const bonusesHtml = bonuses.map(b => `
+        <div class="card bonus">
+            <div class="badge">${esc(b.type || 'resource')}${b.type==='pro'?' <span class="pro-tag">PRO</span>':''}</div>
+            <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:12px">${esc(b.title)}</h3>
+            <pre>${esc(b.body)}</pre>
+        </div>
+    `).join('');
+
+    document.getElementById('app').innerHTML = `
+        <div class="card">
+            <p style="color:#475569;margin-bottom:8px">Your full curriculum is below. We also emailed this access link to <strong>${esc(student.email)}</strong> — bookmark this page.</p>
+            <div class="actions">
+                <a class="btn btn-green" href="jobs.html">Browse Remote Jobs</a>
+                <button class="btn btn-secondary" type="button" onclick="resend('${esc(reference)}')">Resend access email</button>
+                <a class="btn btn-secondary" href="contact.html">Support</a>
+            </div>
+        </div>
+        <h2 style="font-size:1.2rem;font-weight:800;margin:24px 0 12px">Course modules</h2>
+        ${modulesHtml}
+        <h2 style="font-size:1.2rem;font-weight:800;margin:28px 0 12px">Downloads & templates</h2>
+        ${bonusesHtml}
+    `;
+}
+
+async function resend(reference){
+    try{
+        const res = await fetch('/api/course/resend', {
+            method:'POST',
+            headers:{'Content-Type':'application/json'},
+            body: JSON.stringify({ reference })
+        });
+        const json = await res.json();
+        alert(json.message || (res.ok ? 'Email sent' : 'Could not resend'));
+    }catch(e){
+        alert('Could not resend email.');
+    }
+}
+
+init();
+</script>
+<style>@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}</style>
+</body>
+</html>

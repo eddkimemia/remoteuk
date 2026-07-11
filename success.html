@@ -1,375 +1,212 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enrollment Receipt — RemoteMedicalJobs</title>
-    <meta name="description" content="Thank you for enrolling in the Remote Healthcare Career Accelerator course. Your registration details and payment confirmation receipt.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Payment Confirmed — RemoteMedicalJobs</title>
+    <meta name="robots" content="noindex,nofollow">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/style.css">
     <style>
-        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-        :root{
-            --blue-50:#EFF6FF;--blue-100:#DBEAFE;--blue-200:#BFDBFE;--blue-400:#60A5FA;
-            --blue-500:#3B82F6;--blue-600:#2563EB;--blue-700:#1D4ED8;--blue-800:#1E40AF;--blue-900:#1E3A8A;--blue-950:#172554;
-            --green-50:#ECFDF5;--green-100:#D1FAE5;--green-400:#34D399;--green-500:#10B981;--green-600:#059669;--green-700:#047857;
-            --amber-50:#FFFBEB;--amber-100:#FEF3C7;--amber-500:#F59E0B;--amber-600:#D97706;
-            --purple-50:#F3E8FF;--purple-100:#EDE9FE;--purple-600:#7C3AED;
-            --red-50:#FEF2F2;--red-500:#EF4444;--red-600:#DC2626;
-            --slate-50:#F8FAFC;--slate-100:#F1F5F9;--slate-200:#E2E8F0;--slate-300:#CBD5E1;--slate-400:#94A3B8;--slate-500:#64748B;--slate-600:#475569;--slate-700:#334155;--slate-800:#1E293B;--slate-900:#0F172A;
-            --white:#FFFFFF;
-            --radius:12px;--radius-lg:20px;
-            --shadow-sm:0 1px 2px rgba(0,0,0,.05);
-            --shadow:0 1px 3px rgba(0,0,0,.1),0 1px 2px rgba(0,0,0,.06);
-            --shadow-md:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);
-            --shadow-lg:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);
-            --shadow-xl:0 20px 25px -5px rgba(0,0,0,.1),0 8px 10px -6px rgba(0,0,0,.1);
-            --shadow-2xl:0 25px 50px -12px rgba(0,0,0,.25);
-        }
-        body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--slate-800);background:var(--slate-50);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-
-        /* NAV */
-        .nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--slate-200);transition:box-shadow .3s}
-        .nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:72px}
-        .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:1.125rem;color:var(--blue-900)}
-        .nav-logo-icon{width:40px;height:40px;background:linear-gradient(135deg,var(--blue-600),var(--green-600));border-radius:10px;display:flex;align-items:center;justify-content:center;color:white;font-size:20px}
-        .nav-logo span{color:var(--green-600)}
-        .nav-links{display:flex;align-items:center;gap:4px;list-style:none}
-        .nav-links a{text-decoration:none;color:var(--slate-600);font-size:.875rem;font-weight:500;padding:8px 16px;border-radius:8px;transition:all .2s}
-        .nav-links a:hover{color:var(--blue-700);background:var(--blue-50)}
-
-        .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 28px;border-radius:10px;font-size:.9rem;font-weight:600;text-decoration:none;border:none;cursor:pointer;transition:all .25s cubic-bezier(.16,1,.3,1);white-space:nowrap;font-family:inherit}
-        .btn-primary{background:linear-gradient(135deg,var(--blue-600),var(--blue-700));color:white;box-shadow:0 2px 8px rgba(37,99,235,.3)}
-        .btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,99,235,.4)}
-        .btn-green{background:linear-gradient(135deg,var(--green-600),var(--green-700));color:white;box-shadow:0 2px 8px rgba(5,150,105,.3)}
-        .btn-green:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(5,150,105,.4)}
-        .btn-secondary{background:var(--white);color:var(--blue-700);border:1.5px solid var(--blue-200)}
-        .btn-secondary:hover{background:var(--blue-50);border-color:var(--blue-400)}
-        .btn-lg{padding:16px 36px;font-size:1rem;border-radius:12px}
-
-        /* CONTENT */
-        .container {
-            max-width: 680px;
-            margin: 120px auto 80px;
-            padding: 0 24px;
-        }
-
-        .success-card {
-            background: var(--white);
-            border: 1px solid var(--slate-200);
-            border-radius: var(--radius-lg);
-            padding: 48px;
-            box-shadow: var(--shadow-lg);
-            text-align: center;
-        }
-
-        .success-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: var(--green-50);
-            color: var(--green-600);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 44px;
-            margin: 0 auto 24px;
-        }
-
-        .error-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: var(--red-50);
-            color: var(--red-600);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 44px;
-            margin: 0 auto 24px;
-        }
-
-        .success-title {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--slate-900);
-            margin-bottom: 12px;
-            letter-spacing: -0.02em;
-        }
-
-        .success-desc {
-            font-size: 1rem;
-            color: var(--slate-500);
-            margin-bottom: 32px;
-            line-height: 1.6;
-        }
-
-        /* RECEIPT BOX */
-        .receipt-box {
-            background: var(--slate-50);
-            border: 1px solid var(--slate-200);
-            border-radius: var(--radius);
-            padding: 24px 32px;
-            text-align: left;
-            margin-bottom: 36px;
-        }
-
-        .receipt-header {
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--slate-400);
-            border-bottom: 1px solid var(--slate-200);
-            padding-bottom: 12px;
-            margin-bottom: 16px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .receipt-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 8px 0;
-            font-size: 0.9rem;
-        }
-        .receipt-label {
-            color: var(--slate-500);
-        }
-        .receipt-value {
-            font-weight: 600;
-            color: var(--slate-800);
-        }
-        .receipt-value.price {
-            color: var(--green-600);
-            font-weight: 700;
-        }
-
-        /* STEPS LIST */
-        .steps-box {
-            text-align: left;
-            margin-bottom: 40px;
-        }
-        .steps-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--slate-900);
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .step-item {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 16px;
-        }
-        .step-num {
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            background: var(--blue-50);
-            color: var(--blue-600);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.85rem;
-            font-weight: 700;
-            flex-shrink: 0;
-        }
-        .step-text {
-            font-size: 0.875rem;
-            color: var(--slate-600);
-            line-height: 1.5;
-        }
-        .step-text strong {
-            color: var(--slate-900);
-        }
-
-        /* FOOTER */
-        .footer{background:var(--slate-900);color:rgba(255,255,255,.6);padding:48px 24px 24px}
-        .footer-inner{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
-        .footer-brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:1rem;color:white}
-        .footer-brand-icon{width:32px;height:32px;background:linear-gradient(135deg,var(--blue-600),var(--green-600));border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-size:16px}
-        .footer-brand span{color:var(--green-500)}
-        .footer-copy{font-size:.78rem}
-        .footer-links{display:flex;gap:24px}
-        .footer-links a{font-size:.78rem;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s}
-        .footer-links a:hover{color:white}
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:Inter,system-ui,sans-serif;background:#f8fafc;color:#1e293b;line-height:1.6}
+        .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid #e2e8f0}
+        .nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;height:72px;display:flex;align-items:center;justify-content:space-between}
+        .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;color:#1e3a8a}
+        .nav-logo-icon{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#2563eb,#059669);color:#fff;display:flex;align-items:center;justify-content:center}
+        .nav-logo span{color:#059669}
+        .nav-links{display:flex;gap:4px;list-style:none}
+        .nav-links a{text-decoration:none;color:#475569;font-size:.875rem;font-weight:500;padding:8px 14px;border-radius:8px}
+        .nav-links a:hover{background:#eff6ff;color:#1d4ed8}
+        .container{max-width:640px;margin:110px auto 60px;padding:0 24px}
+        .card{background:#fff;border:1px solid #e2e8f0;border-radius:20px;padding:40px;box-shadow:0 10px 25px rgba(0,0,0,.06);text-align:center}
+        .icon-ok{width:80px;height:80px;border-radius:50%;background:#ecfdf5;color:#059669;display:flex;align-items:center;justify-content:center;font-size:42px;margin:0 auto 20px}
+        .icon-err{width:80px;height:80px;border-radius:50%;background:#fef2f2;color:#dc2626;display:flex;align-items:center;justify-content:center;font-size:42px;margin:0 auto 20px}
+        h1{font-size:1.75rem;font-weight:800;margin-bottom:10px}
+        .desc{color:#64748b;margin-bottom:28px}
+        .receipt{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:20px 24px;text-align:left;margin-bottom:28px}
+        .row{display:flex;justify-content:space-between;gap:12px;padding:8px 0;font-size:.9rem;flex-wrap:wrap}
+        .label{color:#64748b}
+        .value{font-weight:600;color:#1e293b;word-break:break-all}
+        .steps{text-align:left;margin-bottom:28px}
+        .steps h3{font-size:1rem;font-weight:700;margin-bottom:14px}
+        .step{display:flex;gap:12px;margin-bottom:12px}
+        .n{width:28px;height:28px;border-radius:50%;background:#eff6ff;color:#2563eb;font-weight:700;font-size:.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+        .actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+        .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:10px;font-weight:600;text-decoration:none;border:none;cursor:pointer;font-family:inherit;font-size:.9rem}
+        .btn-green{background:linear-gradient(135deg,#059669,#047857);color:#fff}
+        .btn-primary{background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff}
+        .btn-secondary{background:#fff;color:#1d4ed8;border:1.5px solid #bfdbfe}
+        .upsell{margin-top:24px;padding:20px;border-radius:14px;background:linear-gradient(135deg,#fffbeb,#fef3c7);border:1px solid #fcd34d;text-align:left}
+        .upsell h4{font-size:.95rem;font-weight:800;color:#92400e;margin-bottom:6px}
+        .upsell p{font-size:.85rem;color:#78350f;margin-bottom:12px}
+        .footer{text-align:center;padding:24px;color:#94a3b8;font-size:.78rem}
+        .footer a{color:#64748b;margin:0 8px}
+        @media(max-width:700px){.nav-links{display:none}}
     </style>
 </head>
 <body>
-
-<!-- NAV -->
-<nav class="nav" id="nav">
+<nav class="nav">
     <div class="nav-inner">
         <a href="index.html" class="nav-logo">
             <div class="nav-logo-icon"><span class="iconify" data-icon="mdi:stethoscope"></span></div>
             RemoteMedical<span>Jobs</span>
         </a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="jobs.html">Jobs</a></li>
-                <li><a href="course.html">Course</a></li>
-                <li><a href="jobseekers.html">Job Seekers</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="compliance.html">Compliance</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        <div class="nav-cta">
-            <a href="jobs.html" class="btn btn-secondary">Browse Jobs</a>
-            <a href="course.html" class="btn btn-primary">Course Accelerator</a>
-        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="jobs.html">Jobs</a></li>
+            <li><a href="course.html">Course</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
     </div>
 </nav>
 
-<!-- MAIN CONTAINER -->
 <div class="container">
-    <div class="success-card" id="responseCard">
-        <!-- Rendered dynamically -->
-        <div class="success-icon">
-            <span class="iconify" data-icon="mdi:loading" style="animation: spin 1s linear infinite;"></span>
-        </div>
-        <h1 class="success-title">Verifying Payment...</h1>
-        <p class="success-desc">Please wait while we verify your transaction status with Paystack.</p>
+    <div class="card" id="card">
+        <div class="icon-ok"><span class="iconify" data-icon="mdi:loading" style="animation:spin 1s linear infinite"></span></div>
+        <h1>Confirming payment…</h1>
+        <p class="desc">Please wait a moment.</p>
     </div>
 </div>
 
-<!-- FOOTER -->
-<footer class="footer">
-    <div class="footer-inner">
-        <a href="index.html" class="footer-brand">
-            <div class="footer-brand-icon"><span class="iconify" data-icon="mdi:stethoscope"></span></div>
-            RemoteMedical<span>Jobs</span>
-        </a>
-        <p class="footer-copy">© 2025 RemoteMedicalJobs.co.uk. All rights reserved.</p>
-        <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="jobs.html">Jobs</a>
-            <a href="index.html#contact">Contact</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="terms.html">Terms</a>
-        </div>
-    </div>
-</footer>
+<div class="footer">
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <div style="margin-top:8px">© <span id="y"></span> RemoteMedicalJobs · Global</div>
+</div>
 
 <script>
-// ===== URL PARSING & CARD RENDERING =====
-function init() {
-    const params = new URLSearchParams(window.location.search);
-    const isFailed = params.get('failed') === 'true';
-    const first_name = params.get('first_name') || 'Job Seeker';
-    const email = params.get('email') || '';
-    const amount = params.get('amount') || '27.00';
+document.getElementById('y').textContent = new Date().getFullYear();
+
+function esc(s){
+    const d = document.createElement('div');
+    d.textContent = s ?? '';
+    return d.innerHTML;
+}
+
+function el(tag, attrs, children){
+    const node = document.createElement(tag);
+    if(attrs){
+        Object.entries(attrs).forEach(([k,v])=>{
+            if(k==='className') node.className = v;
+            else if(k==='text') node.textContent = v;
+            else if(k.startsWith('on') && typeof v === 'function') node.addEventListener(k.slice(2).toLowerCase(), v);
+            else node.setAttribute(k, v);
+        });
+    }
+    (children||[]).forEach(c=>{
+        if(typeof c === 'string') node.appendChild(document.createTextNode(c));
+        else if(c) node.appendChild(c);
+    });
+    return node;
+}
+
+async function init(){
+    const params = new URLSearchParams(location.search);
+    const failed = params.get('failed') === 'true';
     const reference = params.get('reference') || '';
+    const token = params.get('token') || '';
+    const card = document.getElementById('card');
+    card.innerHTML = '';
 
-    const card = document.getElementById('responseCard');
+    if(failed){
+        card.appendChild(el('div',{className:'icon-err'},[el('span',{className:'iconify','data-icon':'mdi:alert-circle-outline'})]));
+        card.appendChild(el('h1',{text:'Payment not completed', style:'color:#dc2626'}));
+        card.appendChild(el('p',{className:'desc', text:'No charge was finalized. You can try checkout again — your details are safe.'}));
+        if(reference){
+            const rec = el('div',{className:'receipt'});
+            rec.innerHTML = `<div class="row"><span class="label">Reference</span><span class="value">${esc(reference)}</span></div>`;
+            card.appendChild(rec);
+        }
+        const actions = el('div',{className:'actions'});
+        actions.appendChild(el('a',{className:'btn btn-primary', href:'course.html', text:'Try checkout again'}));
+        actions.appendChild(el('a',{className:'btn btn-secondary', href:'jobs.html', text:'Browse jobs free'}));
+        card.appendChild(actions);
+        return;
+    }
 
-    if (isFailed) {
-        card.innerHTML = `
-            <div class="error-icon">
-                <span class="iconify" data-icon="mdi:alert-circle-outline"></span>
-            </div>
-            <h1 class="success-title" style="color: var(--red-600);">Payment Failed</h1>
-            <p class="success-desc">We were unable to complete your transaction. No charges have been made. Please review your details or try another card.</p>
+    let studentName = 'there';
+    let email = '';
+    let productName = 'Remote Healthcare Career Accelerator';
+    let amount = '27.00';
+    let accessHref = token ? ('course-access.html?token=' + encodeURIComponent(token)) : 'course.html';
 
-            <div class="receipt-box">
-                <div class="receipt-header">
-                    <span>Transaction Details</span>
-                    <span>Status: Unsuccessful</span>
-                </div>
-                <div class="receipt-row">
-                    <span class="receipt-label">Candidate Name</span>
-                    <span class="receipt-value">${first_name}</span>
-                </div>
-                <div class="receipt-row">
-                    <span class="receipt-label">Reference ID</span>
-                    <span class="receipt-value" style="font-family: monospace;">${reference || 'N/A'}</span>
-                </div>
-            </div>
+    if(token){
+        try{
+            const res = await fetch('/api/course/access?token=' + encodeURIComponent(token));
+            const json = await res.json();
+            if(res.ok && json.status){
+                studentName = json.data.student.first_name || studentName;
+                email = json.data.student.email || '';
+                productName = json.data.product.name || productName;
+                amount = Number(json.data.product.amount).toFixed(2);
+            }
+        }catch(e){/* still show generic success */}
+    }
 
-            <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-                <a href="apply.html" class="btn btn-primary btn-lg">
-                    <span class="iconify" data-icon="mdi:refresh"></span> Try Again
-                </a>
-                <a href="course.html" class="btn btn-secondary btn-lg">Back to Course Info</a>
-            </div>
+    card.appendChild(el('div',{className:'icon-ok'},[el('span',{className:'iconify','data-icon':'mdi:checkbox-marked-circle-outline'})]));
+    const title = el('h1');
+    title.textContent = `You're in, ${studentName}!`;
+    card.appendChild(title);
+    const desc = el('p',{className:'desc'});
+    desc.textContent = `Payment confirmed. Your course access link has been emailed${email ? ' to ' + email : ''}. You can open the portal now.`;
+    card.appendChild(desc);
+
+    const rec = el('div',{className:'receipt'});
+    rec.innerHTML = `
+        <div class="row"><span class="label">Product</span><span class="value">${esc(productName)}</span></div>
+        <div class="row"><span class="label">Amount</span><span class="value">$${esc(amount)} USD</span></div>
+        <div class="row"><span class="label">Reference</span><span class="value">${esc(reference || '—')}</span></div>
+        <div class="row"><span class="label">Delivery</span><span class="value">Email + online portal</span></div>
+    `;
+    card.appendChild(rec);
+
+    const steps = el('div',{className:'steps'});
+    steps.innerHTML = `
+        <h3>What happens next</h3>
+        <div class="step"><div class="n">1</div><div><strong>Check your inbox</strong> for the course access email (and spam folder).</div></div>
+        <div class="step"><div class="n">2</div><div><strong>Open the portal</strong> and complete Module 1 today.</div></div>
+        <div class="step"><div class="n">3</div><div><strong>Update your CV</strong> with the remote template, then apply on the job board.</div></div>
+    `;
+    card.appendChild(steps);
+
+    const actions = el('div',{className:'actions'});
+    const start = el('a',{className:'btn btn-green', href: accessHref});
+    start.innerHTML = '<span class="iconify" data-icon="mdi:play-circle-outline"></span> Open course portal';
+    actions.appendChild(start);
+    actions.appendChild(el('a',{className:'btn btn-secondary', href:'jobs.html', text:'Browse remote jobs'}));
+    if(reference){
+        const resendBtn = el('button',{className:'btn btn-secondary', type:'button', text:'Resend email'});
+        resendBtn.addEventListener('click', async ()=>{
+            resendBtn.disabled = true;
+            resendBtn.textContent = 'Sending…';
+            try{
+                const r = await fetch('/api/course/resend',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({reference})});
+                const j = await r.json();
+                alert(j.message || 'Done');
+            }catch(e){ alert('Could not resend.'); }
+            resendBtn.disabled = false;
+            resendBtn.textContent = 'Resend email';
+        });
+        actions.appendChild(resendBtn);
+    }
+    card.appendChild(actions);
+
+    // Monetization: soft upsell to Pro if they bought standard (detected by amount)
+    if(Number(amount) <= 27){
+        const up = el('div',{className:'upsell'});
+        up.innerHTML = `
+            <h4>Want faster results? Upgrade to Pro ($47)</h4>
+            <p>Add priority job-alert tactics, advanced interview bank, and LinkedIn checklist. Purchase Pro anytime from the course page — contact support to upgrade an existing enrollment.</p>
+            <a class="btn btn-primary" href="course.html?product=pro" style="display:inline-flex">See Pro benefits</a>
         `;
-    } else {
-        card.innerHTML = `
-            <div class="success-icon">
-                <span class="iconify" data-icon="mdi:checkbox-marked-circle-outline"></span>
-            </div>
-            <h1 class="success-title">Welcome to the Accelerator, ${first_name}! 🎉</h1>
-            <p class="success-desc">Your payment of <strong>$${amount}</strong> was processed successfully. You now have lifetime access to the Remote Healthcare Career Accelerator.</p>
-
-            <div class="receipt-box">
-                <div class="receipt-header">
-                    <span>Official Receipt</span>
-                    <span>Status: Paid</span>
-                </div>
-                <div class="receipt-row">
-                    <span class="receipt-label">Candidate Email</span>
-                    <span class="receipt-value">${email || 'Registered Email'}</span>
-                </div>
-                <div class="receipt-row">
-                    <span class="receipt-label">Payment Gateway</span>
-                    <span class="receipt-value">Paystack Secures</span>
-                </div>
-                <div class="receipt-row">
-                    <span class="receipt-label">Transaction Reference</span>
-                    <span class="receipt-value" style="font-family: monospace;">${reference}</span>
-                </div>
-                <div class="receipt-row">
-                    <span class="receipt-label">Amount Paid</span>
-                    <span class="receipt-value price">$${amount} USD</span>
-                </div>
-            </div>
-
-            <div class="steps-box">
-                <h3 class="steps-title">
-                    <span class="iconify" data-icon="mdi:directions-fork" style="color:var(--blue-600)"></span>
-                    Your Next Steps:
-                </h3>
-                <div class="step-item">
-                    <div class="step-num">1</div>
-                    <div class="step-text">
-                        <strong>Check your inbox</strong>: We've dispatched a formal registration email containing your personalized course portal login details.
-                    </div>
-                </div>
-                <div class="step-item">
-                    <div class="step-num">2</div>
-                    <div class="step-text">
-                        <strong>Access SBAR and CV templates</strong>: Navigate immediately to your dashboard's Resource Hub to download ATS-vetted frameworks.
-                    </div>
-                </div>
-                <div class="step-item">
-                    <div class="step-num">3</div>
-                    <div class="step-text">
-                        <strong>Apply for jobs</strong>: Once you start Module 6 (CV makeover), browse our verified list of vacancies to begin tailoring applications!
-                    </div>
-                </div>
-            </div>
-
-            <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
-                <button class="btn btn-green btn-lg" onclick="window.alert('Redirecting you to the Academy course dashboard...')">
-                    <span class="iconify" data-icon="mdi:play-circle-outline"></span> Start Course Now
-                </button>
-                <a href="jobs.html" class="btn btn-secondary btn-lg">Browse Open Jobs</a>
-            </div>
-        `;
+        card.appendChild(up);
     }
 }
 
 document.addEventListener('DOMContentLoaded', init);
 </script>
-
-<style>
-@keyframes spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
-</style>
+<style>@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}</style>
 </body>
 </html>

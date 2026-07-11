@@ -1,102 +1,51 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compliance Hub — RemoteMedicalJobs</title>
-    <meta name="description" content="Global healthcare compliance standards including HIPAA, GDPR, ISO regulatory training requirements.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Compliance Training Overview — RemoteMedicalJobs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/style.css">
+    <style>
+        body{font-family:Inter,system-ui,sans-serif;background:#f8fafc;margin:0;color:#1e293b}
+        .nav{padding:16px 24px;background:#fff;border-bottom:1px solid #e2e8f0}
+        .nav a{font-weight:700;color:#1e3a8a;text-decoration:none}
+        .nav span{color:#059669}
+        .wrap{max-width:900px;margin:40px auto;padding:0 24px 60px}
+        h1{font-size:1.8rem;font-weight:800}
+        .lead{color:#64748b;margin-bottom:28px}
+        .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+        .card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:24px}
+        .card h3{margin:12px 0 8px;font-size:1rem}
+        .card p{font-size:.88rem;color:#64748b;margin:0;line-height:1.6}
+        .ico{width:44px;height:44px;border-radius:12px;background:#eff6ff;color:#2563eb;display:flex;align-items:center;justify-content:center}
+        .btn{display:inline-block;margin-top:28px;background:linear-gradient(135deg,#059669,#047857);color:#fff;text-decoration:none;font-weight:600;padding:12px 22px;border-radius:10px}
+        @media(max-width:800px){.grid{grid-template-columns:1fr}}
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-800">
-
-<!-- NAV -->
-<nav class="nav" id="nav">
-    <div class="nav-inner">
-        <a href="index.html" class="nav-logo">
-            <div class="nav-logo-icon"><span class="iconify" data-icon="mdi:stethoscope"></span></div>
-            RemoteMedical<span>Jobs</span>
-        </a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="jobs.html">Jobs</a></li>
-                <li><a href="course.html">Course</a></li>
-                <li><a href="jobseekers.html">Job Seekers</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="compliance.html">Compliance</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        <div class="nav-cta">
-            <a href="course.html" class="btn btn-primary">Course Accelerator</a>
+<body>
+<div class="nav"><a href="index.html">RemoteMedical<span>Jobs</span></a></div>
+<div class="wrap">
+    <h1>Global compliance awareness</h1>
+    <p class="lead">Remote care teams must handle health information carefully. Our Career Accelerator includes practical privacy modules for multi-market work — not a substitute for employer-specific training or legal advice.</p>
+    <div class="grid">
+        <div class="card">
+            <div class="ico"><span class="iconify" data-icon="mdi:shield-lock"></span></div>
+            <h3>HIPAA-oriented practices</h3>
+            <p>For US-facing roles: PHI awareness, minimum necessary, secure workspaces, and breach escalation basics.</p>
+        </div>
+        <div class="card">
+            <div class="ico"><span class="iconify" data-icon="mdi:earth"></span></div>
+            <h3>GDPR-style principles</h3>
+            <p>For UK/EU-facing work: special category health data, purpose limitation, and careful cross-border handling.</p>
+        </div>
+        <div class="card">
+            <div class="ico"><span class="iconify" data-icon="mdi:laptop"></span></div>
+            <h3>Remote workstation hygiene</h3>
+            <p>Devices, networks, screen privacy, password hygiene — what global employers commonly audit.</p>
         </div>
     </div>
-</nav>
-
-<!-- CONTENT -->
-<div class="container max-w-5xl mx-auto my-32 px-6">
-    <div class="bg-white border border-slate-200 rounded-3xl p-10 shadow-lg">
-        <div class="mb-10 text-center">
-            <span class="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-600 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-4">
-                <span class="iconify" data-icon="mdi:shield-lock"></span> Compliance Hub
-            </span>
-            <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">Global Healthcare Compliance Standards</h1>
-            <p class="text-slate-500 mt-2 max-w-xl mx-auto">We navigate the complex regulatory landscapes (HIPAA, GDPR, ISO 27001) so you can deliver excellent digital patient care safely.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 shadow-sm">
-                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-4"><span class="iconify" data-icon="mdi:shield-account"></span></div>
-                <h3 class="font-bold text-slate-900 mb-2">HIPAA Compliance</h3>
-                <p class="text-xs text-slate-500 leading-relaxed mb-4">Essential standards for securely handling US patient healthcare records, electronic medical data, and telehealth privacy.</p>
-                <ul class="text-xs text-slate-500 space-y-2">
-                    <li class="flex items-center gap-2"><span class="iconify text-green-500" data-icon="mdi:check-circle"></span> Patient Privacy Regulations</li>
-                    <li class="flex items-center gap-2"><span class="iconify text-green-500" data-icon="mdi:check-circle"></span> ePHI Data Encryption</li>
-                </ul>
-            </div>
-
-            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 shadow-sm">
-                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-4"><span class="iconify" data-icon="mdi:lock-outline"></span></div>
-                <h3 class="font-bold text-slate-900 mb-2">GDPR Regulations</h3>
-                <p class="text-xs text-slate-500 leading-relaxed mb-4">Strict frameworks governing the handling of clinical personal data, consent, and storage within the UK and EU.</p>
-                <ul class="text-xs text-slate-500 space-y-2">
-                    <li class="flex items-center gap-2"><span class="iconify text-green-500" data-icon="mdi:check-circle"></span> Right to Erasure Framework</li>
-                    <li class="flex items-center gap-2"><span class="iconify text-green-500" data-icon="mdi:check-circle"></span> Explicit Consent Tracking</li>
-                </ul>
-            </div>
-
-            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 shadow-sm">
-                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-4"><span class="iconify" data-icon="mdi:passport"></span></div>
-                <h3 class="font-bold text-slate-900 mb-2">Global Visas & OSCE</h3>
-                <p class="text-xs text-slate-500 leading-relaxed mb-4">End-to-end relocation and regulatory licensing (OSCE, PLAB) guidance for worldwide medical practitioners.</p>
-                <ul class="text-xs text-slate-500 space-y-2">
-                    <li class="flex items-center gap-2"><span class="iconify text-green-500" data-icon="mdi:check-circle"></span> Licensing Board Matchers</li>
-                    <li class="flex items-center gap-2"><span class="iconify text-green-500" data-icon="mdi:check-circle"></span> Sponsor Coordination</li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    <a class="btn" href="course.html">Get the full compliance module (emailed access)</a>
 </div>
-
-<!-- FOOTER -->
-<footer class="footer">
-    <div class="footer-inner">
-        <a href="index.html" class="footer-brand">
-            <div class="footer-brand-icon"><span class="iconify" data-icon="mdi:stethoscope"></span></div>
-            RemoteMedical<span>Jobs</span>
-        </a>
-        <p class="footer-copy">© 2025 RemoteMedicalJobs. All rights reserved.</p>
-        <div class="footer-links">
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="terms.html">Terms of Service</a>
-        </div>
-    </div>
-</footer>
-
-<script>
-window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20));
-</script>
 </body>
 </html>
