@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Browse Remote Healthcare Jobs — RemoteMedicalJobs.co.uk</title>
-    <meta name="description" content="Browse and apply for vetted remote healthcare jobs across the UK. Telehealth nursing, pharmacy, medical coding, health informatics and more.">
+    <title>Browse Remote Healthcare Jobs — RemoteMedicalJobs</title>
+    <meta name="description" content="Browse and apply for vetted remote healthcare jobs globally. Telehealth nursing, pharmacy, medical coding, health informatics and more.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/style.css">
     <style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
@@ -249,14 +251,15 @@
             <div class="nav-logo-icon"><span class="iconify" data-icon="mdi:stethoscope"></span></div>
             RemoteMedical<span>Jobs</span>
         </a>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="jobs.html" class="active">Jobs</a></li>
-            <li><a href="course.html" style="font-weight: 600; color: var(--blue-700);">Course</a></li>
-            <li><a href="index.html#seekers">Job Seekers</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
-        </ul>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="course.html">Course</a></li>
+                <li><a href="jobseekers.html">Job Seekers</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="compliance.html">Compliance</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         <div class="nav-cta">
             <a href="course.html" class="btn btn-primary">Enrol in Course</a>
         </div>
@@ -265,15 +268,17 @@
         </button>
     </div>
 </nav>
-<div class="mobile-menu" id="mobileMenu">
-    <a href="index.html">Home</a>
-    <a href="jobs.html">Jobs</a>
-    <a href="course.html" style="font-weight: 600; color: var(--blue-700);">Course</a>
-    <a href="index.html#seekers">Job Seekers</a>
-    <a href="index.html#about">About</a>
-    <a href="index.html#contact">Contact</a>
-    <a href="course.html" class="btn btn-primary btn-lg">Enrol in Course</a>
-</div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="mobile-link">Home</a>
+        <a href="jobs.html" class="mobile-link">Jobs</a>
+        <a href="course.html" class="mobile-link">Course</a>
+        <a href="jobseekers.html" class="mobile-link">Job Seekers</a>
+        <a href="about.html" class="mobile-link">About</a>
+        <a href="compliance.html" class="mobile-link">Compliance</a>
+        <a href="contact.html" class="mobile-link">Contact</a>
+        <a href="course.html" class="btn btn-primary btn-lg mobile-link">Enrol in Course</a>
+    </div>
 
 <!-- JOBS HERO -->
 <section class="jobs-hero">
@@ -456,220 +461,58 @@
 // ===== JOB DATA =====
 const jobs = [
     {
-        id:1, title:"Telehealth Nurse (RGN)", company:"NHS Digital", location:"London (Remote)", type:"clinical", mode:"remote", contract:"permanent", speciality:"nursing",
-        salary:"£50,000 – £55,000 (£25.64 – £28.21/hr)", salaryNum:52500, posted:"2 hours ago", badge:["remote","featured"],
-        tags:["NMC Registered","Telehealth","Full-time"],
-        desc:"Provide remote clinical triage and telephone consultations for patients across London. You'll use digital health platforms to assess, advise, and manage patient pathways remotely, working as part of a multidisciplinary team.",
-        requirements:["Valid NMC registration (RGN)","Minimum 2 years post-qualification experience","Experience with digital health tools or willingness to learn","Excellent telephone consultation skills","Right to work in the UK"],
-        benefits:["NHS Pension Scheme","27 days annual leave + bank holidays","Flexible working hours","CPD funding available","NHS discount scheme"],
+        id:1, title:"Telehealth Nurse Specialist", company:"Global Digital Health", location:"Remote (Worldwide)", type:"clinical", mode:"remote", contract:"permanent", speciality:"nursing",
+        salary:"$32.00 / hour", salaryNum:32, posted:"2 hours ago", badge:["remote","featured"],
+        tags:["Registered Nurse","Telehealth","Full-time"],
+        desc:"Provide remote clinical triage and telephone consultations for patients globally. You'll use digital health platforms to assess, advise, and manage patient pathways remotely, working as part of a worldwide multidisciplinary team.",
+        requirements:["Valid Registered Nurse license","Minimum 2 years post-qualification experience","Experience with digital health tools or willingness to learn","Excellent communication skills","High-speed internet connection"],
+        benefits:["Comprehensive health insurance","Flexible working hours","CPD funding available","Remote work equipment stipend"],
         logo:"mdi:stethoscope", logoBg:"#EFF6FF", logoColor:"#2563EB"
     },
     {
-        id:2, title:"Clinical Pharmacist — Remote Consultations", company:"LloydsPharmacy", location:"Birmingham (Hybrid)", type:"clinical", mode:"hybrid", contract:"part-time", speciality:"pharmacy",
-        salary:"£48,500 / year pro-rata (£24.87/hr)", salaryNum:48500, posted:"5 hours ago", badge:["hybrid"],
-        tags:["GPhC Registered","Independent Prescriber","Part-time"],
-        desc:"Deliver remote pharmaceutical consultations via video and telephone. Review medication, provide clinical advice to patients and healthcare professionals, and support medicines optimisation initiatives across the region.",
-        requirements:["GPhC registered pharmacist","Independent Prescriber qualification desirable","Experience in clinical pharmacy or primary care","Strong IT and digital communication skills"],
+        id:2, title:"Clinical Pharmacist Consultations", company:"MedGroup", location:"Remote", type:"clinical", mode:"remote", contract:"part-time", speciality:"pharmacy",
+        salary:"$28.50 / hour", salaryNum:28.5, posted:"5 hours ago", badge:["remote"],
+        tags:["Registered Pharmacist","Prescriber","Part-time"],
+        desc:"Deliver remote pharmaceutical consultations via video and telephone. Review medication, provide clinical advice to patients and healthcare professionals, and support medicines optimisation initiatives globally.",
+        requirements:["Registered pharmacist license","Independent Prescriber qualification desirable","Experience in clinical pharmacy","Strong IT and digital communication skills"],
         benefits:["Competitive hourly rate","Flexible 3-day week","Professional development budget","Employee assistance programme"],
         logo:"mdi:pill", logoBg:"#ECFDF5", logoColor:"#059669"
     },
     {
-        id:3, title:"Health Informatics Specialist", company:"MedTech Start-up", location:"Fully Remote (UK)", type:"non-clinical", mode:"remote", contract:"permanent", speciality:"informatics",
-        salary:"£65,000 – £72,000 (£33.33 – £36.92/hr)", salaryNum:68500, posted:"1 day ago", badge:["remote","new"],
-        tags:["NHS Data","SQL & Python","FHIR/HL7"],
-        desc:"Lead data analytics and informatics projects for NHS clients. Transform complex healthcare datasets into actionable insights, build dashboards, and support digital transformation initiatives across multiple Trusts.",
-        requirements:["Degree in Health Informatics, Computer Science, or related field","Proficiency in SQL, Python, and data visualisation tools","Experience with NHS data systems (SNOMED, Read Codes, FHIR)","Understanding of clinical governance and data protection"],
-        benefits:["Share options in fast-growing start-up","Fully remote with home office budget","Unlimited holiday policy","Regular team retreats","Learning budget of £2,000/year"],
+        id:3, title:"Health Informatics Specialist", company:"MedTech Group", location:"Fully Remote", type:"non-clinical", mode:"remote", contract:"permanent", speciality:"informatics",
+        salary:"$42.00 / hour", salaryNum:42, posted:"1 day ago", badge:["remote","new"],
+        tags:["Healthcare Data","SQL & Python","FHIR/HL7"],
+        desc:"Lead data analytics and informatics projects for health clients. Transform complex healthcare datasets into actionable insights, build dashboards, and support digital transformation initiatives.",
+        requirements:["Degree in Health Informatics, Computer Science, or related field","Proficiency in SQL, Python, and data visualisation tools","Experience with health data systems (FHIR, HL7)","Understanding of data protection and privacy"],
+        benefits:["Fully remote with home office budget","Unlimited holiday policy","Regular team retreats","Learning budget of $2,000/year"],
         logo:"mdi:monitor-cellphone", logoBg:"#F3E8FF", logoColor:"#7C3AED"
     },
     {
-        id:4, title:"Medical Coder — ICD-10 & OPCS-4", company:"Private Hospital Group", location:"Remote (UK)", type:"non-clinical", mode:"remote", contract:"permanent", speciality:"coding",
-        salary:"£38,000 – £42,000 (£19.49 – £21.54/hr)", salaryNum:40000, posted:"1 day ago", badge:["remote"],
-        tags:["CPC Certified","ICD-10","OPCS-4"],
-        desc:"Code clinical diagnoses and procedures accurately from remote locations. Ensure compliance with national coding standards, support clinical audit, and contribute to quality improvement data.",
-        requirements:["CPC or equivalent medical coding certification","Strong knowledge of ICD-10 and OPCS-4 coding systems","Minimum 2 years medical coding experience","Attention to detail and analytical mindset"],
-        benefits:["25 days annual leave","Private health insurance","Remote-first culture","Quarterly coding training updates","Pension contribution 5%"],
+        id:4, title:"Medical Coding Expert", company:"Clinical Services Inc.", location:"Remote", type:"non-clinical", mode:"remote", contract:"permanent", speciality:"coding",
+        salary:"$24.50 / hour", salaryNum:24.5, posted:"1 day ago", badge:["remote"],
+        tags:["Certified Coder","ICD-10","OPCS-4"],
+        desc:"Code clinical diagnoses and procedures accurately from remote locations. Ensure compliance with international coding standards, support clinical audits, and contribute to quality improvement data.",
+        requirements:["CPC or equivalent medical coding certification","Strong knowledge of ICD-10 coding systems","Minimum 2 years medical coding experience","Attention to detail and analytical mindset"],
+        benefits:["Remote-first culture","Quarterly coding training updates","Paid time off","Health insurance plans"],
         logo:"mdi:file-document-edit", logoBg:"#FFFBEB", logoColor:"#D97706"
     },
     {
-        id:5, title:"Telemedicine Physician (GP)", company:"Digital Health Platform", location:"Fully Remote (UK)", type:"clinical", mode:"remote", contract:"locum", speciality:"medicine",
-        salary:"£85 – £110 per hour", salaryNum:102000, posted:"2 days ago", badge:["remote","urgent"],
-        tags:["GMC Registered","GP","Independent Contractor"],
-        desc:"Provide remote GP consultations via video and telephone for a leading digital health platform. Manage patient queries, prescribe where appropriate, and refer to secondary care when needed. Flexible sessions to suit your schedule.",
-        requirements:["GMC registered with full licence to practise","MRCGP or equivalent","Indemnity insurance","Experience in primary care or telemedicine","Strong digital literacy"],
-        benefits:["Choose your own hours — minimum 4 sessions/week","Competitive sessional rates","No overhead costs","Clinical support and peer network","Fast onboarding process"],
+        id:5, title:"Telemedicine Physician (MD / GP)", company:"Digital Health Platform", location:"Fully Remote", type:"clinical", mode:"remote", contract:"locum", speciality:"medicine",
+        salary:"$110.00 / hour", salaryNum:110, posted:"2 days ago", badge:["remote","urgent"],
+        tags:["Licensed MD","Primary Care","Flexible Hours"],
+        desc:"Provide remote physician consultations via video and telephone for a leading global digital health platform. Manage patient queries, prescribe where appropriate, and refer to specialists when needed.",
+        requirements:["Fully licensed MD / Doctor","Specialisation in General Practice or Internal Medicine","Malpractice indemnity insurance","Experience in telemedicine","Strong digital literacy"],
+        benefits:["Choose your own hours — minimum 10 hours/week","Competitive hourly rates","No overhead costs","Clinical support and peer network"],
         logo:"mdi:doctor", logoBg:"#EFF6FF", logoColor:"#2563EB"
     },
     {
-        id:6, title:"Patient Coordination Lead", company:"Private Healthcare Provider", location:"Manchester (Hybrid)", type:"non-clinical", mode:"hybrid", contract:"permanent", speciality:"compliance",
-        salary:"£44,000 / year (£22.56/hr)", salaryNum:44000, posted:"2 days ago", badge:["hybrid"],
-        tags:["Leadership","Patient Pathways","NHS Experience"],
-        desc:"Lead a remote patient coordination team managing end-to-end patient pathways. Optimise referral processes, liaise with clinical teams, and ensure seamless patient experiences from referral to treatment.",
-        requirements:["Experience in patient coordination or pathway management","Leadership or team management experience","Knowledge of NHS referral processes (Choose & Book, e-Referrals)","Excellent communication and organisational skills"],
-        benefits:["Hybrid working (2 days office, 3 days remote)","25 days holiday + bank holidays","Private medical insurance","Career progression opportunities"],
+        id:6, title:"Patient Coordination Lead", company:"Healthcare Provider", location:"Remote", type:"non-clinical", mode:"remote", contract:"permanent", speciality:"compliance",
+        salary:"$26.00 / hour", salaryNum:26, posted:"2 days ago", badge:["remote"],
+        tags:["Leadership","Patient Care","Permanent"],
+        desc:"Lead a remote patient coordination team managing end-to-end patient pathways. Optimise referral processes, liaise with clinical teams, and ensure seamless patient experiences.",
+        requirements:["Experience in patient coordination or healthcare admin","Leadership or team management experience","Knowledge of electronic medical records systems (EMR)","Excellent communication and organisational skills"],
+        benefits:["Fully remote role","Paid time off + holidays","Comprehensive health insurance","Career progression opportunities"],
         logo:"mdi:account-heart", logoBg:"#ECFDF5", logoColor:"#059669"
-    },
-    {
-        id:7, title:"Teletriage Nurse (111 Service)", company:"NHS 111 Provider", location:"Remote (England)", type:"clinical", mode:"remote", contract:"permanent", speciality:"nursing",
-        salary:"£46,000 – £51,000 (£23.59 – £26.15/hr)", salaryNum:48500, posted:"3 days ago", badge:["remote"],
-        tags:["NMC Registered","NHS Pathways","111 Service"],
-        desc:"Assess patient symptoms via telephone using NHS Pathways clinical decision support software. Safely triage patients to appropriate care settings, provide self-care advice, and escalate clinical emergencies.",
-        requirements:["NMC registered nurse (RGN or RMN)","NHS Pathways training or willingness to complete","Excellent clinical assessment skills","Calm under pressure with strong decision-making","Shift flexibility including evenings/weekends"],
-        benefits:["NHS Pension","Shift enhancement pay","Comprehensive NHS Pathways training","Ongoing clinical supervision","Career progression to senior triage roles"],
-        logo:"mdi:phone-in-talk", logoBg:"#EFF6FF", logoColor:"#2563EB"
-    },
-    {
-        id:8, title:"Compliance Officer — Healthcare", company:"Regulatory Consultancy", location:"Fully Remote (UK)", type:"non-clinical", mode:"remote", contract:"permanent", speciality:"compliance",
-        salary:"£52,000 – £58,000 (£26.67 – £29.74/hr)", salaryNum:55000, posted:"3 days ago", badge:["remote","new"],
-        tags:["CQC","Clinical Governance","Healthcare Regulations"],
-        desc:"Ensure healthcare clients maintain compliance with CQC standards, NHS regulations, and data protection requirements. Conduct remote audits, develop compliance frameworks, and provide expert guidance on regulatory changes.",
-        requirements:["Experience in healthcare compliance or clinical governance","Knowledge of CQC registration and inspection processes","Understanding of GDPR and healthcare data standards","Strong report-writing and presentation skills"],
-        benefits:["Fully remote with flexible hours","28 days annual leave","Professional membership funded","Regular training and development","Performance bonus scheme"],
-        logo:"mdi:shield-check", logoBg:"#F3E8FF", logoColor:"#7C3AED"
-    },
-    {
-        id:9, title:"Remote Physiotherapist", company:"Digital Musculoskeletal Service", location:"Remote (UK)", type:"clinical", mode:"remote", contract:"part-time", speciality:"ahp",
-        salary:"£42 – £50 per hour", salaryNum:45760, posted:"3 days ago", badge:["remote"],
-        tags:["HCPC Registered","MSK","Video Consultations"],
-        desc:"Deliver remote physiotherapy assessments and treatment sessions via video for patients with musculoskeletal conditions. Develop personalised exercise programmes, monitor progress through digital tools, and collaborate with the wider clinical team.",
-        requirements:["HCPC registered Physiotherapist","Experience in MSK outpatient physiotherapy","Comfortable with video consultation technology","Self-motivated with strong time management"],
-        benefits:["Flexible hours — build your own caseload","Competitive hourly rate","Digital assessment tools provided","CPD support and supervision","Potential to move to full-time"],
-        logo:"mdi:human-handsup", logoBg:"#ECFDF5", logoColor:"#059669"
-    },
-    {
-        id:10, title:"Medical Writer — Clinical Communications", company:"HealthComms Agency", location:"Fully Remote (UK)", type:"non-clinical", mode:"remote", contract:"contract", speciality:"writing",
-        salary:"£45,000 – £55,000 (£23.08 – £28.21/hr)", salaryNum:50000, posted:"4 days ago", badge:["remote"],
-        tags:["Medical Writing","ABPI Code","Agency"],
-        desc:"Create high-quality medical content for pharmaceutical clients, NHS organisations, and healthcare professionals. Write clinical trial reports, patient education materials, and digital content adhering to ABPI and MHRA guidelines.",
-        requirements:["Life science degree or equivalent","Proven medical writing experience","Knowledge of ABPI Code of Practice","Excellent writing and editing skills","Ability to interpret clinical data"],
-        benefits:["6-month initial contract with perm potential","Fully remote","Flexible working hours","Exposure to diverse therapy areas","Collaborative creative environment"],
-        logo:"mdi:typewriter", logoBg:"#FFFBEB", logoColor:"#D97706"
-    },
-    {
-        id:11, title:"Remote Occupational Therapist", company:"NHS Community Trust", location:"Remote (South East)", type:"clinical", mode:"remote", contract:"locum", speciality:"ahp",
-        salary:"£38 – £45 per hour", salaryNum:43120, posted:"4 days ago", badge:["remote"],
-        tags:["HCPC Registered","Community OT","Assessments"],
-        desc:"Conduct remote occupational therapy assessments for patients in the community. Recommend equipment, adaptations, and rehabilitation strategies via video consultations and digital assessment tools.",
-        requirements:["HCPC registered Occupational Therapist","Community OT experience desirable","Experience with virtual assessments","Strong report-writing skills","Access to suitable home workspace"],
-        benefits:["Flexible locum bookings","Weekly pay","Dedicated recruitment consultant","Free DBS check","Access to NHS pension (via agency)"],
-        logo:"mdi:hand-back-right", logoBg:"#EFF6FF", logoColor:"#2563EB"
-    },
-    {
-        id:12, title:"Healthcare Data Analyst", company:"NHS England", location:"Remote (Leeds-based)", type:"non-clinical", mode:"remote", contract:"contract", speciality:"informatics",
-        salary:"£40,000 – £48,000 (£20.51 – £24.62/hr)", salaryNum:44000, posted:"5 days ago", badge:["remote"],
-        tags:["SQL","Power BI","NHS Datasets"],
-        desc:"Analyse large NHS datasets to support national healthcare improvement initiatives. Build dashboards, create data visualisations, and provide insights that inform policy and operational decisions across the NHS.",
-        requirements:["Degree in a quantitative field","Strong SQL skills and experience with data visualisation (Power BI/Tableau)","Knowledge of NHS data standards","Experience handling large datasets","Security clearance eligible"],
-        benefits:["12-month contract","NHS Terms & Conditions","Generous annual leave","Training and development","Potential for extension/permanence"],
-        logo:"mdi:chart-areaspline", logoBg:"#F3E8FF", logoColor:"#7C3AED"
-    },
-    {
-        id:13, title:"Telehealth Nurse Practitioner", company:"Private Telehealth Company", location:"Fully Remote (UK)", type:"clinical", mode:"remote", contract:"permanent", speciality:"nursing",
-        salary:"£55,000 – £62,000 (£28.21 – £31.79/hr)", salaryNum:58500, posted:"5 days ago", badge:["remote","featured"],
-        tags:["NMC Registered","Independent Prescriber","Nurse Practitioner"],
-        desc:"Work autonomously as a remote Nurse Practitioner, managing patient consultations, diagnosing conditions, and prescribing treatments. Support patients with minor illnesses, long-term condition management, and health screening.",
-        requirements:["NMC registered Nurse Practitioner","Independent/supplementary prescriber","Minimum 3 years advanced clinical practice experience","Experience in primary care or urgent care","Strong clinical decision-making skills"],
-        benefits:["Salary up to £62,000","Performance-related bonus","Fully remote — work from anywhere in the UK","Private medical insurance","5 days CPD leave per year"],
-        logo:"mdi:nurse", logoBg:"#ECFDF5", logoColor:"#059669"
-    },
-    {
-        id:14, title:"Clinical Audiologist — Remote Assessments", company:"Hearing Care Provider", location:"Remote (UK-wide)", type:"clinical", mode:"hybrid", contract:"part-time", speciality:"ahp",
-        salary:"£36,000 – £42,000 pro-rata (£18.46 – £21.54/hr)", salaryNum:39000, posted:"5 days ago", badge:["hybrid"],
-        tags:["HCPC/RCCP Registered","Audiology","Remote Fitting"],
-        desc:"Conduct remote hearing assessments, review audiograms, and programme hearing aids for remote fitting appointments. Support patients through virtual follow-ups and fine-tune devices using remote programming software.",
-        requirements:["HCPC or RCCP registered Audiologist","Experience with remote hearing aid programming","Strong patient communication skills","Comfortable with digital health technology"],
-        benefits:["Flexible 3-day week","Company pension scheme","All equipment and software provided","CPD funding","Employee discount on hearing products"],
-        logo:"mdi:ear-hearing", logoBg:"#FFFBEB", logoColor:"#D97706"
-    },
-    {
-        id:15, title:"Regulatory Affairs Specialist — Medical Devices", company:"MedDevice Consultancy", location:"Fully Remote (UK)", type:"non-clinical", mode:"remote", contract:"permanent", speciality:"compliance",
-        salary:"£58,000 – £65,000 (£29.74 – £33.33/hr)", salaryNum:61500, posted:"6 days ago", badge:["remote","new"],
-        tags:["MDR","IVDR","UKCA Marking"],
-        desc:"Support medical device manufacturers with UKCA and CE marking under the new MDR/IVDR regulations. Conduct remote regulatory assessments, compile technical documentation, and liaise with the MHRA.",
-        requirements:["Experience with EU MDR 2017/745 or IVDR 2017/746","Knowledge of UKCA marking requirements","Strong technical writing skills","Degree in life sciences or engineering","RA certification (e.g., RAC) desirable"],
-        benefits:["Fully remote with international client exposure","25 days annual leave","Professional development budget £3,000","Annual conference attendance","Performance bonus"],
-        logo:"mdi:file-certificate", logoBg:"#EFF6FF", logoColor:"#2563EB"
-    },
-    {
-        id:16, title:"Remote Dietitian", company:"Digital Weight Management Service", location:"Fully Remote (UK)", type:"clinical", mode:"remote", contract:"part-time", speciality:"ahp",
-        salary:"£35 – £42 per hour", salaryNum:40280, posted:"6 days ago", badge:["remote"],
-        tags:["HCPC Registered","BDA Member","Nutrition"],
-        desc:"Provide remote dietary consultations and personalised nutrition plans for patients enrolled in a digital weight management programme. Monitor progress through the platform's tracking tools and adjust plans accordingly.",
-        requirements:["HCPC registered Dietitian","BDA membership desirable","Experience in weight management or chronic disease nutrition","Comfortable with digital health platforms","Self-motivated remote worker"],
-        benefits:["Flexible hours — minimum 10 hours/week","Competitive hourly rate","Digital tools and resources provided","Clinical supervision available","Opportunity to contribute to service development"],
-        logo:"mdi:food-apple", logoBg:"#ECFDF5", logoColor:"#059669"
-    },
-    {
-        id:17, title:"Telemedicine Consultant — Dermatology", company:"Skin Health Platform", location:"Fully Remote (UK)", type:"clinical", mode:"remote", contract:"locum", speciality:"medicine",
-        salary:"£120 – £150 per hour", salaryNum:140400, posted:"1 week ago", badge:["remote","featured"],
-        tags:["GMC Registered","Consultant Dermatologist","Teledermatology"],
-        desc:"Review teledermatology referrals from GPs, provide remote diagnoses via high-resolution imaging, and recommend treatment plans. Support a national teledermatology service reducing unnecessary secondary care referrals.",
-        requirements:["GMC registered Consultant Dermatologist","Experience with teledermatology or digital diagnostics","Indemnity insurance for remote practice","Strong written communication for referral feedback"],
-        benefits:["Premium hourly rates","Complete session flexibility — as few or many as you want","No admin burden — platform handles scheduling","Clinical governance support","Peer review network"],
-        logo:"mdi:hand-pointing-right", logoBg:"#F3E8FF", logoColor:"#7C3AED"
-    },
-    {
-        id:18, title:"Medical Writer — Patient Education", company:"Health Charity", location:"Remote (UK)", type:"non-clinical", mode:"remote", contract:"part-time", speciality:"writing",
-        salary:"£32,000 – £38,000 pro-rata (£16.41 – £19.49/hr)", salaryNum:35000, posted:"1 week ago", badge:["remote"],
-        tags:["Plain English","Patient Information","Health Literacy"],
-        desc:"Create clear, accessible patient education materials for a national health charity. Translate complex medical information into easy-to-understand content for diverse audiences, ensuring health literacy best practices.",
-        requirements:["Excellent writing skills with plain English expertise","Understanding of health literacy principles","Background in health communication or clinical background","Experience writing for diverse audiences","Empathy and patient-centred approach"],
-        benefits:["Meaningful work in the charity sector","Flexible 3-day week","28 days annual leave (pro-rata)","Pension scheme","Training in health literacy best practice"],
-        logo:"mdi:book-open-page-variant", logoBg:"#FFFBEB", logoColor:"#D97706"
-    },
-    {
-        id:19, title:"Remote Clinical Psychologist", company:"Digital Mental Health Platform", location:"Fully Remote (UK)", type:"clinical", mode:"remote", contract:"permanent", speciality:"medicine",
-        salary:"£60,000 – £72,000 (£30.77 – £36.92/hr)", salaryNum:66000, posted:"1 week ago", badge:["remote","new"],
-        tags:["HCPC Registered","CBT","Digital Mental Health"],
-        desc:"Deliver remote psychological assessments and evidence-based interventions (CBT, DBT, ACT) via secure video platform. Manage a caseload of patients with anxiety, depression, and other common mental health conditions.",
-        requirements:["HCPC registered Clinical Psychologist or BABCP accredited CBT therapist","Experience delivering remote therapy","Knowledge of digital mental health interventions","Strong clinical assessment skills","Experience with NHS IAPT services desirable"],
-        benefits:["Salary up to £72,000","Regular clinical supervision","Fully remote — UK-wide","Generous CPD allowance","Employee wellbeing programme"],
-        logo:"mdi:head-heart", logoBg:"#ECFDF5", logoColor:"#059669"
-    },
-    {
-        id:20, title:"Senior Medical Coder — Oncology", company:"Cancer Research Network", location:"Remote (UK)", type:"non-clinical", mode:"remote", contract:"contract", speciality:"coding",
-        salary:"£48,000 – £54,000 (£24.62 – £27.69/hr)", salaryNum:51000, posted:"1 week ago", badge:["remote"],
-        tags:["CPC-H","Oncology Coding","Clinical Trials"],
-        desc:"Lead medical coding for oncology clinical trials, ensuring accurate ICD-10 and OPCS-4 coding of cancer diagnoses, treatments, and procedures. Support data quality for research publications and regulatory submissions.",
-        requirements:["Advanced medical coding certification (CPC-H or equivalent)","Oncology coding experience essential","Clinical trials coding experience desirable","Meticulous attention to detail","Ability to work independently"],
-        benefits:["6-month contract with extension potential","Fully remote","Competitive daily rate","Contribution to ground-breaking cancer research","Flexible working hours"],
-        logo:"mdi:microscope", logoBg:"#F3E8FF", logoColor:"#7C3AED"
-    },
-    {
-        id:21, title:"Telehealth Nurse — Children's Services", company:"NHS Children's Trust", location:"Remote (North West)", type:"clinical", mode:"hybrid", contract:"permanent", speciality:"nursing",
-        salary:"£47,000 – £52,000 (£24.10 – £26.67/hr)", salaryNum:49500, posted:"1 week ago", badge:["hybrid"],
-        tags:["RSCN/RCN Child","Safeguarding","Paediatric Telehealth"],
-        desc:"Deliver remote consultations for children and young people in community settings. Manage virtual appointments for chronic condition reviews, post-discharge follow-ups, and parental advice lines with robust safeguarding protocols.",
-        requirements:["NMC registered children's nurse (RSCN or Part 1 child branch)","Minimum 2 years paediatric experience","Level 3 safeguarding training","Experience with or willingness to learn telehealth","Excellent communication with children and families"],
-        benefits:["NHS Agenda for Change terms","Hybrid working (1 day office)","Protected CPD time","NHS Pension","Childcare voucher scheme"],
-        logo:"mdi:baby-face-outline", logoBg:"#FFFBEB", logoColor:"#D97706"
-    },
-    {
-        id:22, title:"Digital Health Project Manager", company:"NHSX Transformation Team", location:"Remote (London-based)", type:"non-clinical", mode:"remote", contract:"contract", speciality:"informatics",
-        salary:"£62,000 – £70,000 (£31.79 – £35.90/hr)", salaryNum:66000, posted:"1 week ago", badge:["remote"],
-        tags:["PRINCE2","NHS Digital","Agile"],
-        desc:"Manage the delivery of digital health transformation projects across multiple NHS Trusts. Coordinate stakeholders, manage budgets, track milestones, and ensure projects are delivered on time and within scope.",
-        requirements:["PRINCE2 or APM qualification","Experience managing NHS digital projects","Understanding of healthcare IT systems and interoperability","Strong stakeholder management skills","Agile/waterfall methodology experience"],
-        benefits:["12-month contract with extension potential","NHS Terms & Conditions","Generous annual leave","Impactful national-level work","Flexible remote working"],
-        logo:"mdi:clipboard-check", logoBg:"#EFF6FF", logoColor:"#2563EB"
-    },
-    {
-        id:23, title:"Remote Pharmacist — Medicines Management", company:"Primary Care Network", location:"Remote (Midlands)", type:"clinical", mode:"remote", contract:"locum", speciality:"pharmacy",
-        salary:"£40 – £48 per hour", salaryNum:45760, posted:"2 weeks ago", badge:["remote"],
-        tags:["GPhC Registered","PCN","Medicines Optimisation"],
-        desc:"Support a Primary Care Network with remote medicines management. Conduct structured medication reviews, manage high-risk medicines, reduce polypharmacy, and support care homes with pharmaceutical advice.",
-        requirements:["GPhC registered pharmacist","Experience in primary care or PCN settings","Structured medication review experience","Independent prescriber qualification advantageous","Strong IT skills for remote working"],
-        benefits:["Flexible locum sessions","Competitive hourly rate","Supportive PCN team","Free CPD events","Potential for permanent role"],
-        logo:"mdi:pharmacy", logoBg:"#ECFDF5", logoColor:"#059669"
-    },
-    {
-        id:24, title:"Telemedicine GP — Out of Hours", company:"OOH Provider", location:"Remote (UK-wide)", type:"clinical", mode:"remote", contract:"locum", speciality:"medicine",
-        salary:"£95 – £120 per hour", salaryNum:111800, posted:"2 weeks ago", badge:["remote","urgent"],
-        tags:["GMC Registered","OOH","Enhanced Rates"],
-        desc:"Provide remote out-of-hours GP consultations for patients across the UK. Manage urgent calls, provide safe clinical advice, arrange home visits where needed, and ensure appropriate handover to in-hours services.",
-        requirements:["GMC registered with full licence to practise","MRCGP or equivalent","OOH experience desirable","Indemnity insurance","Ability to work unsocial hours (evenings, weekends, bank holidays)"],
-        benefits:["Enhanced rates for unsocial hours","Flexible booking system","No travel required — work from home","Full clinical governance support","Rapid onboarding (can start within 2 weeks)"],
-        logo:"mdi:clock-alert", logoBg:"#FEE2E2", logoColor:"#991B1B"
     }
 ];
 
@@ -780,7 +623,7 @@ function renderJobs(filtered) {
                     <button class="btn-save ${savedJobs.has(j.id)?'saved':''}" onclick="toggleSave(${j.id},this)" aria-label="Save job">
                         <span class="iconify" data-icon="${savedJobs.has(j.id)?'mdi:heart':'mdi:heart-outline'}"></span>
                     </button>
-                    <button class="btn-apply-sm" onclick="event.stopPropagation(); window.location.href='apply.html?job_title=' + encodeURIComponent('${j.title}')" style="background: linear-gradient(135deg, var(--green-600), var(--green-700)); color: white; font-weight: 700; box-shadow: 0 2px 8px rgba(5,150,105,0.3);">👉 APPLY NOW – LIMITED SLOTS AVAILABLE</button>
+                    <button class="btn-apply-sm" onclick="event.stopPropagation(); window.location.href='apply.html?job_title=' + encodeURIComponent('${j.title}')" style="background: linear-gradient(135deg, var(--green-600), var(--green-700)); color: white; font-weight: 700; box-shadow: 0 2px 8px rgba(5,150,105,0.3);">Apply Now</button>
                 </div>
             </div>
         </div>
@@ -910,7 +753,7 @@ function openJobModal(id) {
                 </p>
                 <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
                     <a href="apply.html?job_title=${encodeURIComponent(j.title)}" class="btn btn-green btn-lg" style="box-shadow:0 4px 14px rgba(5,150,105,0.25); font-weight: 800;">
-                        👉 APPLY NOW – LIMITED SLOTS AVAILABLE
+                        Apply Now
                     </a>
                 </div>
             </div>

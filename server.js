@@ -289,15 +289,17 @@ app.post('/api/payment/webhook', (req, res) => {
                     (updateErr) => {
                         if (updateErr) {
                             console.error('Webhook: DB update status failed', updateErr.message);
+                            return res.sendStatus(500);
                         } else {
                             console.log(`Webhook: successfully completed enrollment status for ${reference}`);
+                            return res.sendStatus(200);
                         }
                     }
                 );
             } else {
                 console.log(`Webhook: reference ${reference} was already completed.`);
+                return res.sendStatus(200);
             }
-            return res.sendStatus(200);
         });
     } else {
         // Acknowledge other webhook events
