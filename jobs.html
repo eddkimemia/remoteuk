@@ -396,6 +396,49 @@
     </main>
 </div>
 
+<!-- ===== FOOTER ===== -->
+<footer class="footer" style="background: var(--slate-900); color: rgba(255,255,255,0.6); padding: 80px 24px 32px; margin-top: 80px;">
+    <div class="footer-inner" style="max-width: 1280px; margin: 0 auto;">
+        <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 60px;">
+            <div class="footer-brand">
+                <a href="index.html" class="nav-logo" style="margin-bottom:4px; text-decoration:none; display:flex; align-items:center; gap:10px; font-weight:700; color:white;">
+                    <div class="nav-logo-icon" style="width:32px; height:32px; background:linear-gradient(135deg,var(--blue-600),var(--green-600)); border-radius:8px; display:flex; align-items:center; justify-content:center; color:white; font-size:16px;"><span class="iconify" data-icon="mdi:stethoscope"></span></div>
+                    RemoteMedical<span style="color:var(--green-500)">Jobs</span>
+                </a>
+                <p style="font-size: 0.85rem; line-height: 1.7; margin-top: 16px; max-width: 320px;">Connecting the Nation's Top Healthcare Talent with the Future of Work. The UK's premier vetted remote healthcare hiring agency.</p>
+            </div>
+            <div class="footer-col" style="display:flex; flex-direction:column; gap:10px;">
+                <h4 style="font-size: 0.8rem; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px;">For Job Seekers</h4>
+                <a href="jobs.html" style="color: rgba(255,255,255,0.5); text-decoration:none; font-size: 0.85rem;">Browse Remote Jobs</a>
+                <a href="course.html" style="color: rgba(255,255,255,0.5); text-decoration:none; font-size: 0.85rem;">The Academy</a>
+            </div>
+            <div class="footer-col" style="display:flex; flex-direction:column; gap:10px;">
+                <h4 style="font-size: 0.8rem; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px;">For Employers</h4>
+                <a href="index.html#employers" style="color: rgba(255,255,255,0.5); text-decoration:none; font-size: 0.85rem;">Our Services</a>
+            </div>
+            <div class="footer-col" style="display:flex; flex-direction:column; gap:10px;">
+                <h4 style="font-size: 0.8rem; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px;">Company</h4>
+                <a href="index.html#about" style="color: rgba(255,255,255,0.5); text-decoration:none; font-size: 0.85rem;">About Us</a>
+                <a href="privacy.html" style="color: rgba(255,255,255,0.5); text-decoration:none; font-size: 0.85rem;">Privacy Policy</a>
+                <a href="terms.html" style="color: rgba(255,255,255,0.5); text-decoration:none; font-size: 0.85rem;">Terms of Service</a>
+            </div>
+        </div>
+        <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <p style="font-size: 0.78rem;">© 2025 RemoteMedicalJobs.co.uk. All rights reserved. Registered in England & Wales.</p>
+            <div style="display: flex; gap: 24px;">
+                <a href="privacy.html" style="font-size: 0.78rem; color: rgba(255,255,255,0.4); text-decoration: none;">Privacy</a>
+                <a href="terms.html" style="font-size: 0.78rem; color: rgba(255,255,255,0.4); text-decoration: none;">Terms</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+@media (max-width: 768px) {
+    .footer-inner div { grid-template-columns: 1fr !important; gap: 32px !important; }
+}
+</style>
+
 <!-- APPLICATION MODAL -->
 <div class="modal-overlay" id="modalOverlay">
     <div class="modal" id="modal">
@@ -414,7 +457,7 @@
 const jobs = [
     {
         id:1, title:"Telehealth Nurse (RGN)", company:"NHS Digital", location:"London (Remote)", type:"clinical", mode:"remote", contract:"permanent", speciality:"nursing",
-        salary:"£50,000 – £55,000", salaryNum:52500, posted:"2 hours ago", badge:["remote","featured"],
+        salary:"£50,000 – £55,000 (£25.64 – £28.21/hr)", salaryNum:52500, posted:"2 hours ago", badge:["remote","featured"],
         tags:["NMC Registered","Telehealth","Full-time"],
         desc:"Provide remote clinical triage and telephone consultations for patients across London. You'll use digital health platforms to assess, advise, and manage patient pathways remotely, working as part of a multidisciplinary team.",
         requirements:["Valid NMC registration (RGN)","Minimum 2 years post-qualification experience","Experience with digital health tools or willingness to learn","Excellent telephone consultation skills","Right to work in the UK"],
@@ -423,7 +466,7 @@ const jobs = [
     },
     {
         id:2, title:"Clinical Pharmacist — Remote Consultations", company:"LloydsPharmacy", location:"Birmingham (Hybrid)", type:"clinical", mode:"hybrid", contract:"part-time", speciality:"pharmacy",
-        salary:"£48,500 / year pro-rata", salaryNum:48500, posted:"5 hours ago", badge:["hybrid"],
+        salary:"£48,500 / year pro-rata (£24.87/hr)", salaryNum:48500, posted:"5 hours ago", badge:["hybrid"],
         tags:["GPhC Registered","Independent Prescriber","Part-time"],
         desc:"Deliver remote pharmaceutical consultations via video and telephone. Review medication, provide clinical advice to patients and healthcare professionals, and support medicines optimisation initiatives across the region.",
         requirements:["GPhC registered pharmacist","Independent Prescriber qualification desirable","Experience in clinical pharmacy or primary care","Strong IT and digital communication skills"],
@@ -432,7 +475,7 @@ const jobs = [
     },
     {
         id:3, title:"Health Informatics Specialist", company:"MedTech Start-up", location:"Fully Remote (UK)", type:"non-clinical", mode:"remote", contract:"permanent", speciality:"informatics",
-        salary:"£65,000 – £72,000", salaryNum:68500, posted:"1 day ago", badge:["remote","new"],
+        salary:"£65,000 – £72,000 (£33.33 – £36.92/hr)", salaryNum:68500, posted:"1 day ago", badge:["remote","new"],
         tags:["NHS Data","SQL & Python","FHIR/HL7"],
         desc:"Lead data analytics and informatics projects for NHS clients. Transform complex healthcare datasets into actionable insights, build dashboards, and support digital transformation initiatives across multiple Trusts.",
         requirements:["Degree in Health Informatics, Computer Science, or related field","Proficiency in SQL, Python, and data visualisation tools","Experience with NHS data systems (SNOMED, Read Codes, FHIR)","Understanding of clinical governance and data protection"],
@@ -441,7 +484,7 @@ const jobs = [
     },
     {
         id:4, title:"Medical Coder — ICD-10 & OPCS-4", company:"Private Hospital Group", location:"Remote (UK)", type:"non-clinical", mode:"remote", contract:"permanent", speciality:"coding",
-        salary:"£38,000 – £42,000", salaryNum:40000, posted:"1 day ago", badge:["remote"],
+        salary:"£38,000 – £42,000 (£19.49 – £21.54/hr)", salaryNum:40000, posted:"1 day ago", badge:["remote"],
         tags:["CPC Certified","ICD-10","OPCS-4"],
         desc:"Code clinical diagnoses and procedures accurately from remote locations. Ensure compliance with national coding standards, support clinical audit, and contribute to quality improvement data.",
         requirements:["CPC or equivalent medical coding certification","Strong knowledge of ICD-10 and OPCS-4 coding systems","Minimum 2 years medical coding experience","Attention to detail and analytical mindset"],
@@ -459,7 +502,7 @@ const jobs = [
     },
     {
         id:6, title:"Patient Coordination Lead", company:"Private Healthcare Provider", location:"Manchester (Hybrid)", type:"non-clinical", mode:"hybrid", contract:"permanent", speciality:"compliance",
-        salary:"£44,000 / year", salaryNum:44000, posted:"2 days ago", badge:["hybrid"],
+        salary:"£44,000 / year (£22.56/hr)", salaryNum:44000, posted:"2 days ago", badge:["hybrid"],
         tags:["Leadership","Patient Pathways","NHS Experience"],
         desc:"Lead a remote patient coordination team managing end-to-end patient pathways. Optimise referral processes, liaise with clinical teams, and ensure seamless patient experiences from referral to treatment.",
         requirements:["Experience in patient coordination or pathway management","Leadership or team management experience","Knowledge of NHS referral processes (Choose & Book, e-Referrals)","Excellent communication and organisational skills"],
@@ -468,7 +511,7 @@ const jobs = [
     },
     {
         id:7, title:"Teletriage Nurse (111 Service)", company:"NHS 111 Provider", location:"Remote (England)", type:"clinical", mode:"remote", contract:"permanent", speciality:"nursing",
-        salary:"£46,000 – £51,000", salaryNum:48500, posted:"3 days ago", badge:["remote"],
+        salary:"£46,000 – £51,000 (£23.59 – £26.15/hr)", salaryNum:48500, posted:"3 days ago", badge:["remote"],
         tags:["NMC Registered","NHS Pathways","111 Service"],
         desc:"Assess patient symptoms via telephone using NHS Pathways clinical decision support software. Safely triage patients to appropriate care settings, provide self-care advice, and escalate clinical emergencies.",
         requirements:["NMC registered nurse (RGN or RMN)","NHS Pathways training or willingness to complete","Excellent clinical assessment skills","Calm under pressure with strong decision-making","Shift flexibility including evenings/weekends"],
@@ -477,7 +520,7 @@ const jobs = [
     },
     {
         id:8, title:"Compliance Officer — Healthcare", company:"Regulatory Consultancy", location:"Fully Remote (UK)", type:"non-clinical", mode:"remote", contract:"permanent", speciality:"compliance",
-        salary:"£52,000 – £58,000", salaryNum:55000, posted:"3 days ago", badge:["remote","new"],
+        salary:"£52,000 – £58,000 (£26.67 – £29.74/hr)", salaryNum:55000, posted:"3 days ago", badge:["remote","new"],
         tags:["CQC","Clinical Governance","Healthcare Regulations"],
         desc:"Ensure healthcare clients maintain compliance with CQC standards, NHS regulations, and data protection requirements. Conduct remote audits, develop compliance frameworks, and provide expert guidance on regulatory changes.",
         requirements:["Experience in healthcare compliance or clinical governance","Knowledge of CQC registration and inspection processes","Understanding of GDPR and healthcare data standards","Strong report-writing and presentation skills"],
@@ -495,7 +538,7 @@ const jobs = [
     },
     {
         id:10, title:"Medical Writer — Clinical Communications", company:"HealthComms Agency", location:"Fully Remote (UK)", type:"non-clinical", mode:"remote", contract:"contract", speciality:"writing",
-        salary:"£45,000 – £55,000", salaryNum:50000, posted:"4 days ago", badge:["remote"],
+        salary:"£45,000 – £55,000 (£23.08 – £28.21/hr)", salaryNum:50000, posted:"4 days ago", badge:["remote"],
         tags:["Medical Writing","ABPI Code","Agency"],
         desc:"Create high-quality medical content for pharmaceutical clients, NHS organisations, and healthcare professionals. Write clinical trial reports, patient education materials, and digital content adhering to ABPI and MHRA guidelines.",
         requirements:["Life science degree or equivalent","Proven medical writing experience","Knowledge of ABPI Code of Practice","Excellent writing and editing skills","Ability to interpret clinical data"],
@@ -513,7 +556,7 @@ const jobs = [
     },
     {
         id:12, title:"Healthcare Data Analyst", company:"NHS England", location:"Remote (Leeds-based)", type:"non-clinical", mode:"remote", contract:"contract", speciality:"informatics",
-        salary:"£40,000 – £48,000", salaryNum:44000, posted:"5 days ago", badge:["remote"],
+        salary:"£40,000 – £48,000 (£20.51 – £24.62/hr)", salaryNum:44000, posted:"5 days ago", badge:["remote"],
         tags:["SQL","Power BI","NHS Datasets"],
         desc:"Analyse large NHS datasets to support national healthcare improvement initiatives. Build dashboards, create data visualisations, and provide insights that inform policy and operational decisions across the NHS.",
         requirements:["Degree in a quantitative field","Strong SQL skills and experience with data visualisation (Power BI/Tableau)","Knowledge of NHS data standards","Experience handling large datasets","Security clearance eligible"],
@@ -522,7 +565,7 @@ const jobs = [
     },
     {
         id:13, title:"Telehealth Nurse Practitioner", company:"Private Telehealth Company", location:"Fully Remote (UK)", type:"clinical", mode:"remote", contract:"permanent", speciality:"nursing",
-        salary:"£55,000 – £62,000", salaryNum:58500, posted:"5 days ago", badge:["remote","featured"],
+        salary:"£55,000 – £62,000 (£28.21 – £31.79/hr)", salaryNum:58500, posted:"5 days ago", badge:["remote","featured"],
         tags:["NMC Registered","Independent Prescriber","Nurse Practitioner"],
         desc:"Work autonomously as a remote Nurse Practitioner, managing patient consultations, diagnosing conditions, and prescribing treatments. Support patients with minor illnesses, long-term condition management, and health screening.",
         requirements:["NMC registered Nurse Practitioner","Independent/supplementary prescriber","Minimum 3 years advanced clinical practice experience","Experience in primary care or urgent care","Strong clinical decision-making skills"],
@@ -531,7 +574,7 @@ const jobs = [
     },
     {
         id:14, title:"Clinical Audiologist — Remote Assessments", company:"Hearing Care Provider", location:"Remote (UK-wide)", type:"clinical", mode:"hybrid", contract:"part-time", speciality:"ahp",
-        salary:"£36,000 – £42,000 pro-rata", salaryNum:39000, posted:"5 days ago", badge:["hybrid"],
+        salary:"£36,000 – £42,000 pro-rata (£18.46 – £21.54/hr)", salaryNum:39000, posted:"5 days ago", badge:["hybrid"],
         tags:["HCPC/RCCP Registered","Audiology","Remote Fitting"],
         desc:"Conduct remote hearing assessments, review audiograms, and programme hearing aids for remote fitting appointments. Support patients through virtual follow-ups and fine-tune devices using remote programming software.",
         requirements:["HCPC or RCCP registered Audiologist","Experience with remote hearing aid programming","Strong patient communication skills","Comfortable with digital health technology"],
@@ -540,7 +583,7 @@ const jobs = [
     },
     {
         id:15, title:"Regulatory Affairs Specialist — Medical Devices", company:"MedDevice Consultancy", location:"Fully Remote (UK)", type:"non-clinical", mode:"remote", contract:"permanent", speciality:"compliance",
-        salary:"£58,000 – £65,000", salaryNum:61500, posted:"6 days ago", badge:["remote","new"],
+        salary:"£58,000 – £65,000 (£29.74 – £33.33/hr)", salaryNum:61500, posted:"6 days ago", badge:["remote","new"],
         tags:["MDR","IVDR","UKCA Marking"],
         desc:"Support medical device manufacturers with UKCA and CE marking under the new MDR/IVDR regulations. Conduct remote regulatory assessments, compile technical documentation, and liaise with the MHRA.",
         requirements:["Experience with EU MDR 2017/745 or IVDR 2017/746","Knowledge of UKCA marking requirements","Strong technical writing skills","Degree in life sciences or engineering","RA certification (e.g., RAC) desirable"],
@@ -567,7 +610,7 @@ const jobs = [
     },
     {
         id:18, title:"Medical Writer — Patient Education", company:"Health Charity", location:"Remote (UK)", type:"non-clinical", mode:"remote", contract:"part-time", speciality:"writing",
-        salary:"£32,000 – £38,000 pro-rata", salaryNum:35000, posted:"1 week ago", badge:["remote"],
+        salary:"£32,000 – £38,000 pro-rata (£16.41 – £19.49/hr)", salaryNum:35000, posted:"1 week ago", badge:["remote"],
         tags:["Plain English","Patient Information","Health Literacy"],
         desc:"Create clear, accessible patient education materials for a national health charity. Translate complex medical information into easy-to-understand content for diverse audiences, ensuring health literacy best practices.",
         requirements:["Excellent writing skills with plain English expertise","Understanding of health literacy principles","Background in health communication or clinical background","Experience writing for diverse audiences","Empathy and patient-centred approach"],
@@ -576,7 +619,7 @@ const jobs = [
     },
     {
         id:19, title:"Remote Clinical Psychologist", company:"Digital Mental Health Platform", location:"Fully Remote (UK)", type:"clinical", mode:"remote", contract:"permanent", speciality:"medicine",
-        salary:"£60,000 – £72,000", salaryNum:66000, posted:"1 week ago", badge:["remote","new"],
+        salary:"£60,000 – £72,000 (£30.77 – £36.92/hr)", salaryNum:66000, posted:"1 week ago", badge:["remote","new"],
         tags:["HCPC Registered","CBT","Digital Mental Health"],
         desc:"Deliver remote psychological assessments and evidence-based interventions (CBT, DBT, ACT) via secure video platform. Manage a caseload of patients with anxiety, depression, and other common mental health conditions.",
         requirements:["HCPC registered Clinical Psychologist or BABCP accredited CBT therapist","Experience delivering remote therapy","Knowledge of digital mental health interventions","Strong clinical assessment skills","Experience with NHS IAPT services desirable"],
@@ -585,7 +628,7 @@ const jobs = [
     },
     {
         id:20, title:"Senior Medical Coder — Oncology", company:"Cancer Research Network", location:"Remote (UK)", type:"non-clinical", mode:"remote", contract:"contract", speciality:"coding",
-        salary:"£48,000 – £54,000", salaryNum:51000, posted:"1 week ago", badge:["remote"],
+        salary:"£48,000 – £54,000 (£24.62 – £27.69/hr)", salaryNum:51000, posted:"1 week ago", badge:["remote"],
         tags:["CPC-H","Oncology Coding","Clinical Trials"],
         desc:"Lead medical coding for oncology clinical trials, ensuring accurate ICD-10 and OPCS-4 coding of cancer diagnoses, treatments, and procedures. Support data quality for research publications and regulatory submissions.",
         requirements:["Advanced medical coding certification (CPC-H or equivalent)","Oncology coding experience essential","Clinical trials coding experience desirable","Meticulous attention to detail","Ability to work independently"],
@@ -594,7 +637,7 @@ const jobs = [
     },
     {
         id:21, title:"Telehealth Nurse — Children's Services", company:"NHS Children's Trust", location:"Remote (North West)", type:"clinical", mode:"hybrid", contract:"permanent", speciality:"nursing",
-        salary:"£47,000 – £52,000", salaryNum:49500, posted:"1 week ago", badge:["hybrid"],
+        salary:"£47,000 – £52,000 (£24.10 – £26.67/hr)", salaryNum:49500, posted:"1 week ago", badge:["hybrid"],
         tags:["RSCN/RCN Child","Safeguarding","Paediatric Telehealth"],
         desc:"Deliver remote consultations for children and young people in community settings. Manage virtual appointments for chronic condition reviews, post-discharge follow-ups, and parental advice lines with robust safeguarding protocols.",
         requirements:["NMC registered children's nurse (RSCN or Part 1 child branch)","Minimum 2 years paediatric experience","Level 3 safeguarding training","Experience with or willingness to learn telehealth","Excellent communication with children and families"],
@@ -603,7 +646,7 @@ const jobs = [
     },
     {
         id:22, title:"Digital Health Project Manager", company:"NHSX Transformation Team", location:"Remote (London-based)", type:"non-clinical", mode:"remote", contract:"contract", speciality:"informatics",
-        salary:"£62,000 – £70,000", salaryNum:66000, posted:"1 week ago", badge:["remote"],
+        salary:"£62,000 – £70,000 (£31.79 – £35.90/hr)", salaryNum:66000, posted:"1 week ago", badge:["remote"],
         tags:["PRINCE2","NHS Digital","Agile"],
         desc:"Manage the delivery of digital health transformation projects across multiple NHS Trusts. Coordinate stakeholders, manage budgets, track milestones, and ensure projects are delivered on time and within scope.",
         requirements:["PRINCE2 or APM qualification","Experience managing NHS digital projects","Understanding of healthcare IT systems and interoperability","Strong stakeholder management skills","Agile/waterfall methodology experience"],
@@ -737,7 +780,7 @@ function renderJobs(filtered) {
                     <button class="btn-save ${savedJobs.has(j.id)?'saved':''}" onclick="toggleSave(${j.id},this)" aria-label="Save job">
                         <span class="iconify" data-icon="${savedJobs.has(j.id)?'mdi:heart':'mdi:heart-outline'}"></span>
                     </button>
-                    <button class="btn-apply-sm" onclick="openJobModal(${j.id})">View & Apply</button>
+                    <button class="btn-apply-sm" onclick="event.stopPropagation(); window.location.href='apply.html?job_title=' + encodeURIComponent('${j.title}')" style="background: linear-gradient(135deg, var(--green-600), var(--green-700)); color: white; font-weight: 700; box-shadow: 0 2px 8px rgba(5,150,105,0.3);">👉 APPLY NOW – LIMITED SLOTS AVAILABLE</button>
                 </div>
             </div>
         </div>
@@ -860,14 +903,14 @@ function openJobModal(id) {
             </div>
             <hr class="modal-divider">
             <div style="background:var(--blue-50);border:1.5px solid var(--blue-200);border-radius:12px;padding:24px 32px;text-align:center;margin-top:20px">
-                <span class="iconify" data-icon="mdi:alert-circle-outline" style="font-size:36px;color:var(--blue-600);margin-bottom:12px"></span>
-                <h4 style="font-size:1.15rem;font-weight:800;color:var(--slate-900);margin-bottom:8px">Course Completion Required</h4>
+                <span class="iconify" data-icon="mdi:fire" style="font-size:36px;color:var(--amber-500);margin-bottom:12px"></span>
+                <h4 style="font-size:1.15rem;font-weight:800;color:var(--slate-900);margin-bottom:8px">Apply for ${j.title}</h4>
                 <p style="font-size:0.875rem;color:var(--slate-600);line-height:1.6;margin-bottom:20px;max-width:480px;margin-left:auto;margin-right:auto">
-                    To apply for <strong>${j.title}</strong>, all candidates are required to complete the <strong>Remote Healthcare Career Accelerator</strong> course. This ensures proper verification of digital competencies, data governance, and remote assessment skills before onboarding.
+                    There are currently high volumes of applicants for this clinical position. Submit your eligibility details immediately to lock in your priority spot.
                 </p>
                 <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-                    <a href="course.html" class="btn btn-green btn-lg" style="box-shadow:0 4px 14px rgba(5,150,105,0.25)">
-                        <span class="iconify" data-icon="mdi:school-outline"></span> Enroll in Course & Unlock Applications — $27
+                    <a href="apply.html?job_title=${encodeURIComponent(j.title)}" class="btn btn-green btn-lg" style="box-shadow:0 4px 14px rgba(5,150,105,0.25); font-weight: 800;">
+                        👉 APPLY NOW – LIMITED SLOTS AVAILABLE
                     </a>
                 </div>
             </div>
