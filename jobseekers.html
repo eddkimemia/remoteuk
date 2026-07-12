@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Job Seekers — RemoteMedicalJobs</title>
+    <title>Remote Healthcare Job Seeker Hub — | RemoteMedicalJobs</title>
+    <meta name="description" content="Job seeker hub for remote nursing, telehealth, pharmacy and digital health careers. Browse remote nursing, telehealth and digital health roles. Apply free. Unlock Career Accelerator training when you want to stand out for interviews.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
     <style>
@@ -25,15 +26,14 @@
         .link-card span{font-size:.85rem;color:#64748b}
         @media(max-width:700px){.grid{grid-template-columns:1fr}}
     </style>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-<div class="nav">
-    <a class="brand" href="index.html">RemoteMedical<span>Jobs</span></a>
-    <a href="course.html" style="font-size:.875rem;font-weight:600;color:#2563eb;text-decoration:none">Course</a>
-</div>
+<div id="site-header" data-active="jobseekers" data-pad="true"></div>
+
 <div class="wrap"><div class="card">
-    <h1>For job seekers worldwide</h1>
-    <p class="lead">Search remote healthcare roles, join the free talent pool, and optionally unlock the Career Accelerator (access emailed after payment).</p>
+    <h1>For ambitious remote healthcare job seekers</h1>
+    <p class="lead">Search remote healthcare roles, apply free, and when you are serious about interviews, unlock the Career Accelerator ($27) for telehealth skills, privacy confidence, and a remote-ready CV.</p>
     <div class="grid">
         <div class="panel">
             <h2 style="font-size:1.1rem;margin:0 0 12px">Quick job search</h2>
@@ -47,29 +47,41 @@
                 <option>Asia-Pacific</option>
             </select>
             <button class="btn" type="button" id="searchBtn">Search jobs</button>
+            <p style="font-size:.8rem;color:#64748b;margin-top:10px">Viewing jobs and applying is free. Training is available after you apply if you want an interview edge.</p>
         </div>
         <div>
-            <h2 style="font-size:1.1rem;margin:0 0 12px">Resources</h2>
+            <h2 style="font-size:1.1rem;margin:0 0 12px">Recommended path</h2>
             <a class="link-card" href="course.html">
-                <strong>Career Accelerator — from $27</strong>
-                <span>8 modules + templates. Portal link emailed after checkout.</span>
+                <strong>1. Career Accelerator — from $27</strong>
+                <span>8 modules, templates, email portal. Ideal after you apply when interviews matter.</span>
             </a>
             <a class="link-card" href="apply.html">
-                <strong>Free talent-pool application</strong>
-                <span>Submit your profile — course is optional.</span>
+                <strong>2. Submit a free application</strong>
+                <span>Tell us about your background — no payment to apply.</span>
             </a>
             <a class="link-card" href="jobs.html">
-                <strong>Browse all listings</strong>
-                <span>Filters for role type, specialty, and hourly rate (USD).</span>
+                <strong>3. Browse live remote listings</strong>
+                <span>Telehealth, nursing, pharmacy, coding, informatics & more.</span>
             </a>
         </div>
     </div>
+    <section style="margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0">
+        <h2 style="font-size:1.15rem;font-weight:800;margin:0 0 10px">When candidates unlock the Accelerator</h2>
+        <p style="color:#475569;line-height:1.7;margin:0 0 12px">After you apply, the candidates who get interviews usually look remote-ready already. The Career Accelerator packages telehealth skills, privacy awareness, and a polished remote profile — so shortlisters take you seriously.</p>
+        <a class="btn" href="course.html" style="width:auto;display:inline-flex;padding:12px 22px">See Career Accelerator →</a>
+    </section>
 </div></div>
+<div id="site-footer"></div>
+    <script src="/js/chrome.js"></script>
 <script>
 document.getElementById('searchBtn').addEventListener('click', ()=>{
     const q = document.getElementById('q').value.trim();
-    const url = 'jobs.html' + (q ? ('?q=' + encodeURIComponent(q)) : '');
-    location.href = url;
+    const loc = document.getElementById('loc').value.trim();
+    const params = new URLSearchParams();
+    if (q) params.set('q', q);
+    if (loc) params.set('location', loc);
+    const qs = params.toString();
+    location.href = 'jobs.html' + (qs ? ('?' + qs) : '');
 });
 // Prefill jobs search if supported later
 </script>

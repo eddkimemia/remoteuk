@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Remote Medical Scheduler Roles — Career Accelerator | RemoteMedicalJobs</title>
-    <meta name="description" content="Prepare for remote medical scheduler and telehealth support roles worldwide. Optional Career Accelerator course — access emailed after secure payment.">
+    <meta name="description" content="Prepare for remote medical scheduler and telehealth support roles worldwide. Optional Career Accelerator ($27) to look interview-ready after you apply — access emailed after secure payment.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -13,8 +13,11 @@
         .toast{position:fixed;top:20px;right:20px;z-index:50;background:#0f172a;color:#fff;padding:12px 16px;border-radius:12px;transform:translateX(120%);transition:.3s;max-width:300px;font-size:14px}
         .toast.show{transform:translateX(0)}
     </style>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body class="bg-slate-50 text-slate-900 antialiased">
+<div id="site-header" data-active="" data-pad="true"></div>
+
     <div class="bg-slate-900 text-white text-center text-xs sm:text-sm py-2 px-4">
         Global remote healthcare careers · Course access delivered by email after payment
     </div>
@@ -29,14 +32,14 @@
                 Build skills for <span class="text-cyan-300">remote medical scheduler</span> roles worldwide
             </h1>
             <p class="text-slate-300 text-base sm:text-lg mb-8 max-w-2xl mx-auto">
-                No fake “limited slots.” Browse real listings free, submit your profile free, and optionally unlock the Career Accelerator — training emailed to you after secure Paystack checkout.
+                Browse roles and submit your profile free. When you want interview shortlists to notice you, unlock the Career Accelerator — training emailed instantly after Paystack checkout.
             </p>
             <div class="flex flex-col sm:flex-row gap-3 justify-center">
                 <a href="apply.html?job_title=Remote%20Medical%20Scheduler" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg">
-                    Apply free + optional course
+                    Apply free
                 </a>
-                <a href="jobs.html" class="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/20 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/15">
-                    Browse jobs
+                <a href="course.html" class="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/20 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/15">
+                    Get certified — $27
                 </a>
             </div>
             <div class="flex flex-wrap justify-center gap-4 mt-8 text-xs text-slate-400">
@@ -113,7 +116,9 @@
         </div>
     </section>
 
-    <div class="toast" id="toast"></div>
+    <div id="site-footer"></div>
+    <script src="/js/chrome.js"></script>
+<div class="toast" id="toast"></div>
 <script>
 function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3500)}
 document.getElementById('enrollForm').addEventListener('submit', async (e)=>{

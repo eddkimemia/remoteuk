@@ -238,54 +238,21 @@
         }
 
         /* Fade-up */
-        .fade-up { opacity:0;transform:translateY(20px);transition:all .6s cubic-bezier(.16,1,.3,1); }
-        .fade-up.visible { opacity:1;transform:translateY(0); }
+        .fade-up { opacity:1;transform:none; }
+        .fade-up.js-anim { opacity:0;transform:translateY(20px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1); }
+        .fade-up.js-anim.visible, .fade-up.visible { opacity:1;transform:translateY(0); }
     </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav class="nav" id="nav">
-    <div class="nav-inner">
-        <a href="index.html" class="nav-logo">
-            <div class="nav-logo-icon"><span class="iconify" data-icon="mdi:stethoscope"></span></div>
-            RemoteMedical<span>Jobs</span>
-        </a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="jobs.html">Jobs</a></li>
-                <li><a href="course.html">Course</a></li>
-                <li><a href="jobseekers.html">Job Seekers</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="compliance.html">Compliance</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        <div class="nav-cta">
-            <a href="course.html" class="btn btn-primary">Enrol in Course</a>
-        </div>
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
-            <span class="iconify" data-icon="mdi:menu" style="font-size:28px" id="menuIcon"></span>
-        </button>
-    </div>
-</nav>
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="index.html" class="mobile-link">Home</a>
-        <a href="jobs.html" class="mobile-link">Jobs</a>
-        <a href="course.html" class="mobile-link">Course</a>
-        <a href="jobseekers.html" class="mobile-link">Job Seekers</a>
-        <a href="about.html" class="mobile-link">About</a>
-        <a href="compliance.html" class="mobile-link">Compliance</a>
-        <a href="contact.html" class="mobile-link">Contact</a>
-        <a href="course.html" class="btn btn-primary btn-lg mobile-link">Enrol in Course</a>
-    </div>
+<div id="site-header" data-active="jobs" data-pad="false"></div>
 
 <!-- JOBS HERO -->
 <section class="jobs-hero">
     <div class="jobs-hero-grid"></div>
     <div class="jobs-hero-inner fade-up">
         <h1>Browse Remote Healthcare Jobs</h1>
-        <p>Curated remote and hybrid healthcare roles from digital clinics, healthtech, and global care teams. Apply free — optional career training available.</p>
+        <p>Curated remote and hybrid healthcare roles from digital clinics, healthtech, and global care teams. Apply free to curated remote and hybrid roles. After you apply, unlock interview-ready training if you want a stronger shot at shortlists.</p>
         <div class="search-bar">
             <div class="search-bar-wrap">
                 <span class="iconify" data-icon="mdi:magnify"></span>
@@ -401,48 +368,8 @@
     </main>
 </div>
 
-<!-- ===== FOOTER ===== -->
-<footer class="footer" style="background: var(--slate-900); color: rgba(255,255,255,0.6); padding: 80px 24px 32px; margin-top: 80px;">
-    <div class="footer-inner" style="max-width: 1280px; margin: 0 auto;">
-        <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 60px;">
-            <div class="footer-brand">
-                <a href="index.html" class="nav-logo" style="margin-bottom:4px; text-decoration:none; display:flex; align-items:center; gap:10px; font-weight:700; color:white;">
-                    <div class="nav-logo-icon" style="width:32px; height:32px; background:linear-gradient(135deg,var(--blue-600),var(--green-600)); border-radius:8px; display:flex; align-items:center; justify-content:center; color:white; font-size:16px;"><span class="iconify" data-icon="mdi:stethoscope"></span></div>
-                    RemoteMedical<span style="color:var(--green-500)">Jobs</span>
-                </a>
-                <p style="font-size: 0.85rem; line-height: 1.7; margin-top: 16px; max-width: 320px;">Connecting the Nation's Top Healthcare Talent with the Future of Work. The UK's premier vetted remote healthcare hiring agency.</p>
-            </div>
-            <div class="footer-col" style="display:flex; flex-direction:column; gap:10px;">
-                <h4 style="font-size: 0.8rem; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px;">For Job Seekers</h4>
-                <a href="jobs.html" style="color: rgba(255,255,255,0.5); text-decoration:none; font-size: 0.85rem;">Browse Remote Jobs</a>
-                <a href="course.html" style="color: rgba(255,255,255,0.5); text-decoration:none; font-size: 0.85rem;">The Academy</a>
-            </div>
-            <div class="footer-col" style="display:flex; flex-direction:column; gap:10px;">
-                <h4 style="font-size: 0.8rem; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px;">For Employers</h4>
-                <a href="index.html#employers" style="color: rgba(255,255,255,0.5); text-decoration:none; font-size: 0.85rem;">Our Services</a>
-            </div>
-            <div class="footer-col" style="display:flex; flex-direction:column; gap:10px;">
-                <h4 style="font-size: 0.8rem; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px;">Company</h4>
-                <a href="index.html#about" style="color: rgba(255,255,255,0.5); text-decoration:none; font-size: 0.85rem;">About Us</a>
-                <a href="privacy.html" style="color: rgba(255,255,255,0.5); text-decoration:none; font-size: 0.85rem;">Privacy Policy</a>
-                <a href="terms.html" style="color: rgba(255,255,255,0.5); text-decoration:none; font-size: 0.85rem;">Terms of Service</a>
-            </div>
-        </div>
-        <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
-            <p style="font-size: 0.78rem;">© 2026 RemoteMedicalJobs. Remote healthcare careers worldwide.</p>
-            <div style="display: flex; gap: 24px;">
-                <a href="privacy.html" style="font-size: 0.78rem; color: rgba(255,255,255,0.4); text-decoration: none;">Privacy</a>
-                <a href="terms.html" style="font-size: 0.78rem; color: rgba(255,255,255,0.4); text-decoration: none;">Terms</a>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<style>
-@media (max-width: 768px) {
-    .footer-inner div { grid-template-columns: 1fr !important; gap: 32px !important; }
-}
-</style>
+<div id="site-footer"></div>
+<script src="/js/chrome.js"></script>
 
 <!-- APPLICATION MODAL -->
 <div class="modal-overlay" id="modalOverlay">
@@ -701,10 +628,8 @@ function renderJobs(filtered) {
 
 function goPage(p) {
     currentPage = p;
-    // Prefill search from ?q=
-(function(){ try{ const q=new URLSearchParams(location.search).get('q'); if(q){ const el=document.getElementById('mainSearch'); if(el){ el.value=q; }} }catch(e){} })();
-filterJobs();
-    window.scrollTo({top: 340, behavior:'smooth'});
+    filterJobs();
+    window.scrollTo({ top: 340, behavior: 'smooth' });
 }
 
 function setView(v) {
@@ -717,7 +642,9 @@ function setView(v) {
 
 function updateSalary() {
     const v = document.getElementById('salaryRange').value;
-    document.getElementById('salaryValue').textContent = '
+    const el = document.getElementById('salaryValue');
+    if (!el) return;
+    el.textContent = (!v || v === '0') ? 'Any rate' : ('$' + v + '+ / hour');
 }
 
 function clearAllFilters() {
@@ -917,19 +844,22 @@ const mobileToggle = document.getElementById('mobileToggle');
 const mobileMenu = document.getElementById('mobileMenu');
 const menuIcon = document.getElementById('menuIcon');
 let menuOpen = false;
-mobileToggle.addEventListener('click', () => {
+mobileToggle && mobileToggle.addEventListener('click', () => {
     menuOpen = !menuOpen;
-    mobileMenu.classList.toggle('active', menuOpen);
-    menuIcon.setAttribute('data-icon', menuOpen ? 'mdi:close' : 'mdi:menu');
+    mobileMenu && mobileMenu.classList.toggle('active', menuOpen);
+    menuIcon && menuIcon.setAttribute('data-icon', menuOpen ? 'mdi:close' : 'mdi:menu');
     document.body.style.overflow = menuOpen ? 'hidden' : '';
 });
 document.querySelectorAll('.mobile-menu a').forEach(a => a.addEventListener('click', () => {
-    menuOpen = false; mobileMenu.classList.remove('active');
-    menuIcon.setAttribute('data-icon','mdi:menu'); document.body.style.overflow = '';
+    menuOpen = false; mobileMenu && mobileMenu.classList.remove('active');
+    menuIcon && menuIcon.setAttribute('data-icon','mdi:menu'); document.body.style.overflow = '';
 }));
 
 // ===== NAV SCROLL =====
-window.addEventListener('scroll', () => document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20));
+window.addEventListener('scroll', () => {
+    const n = document.getElementById('nav');
+    if (n) n.classList.toggle('scrolled', window.scrollY > 20);
+}, { passive: true });
 
 // ===== MODAL CLOSE ON OVERLAY CLICK =====
 document.getElementById('modalOverlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeModal(); });
@@ -939,241 +869,20 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal()
 const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, {threshold:0.1});
-document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+document.querySelectorAll('.fade-up').forEach(el => { el.classList.add('js-anim'); obs.observe(el); });
+setTimeout(() => document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible')), 900);
 
 // ===== INIT =====
-filterJobs();
-</script>
-
-<style>
-@keyframes spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
-</style>
-</body>
-</html> + parseInt(v) + '+ / hour';
-}
-
-function clearAllFilters() {
-    document.getElementById('mainSearch').value = '';
-    document.getElementById('mainCategory').value = '';
-    document.getElementById('mainContract').value = '';
-    document.getElementById('salaryRange').value = 25000;
-    updateSalary();
-    document.getElementById('sortSelect').value = 'featured';
-    document.querySelectorAll('.sidebar-card input[type="checkbox"]').forEach(c => c.checked = false);
-    filterJobs();
-    showToast('All filters cleared', 'info');
-}
-
-function toggleSave(id, btn) {
-    if (savedJobs.has(id)) {
-        savedJobs.delete(id);
-        btn.classList.remove('saved');
-        btn.querySelector('.iconify').setAttribute('data-icon','mdi:heart-outline');
-        showToast('Job removed from saved', 'info');
-    } else {
-        savedJobs.add(id);
-        btn.classList.add('saved');
-        btn.querySelector('.iconify').setAttribute('data-icon','mdi:heart');
-        showToast('Job saved to your favourites', 'success');
-    }
-}
-
-// ===== JOB MODAL =====
-function openJobModal(id) {
-    const j = jobs.find(x => x.id === id);
-    if (!j) return;
-    const modal = document.getElementById('modal');
-    modal.innerHTML = `
-        <div class="modal-header">
-            <div>
-                <div class="modal-job-title">${j.title}</div>
-                <div class="modal-job-company">
-                    <span class="iconify" data-icon="mdi:office-building" style="font-size:14px"></span>
-                    ${j.company} · ${j.location}
-                </div>
-            </div>
-            <button class="modal-close" onclick="closeModal()"><span class="iconify" data-icon="mdi:close"></span></button>
-        </div>
-        <div class="modal-body">
-            <div class="modal-detail-grid">
-                <div class="modal-detail">
-                    <div class="modal-detail-icon"><span class="iconify" data-icon="mdi:currency-gbp"></span></div>
-                    <div class="modal-detail-value">${j.salary}</div>
-                    <div class="modal-detail-label">Salary</div>
-                </div>
-                <div class="modal-detail">
-                    <div class="modal-detail-icon"><span class="iconify" data-icon="${j.mode==='remote'?'mdi:home':'mdi:office-building'}"></span></div>
-                    <div class="modal-detail-value">${j.mode==='remote'?'Fully Remote':'Hybrid'}</div>
-                    <div class="modal-detail-label">Work Mode</div>
-                </div>
-                <div class="modal-detail">
-                    <div class="modal-detail-icon"><span class="iconify" data-icon="mdi:file-sign"></span></div>
-                    <div class="modal-detail-value">${j.contract.charAt(0).toUpperCase()+j.contract.slice(1)}</div>
-                    <div class="modal-detail-label">Contract</div>
-                </div>
-                <div class="modal-detail">
-                    <div class="modal-detail-icon"><span class="iconify" data-icon="mdi:clock-outline"></span></div>
-                    <div class="modal-detail-value">${j.posted}</div>
-                    <div class="modal-detail-label">Posted</div>
-                </div>
-            </div>
-            <div class="modal-section">
-                <h4><span class="iconify" data-icon="mdi:text-box-outline"></span> About the Role</h4>
-                <p>${j.desc}</p>
-            </div>
-            <div class="modal-section">
-                <h4><span class="iconify" data-icon="mdi:check-circle"></span> Requirements</h4>
-                <ul>${j.requirements.map(r => `<li>${r}</li>`).join('')}</ul>
-            </div>
-            <div class="modal-section">
-                <h4><span class="iconify" data-icon="mdi:gift-outline"></span> Benefits</h4>
-                <ul>${j.benefits.map(b => `<li>${b}</li>`).join('')}</ul>
-            </div>
-            <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:24px">
-                ${j.tags.map(t => `<span class="tag">${t}</span>`).join('')}
-            </div>
-            <hr class="modal-divider">
-            <div style="background:var(--blue-50);border:1.5px solid var(--blue-200);border-radius:12px;padding:24px 32px;text-align:center;margin-top:20px">
-                <span class="iconify" data-icon="mdi:fire" style="font-size:36px;color:var(--amber-500);margin-bottom:12px"></span>
-                <h4 style="font-size:1.15rem;font-weight:800;color:var(--slate-900);margin-bottom:8px">Apply for ${j.title}</h4>
-                <p style="font-size:0.875rem;color:var(--slate-600);line-height:1.6;margin-bottom:20px;max-width:480px;margin-left:auto;margin-right:auto">
-                    There are currently high volumes of applicants for this clinical position. Submit your eligibility details immediately to lock in your priority spot.
-                </p>
-                <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-                    <a href="apply.html?job_title=${encodeURIComponent(j.title)}" class="btn btn-green btn-lg" style="box-shadow:0 4px 14px rgba(5,150,105,0.25); font-weight: 800;">
-                        Apply Now
-                    </a>
-                </div>
-            </div>
-        </div>
-    `;
-    document.getElementById('modalOverlay').classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
-
-function closeModal() {
-    document.getElementById('modalOverlay').classList.remove('active');
-    document.body.style.overflow = '';
-}
-
-function nextStep(step) {
-    // Validation
-    if (step === 2) {
-        const f = document.getElementById('appFirst').value.trim();
-        const l = document.getElementById('appLast').value.trim();
-        const e = document.getElementById('appEmail').value.trim();
-        const p = document.getElementById('appPhone').value.trim();
-        const r = document.getElementById('appRight').value;
-        if (!f || !l || !e || !p || !r) { showToast('Please fill in all required fields', 'error'); return; }
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)) { showToast('Please enter a valid email address', 'error'); return; }
-    }
-    if (step === 3) {
-        const reg = document.getElementById('appReg').value;
-        const exp = document.getElementById('appExp').value;
-        const cover = document.getElementById('appCover').value.trim();
-        if (!reg || !exp || !cover) { showToast('Please fill in all required fields', 'error'); return; }
-        if (cover.length < 50) { showToast('Please provide a more detailed cover letter (min 50 characters)', 'error'); return; }
-    }
-    if (step === 4) {
-        const cv = document.getElementById('cvName').textContent;
-        if (!cv) { showToast('Please upload your CV', 'error'); return; }
-        // Build summary
-        const regLabels = {nmc:'NMC',gmc:'GMC',gphc:'GPhC',hcpc:'HCPC',rccp:'RCCP',none:'N/A (Non-clinical)'};
-        const rightLabels = {british:'British/Irish Citizen',settled:'Settled/Pre-settled Status',visa:'Skilled Worker Visa',health:'Health & Care Visa',dependent:'Dependent Visa',other:'Other'};
-        document.getElementById('appSummary').innerHTML = `
-            <div><strong>Name:</strong> ${document.getElementById('appFirst').value} ${document.getElementById('appLast').value}</div>
-            <div><strong>Email:</strong> ${document.getElementById('appEmail').value}</div>
-            <div><strong>Phone:</strong> ${document.getElementById('appPhone').value}</div>
-            <div><strong>Right to Work:</strong> ${rightLabels[document.getElementById('appRight').value] || 'Not specified'}</div>
-            <div><strong>Registration:</strong> ${regLabels[document.getElementById('appReg').value] || 'Not specified'} ${document.getElementById('appRegNum').value ? '(' + document.getElementById('appRegNum').value + ')' : ''}</div>
-            <div><strong>Experience:</strong> ${document.getElementById('appExp').value} years</div>
-            <div><strong>Notice Period:</strong> ${document.getElementById('appNotice').value}</div>
-            <div><strong>CV:</strong> ${cv}</div>
-            ${document.getElementById('appLinkedin').value ? '<div><strong>LinkedIn:</strong> ' + document.getElementById('appLinkedin').value + '</div>' : ''}
-        `;
-    }
-
-    // Switch steps
-    for (let i = 1; i <= 4; i++) {
-        document.getElementById('step' + i).classList.toggle('active', i === step);
-        const label = document.getElementById('stepLabel' + i);
-        label.classList.toggle('active', i === step);
-        if (i < step) label.classList.add('completed');
-        else label.classList.remove('completed');
-    }
-}
-
-function handleFile(input, nameId) {
-    if (input.files.length) {
-        const file = input.files[0];
-        if (file.size > 5 * 1024 * 1024) { showToast('File too large — maximum 5MB', 'error'); input.value = ''; return; }
-        const el = document.getElementById(nameId);
-        el.textContent = '✓ ' + file.name;
-        el.style.display = 'block';
-    }
-}
-
-function submitApplication(jobId) {
-    if (!document.getElementById('appConsent').checked) {
-        showToast('Please consent to data processing to continue', 'error');
-        return;
-    }
-    const btn = document.getElementById('submitBtn');
-    btn.disabled = true;
-    btn.innerHTML = '<span class="iconify" data-icon="mdi:loading" style="animation:spin 1s linear infinite"></span> Submitting...';
-
-    setTimeout(() => {
-        for (let i = 1; i <= 4; i++) document.getElementById('step' + i).classList.remove('active');
-        document.getElementById('stepSuccess').classList.add('active');
-        for (let i = 1; i <= 4; i++) {
-            document.getElementById('stepLabel' + i).classList.remove('active');
-            document.getElementById('stepLabel' + i).classList.add('completed');
+(function () {
+    try {
+        const params = new URLSearchParams(location.search);
+        const q = params.get('q');
+        if (q) {
+            const el = document.getElementById('mainSearch');
+            if (el) el.value = q;
         }
-    }, 1500);
-}
-
-// ===== TOAST =====
-function showToast(msg, type = 'success') {
-    const t = document.getElementById('toast');
-    const m = document.getElementById('toastMsg');
-    t.className = 'toast toast-' + type;
-    const icons = {success:'mdi:check-circle',info:'mdi:information',error:'mdi:alert-circle'};
-    t.querySelector('.iconify').setAttribute('data-icon', icons[type] || icons.success);
-    m.textContent = msg;
-    t.classList.add('show');
-    setTimeout(() => t.classList.remove('show'), 3500);
-}
-
-// ===== MOBILE MENU =====
-const mobileToggle = document.getElementById('mobileToggle');
-const mobileMenu = document.getElementById('mobileMenu');
-const menuIcon = document.getElementById('menuIcon');
-let menuOpen = false;
-mobileToggle.addEventListener('click', () => {
-    menuOpen = !menuOpen;
-    mobileMenu.classList.toggle('active', menuOpen);
-    menuIcon.setAttribute('data-icon', menuOpen ? 'mdi:close' : 'mdi:menu');
-    document.body.style.overflow = menuOpen ? 'hidden' : '';
-});
-document.querySelectorAll('.mobile-menu a').forEach(a => a.addEventListener('click', () => {
-    menuOpen = false; mobileMenu.classList.remove('active');
-    menuIcon.setAttribute('data-icon','mdi:menu'); document.body.style.overflow = '';
-}));
-
-// ===== NAV SCROLL =====
-window.addEventListener('scroll', () => document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20));
-
-// ===== MODAL CLOSE ON OVERLAY CLICK =====
-document.getElementById('modalOverlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeModal(); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
-// ===== INTERSECTION OBSERVER =====
-const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, {threshold:0.1});
-document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
-
-// ===== INIT =====
+    } catch (e) {}
+})();
 filterJobs();
 </script>
 

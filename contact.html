@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us — RemoteMedicalJobs</title>
+    <title>Contact RemoteMedicalJobs — Hiring & Course Support</title>
     <meta name="description" content="Contact RemoteMedicalJobs for job seeker support, employer partnerships, or course help. We serve candidates worldwide.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
@@ -36,33 +36,19 @@
         .toast.show{transform:translateX(0)}
         .footer{text-align:center;padding:24px;color:#94a3b8;font-size:.8rem}
         .footer a{color:#64748b;margin:0 8px}
-        @media(max-width:800px){.grid,.row,.nav-links{display:none}.grid{display:block}.row{display:grid}}
-        @media(max-width:800px){.nav-links{display:none}}
+        @media(max-width:800px){
+            .grid{grid-template-columns:1fr}
+            .row{grid-template-columns:1fr}
+        }
     </style>
 </head>
 <body>
-<nav class="nav">
-    <div class="nav-inner">
-        <a href="index.html" class="nav-logo">
-            <div class="nav-logo-icon"><span class="iconify" data-icon="mdi:stethoscope"></span></div>
-            RemoteMedical<span>Jobs</span>
-        </a>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="jobs.html">Jobs</a></li>
-            <li><a href="course.html">Course</a></li>
-            <li><a href="jobseekers.html">Job Seekers</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <a href="course.html" class="btn btn-primary" style="width:auto">Course</a>
-    </div>
-</nav>
+<div id="site-header" data-active="contact" data-pad="false"></div>
 
 <div class="wrap">
     <div class="card">
         <h1>Contact us</h1>
-        <p class="lead">Job seekers, employers, and course students worldwide — we typically reply within 1 business day.</p>
+        <p class="lead">Job seekers completing certification, employers hiring remote healthcare talent, and students needing portal access — we typically reply within 1 business day. Curious about training? <a href="course.html" style="color:#2563eb;font-weight:600">See the Career Accelerator →</a></p>
         <div class="grid">
             <div>
                 <div class="info-item">
@@ -123,14 +109,11 @@
         </div>
     </div>
 </div>
-<div class="footer">
-    <a href="privacy.html">Privacy</a>
-    <a href="terms.html">Terms</a>
-    <div style="margin-top:8px">© <span id="y"></span> RemoteMedicalJobs</div>
-</div>
+<div id="site-footer"></div>
+    <script src="/js/chrome.js"></script>
 <div class="toast" id="toast"></div>
 <script>
-document.getElementById('y').textContent = new Date().getFullYear();
+const _y = document.getElementById('y'); if (_y) _y.textContent = new Date().getFullYear();
 function toast(msg){
     const t=document.getElementById('toast');
     t.textContent=msg;

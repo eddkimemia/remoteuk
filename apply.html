@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apply & Get Career-Ready — RemoteMedicalJobs</title>
-    <meta name="description" content="Apply for remote healthcare roles worldwide. Optional Career Accelerator course with telehealth skills, compliance, and CV tools — delivered by email.">
+    <title>Apply for Remote Healthcare Jobs | RemoteMedicalJobs</title>
+    <meta name="description" content="Apply free for remote telehealth and healthcare roles worldwide. After you apply, unlock interview-ready Career Accelerator training delivered to your email.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
     <link rel="stylesheet" href="/style.css">
@@ -65,39 +65,14 @@
     </style>
 </head>
 <body>
-<nav class="nav">
-    <div class="nav-inner">
-        <a href="index.html" class="nav-logo">
-            <div class="nav-logo-icon"><span class="iconify" data-icon="mdi:stethoscope"></span></div>
-            RemoteMedical<span>Jobs</span>
-        </a>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="jobs.html">Jobs</a></li>
-            <li><a href="course.html">Course</a></li>
-            <li><a href="jobseekers.html">Job Seekers</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <div class="nav-cta"><a href="course.html" class="btn btn-primary">Career Accelerator</a></div>
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><span class="iconify" data-icon="mdi:menu" id="menuIcon"></span></button>
-    </div>
-</nav>
-<div class="mobile-menu" id="mobileMenu">
-    <a href="index.html">Home</a>
-    <a href="jobs.html">Jobs</a>
-    <a href="course.html">Course</a>
-    <a href="jobseekers.html">Job Seekers</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-</div>
+<div id="site-header" data-active="apply" data-pad="false"></div>
 
 <div class="container">
     <div class="card">
         <!-- Screen 1: free application -->
         <div id="screenForm" class="screen active">
             <h1 id="pageTitle">Apply for remote healthcare roles</h1>
-            <p class="subtitle">Tell us about your background. Your free application is saved to our talent pool for global remote matching. Optional career training is available after — never required to browse jobs.</p>
+            <p class="subtitle">Tell us about your background. Your application is free and saved to our talent pool for global remote matching. No payment needed to submit.</p>
             <form id="applyForm">
                 <div class="form-row">
                     <div class="form-group">
@@ -112,7 +87,7 @@
                 <div class="form-group">
                     <label>Email <span class="req">*</span></label>
                     <input type="email" class="form-input" id="email" required autocomplete="email">
-                    <p class="hint">Course access is delivered to this email after purchase.</p>
+                    <p class="hint">We will use this email for application updates (and course access if you enrol later).</p>
                 </div>
                 <div class="form-group">
                     <label>Phone / WhatsApp</label>
@@ -164,16 +139,18 @@
 
         <!-- Screen 2: honest upsell -->
         <div id="screenOffer" class="screen">
-            <h1>Application received ✓</h1>
-            <p class="subtitle" id="offerSub">You're in our talent pool. Optional next step: get remote-ready faster with the Career Accelerator.</p>
+            <div style="display:inline-flex;align-items:center;gap:8px;background:#eff6ff;color:#1d4ed8;font-size:.78rem;font-weight:700;padding:6px 12px;border-radius:50px;margin-bottom:14px">APPLICATION RECEIVED ✓</div>
+            <h1>Want to be included in interview shortlists?</h1>
+            <p class="subtitle" id="offerSub">Your free application is saved. Here is how serious candidates get noticed faster.</p>
             <div class="offer">
-                <h2>Stand out for global remote roles</h2>
-                <p style="font-size:.92rem;color:#334155">Many telehealth employers look for consultation skills, privacy awareness (HIPAA/GDPR-style practices), and a remote-ready CV. Our self-paced course is <strong>optional</strong> — not a barrier to browsing jobs — and is delivered to your email with lifetime portal access.</p>
+                <h2>You are one step from standing out</h2>
+                <p style="font-size:.92rem;color:#334155;margin-bottom:12px">Hiring partners get hundreds of CVs that look the same. Candidates who complete the <strong>Career Accelerator</strong> arrive interview-ready — video-consult skills, privacy awareness, and a remote-ready CV — so your application is far more likely to move into <strong>interview consideration</strong>.</p>
                 <ul>
-                    <li>8 modules: telehealth skills, compliance, CV, interviews</li>
-                    <li>Downloadable templates & checklists</li>
-                    <li>Access link emailed instantly after payment</li>
-                    <li>Works worldwide · one-time payment in USD</li>
+                    <li><strong>Priority for interview shortlists</strong> — show you are remote-ready, not just “interested”</li>
+                    <li>8 modules: telehealth skills, privacy essentials, CV &amp; interview prep</li>
+                    <li>Templates &amp; checklists used by candidates who convert applications into calls</li>
+                    <li>Instant email access after checkout · lifetime portal</li>
+                    <li>One-time from <strong>$27</strong> — less than a single missed opportunity</li>
                 </ul>
                 <div class="pricing">
                     <button type="button" class="price-card selected" data-product="standard" id="cardStandard">
@@ -182,38 +159,30 @@
                         <span>Full course + templates</span>
                     </button>
                     <button type="button" class="price-card" data-product="pro" id="cardPro">
-                        <div style="font-weight:700;margin-bottom:4px">Pro · Best value</div>
+                        <div style="font-weight:700;margin-bottom:4px">Pro · Best for interviews</div>
                         <strong>$47</strong>
                         <span>Course + interview bank + LinkedIn kit</span>
                     </button>
                 </div>
                 <button type="button" class="btn btn-green btn-lg" id="purchaseBtn">
-                    Get course access — email delivery
+                    Unlock interview-ready access — $27
                 </button>
-                <p class="trust">Secure checkout via Paystack · Instant email delivery · 30-day satisfaction policy</p>
+                <p class="trust">Secure Paystack checkout · Instant email delivery · 30-day satisfaction policy</p>
             </div>
             <div style="margin-top:20px;display:flex;flex-wrap:wrap;gap:10px;justify-content:center">
-                <a href="jobs.html" class="btn btn-secondary">Browse jobs without course</a>
-                <a href="course.html" class="btn btn-secondary">Full course details</a>
+                <a href="jobs.html" class="btn btn-secondary">Back to jobs</a>
+                <a href="course.html" class="btn btn-secondary">See full curriculum</a>
             </div>
         </div>
     </div>
 </div>
 
-<footer class="footer">
-    <div class="footer-inner">
-        <div>© <span id="y"></span> RemoteMedicalJobs · Remote healthcare careers worldwide</div>
-        <div>
-            <a href="privacy.html">Privacy</a>
-            <a href="terms.html">Terms</a>
-            <a href="contact.html">Contact</a>
-        </div>
-    </div>
-</footer>
+<div id="site-footer"></div>
+    <script src="/js/chrome.js"></script>
 <div class="toast" id="toast"></div>
 
 <script>
-document.getElementById('y').textContent = new Date().getFullYear();
+const _y = document.getElementById('y'); if (_y) _y.textContent = new Date().getFullYear();
 let candidate = {};
 let selectedProduct = 'standard';
 const params = new URLSearchParams(location.search);
@@ -229,8 +198,8 @@ document.querySelectorAll('.price-card').forEach(card => {
         selectedProduct = card.dataset.product;
         document.getElementById('purchaseBtn').textContent =
             selectedProduct === 'pro'
-                ? 'Get Pro access ($47) — email delivery'
-                : 'Get course access ($27) — email delivery';
+                ? 'Unlock Pro interview pack — $47'
+                : 'Unlock interview-ready access — $27';
     });
 });
 
@@ -268,7 +237,7 @@ document.getElementById('applyForm').addEventListener('submit', async (e) => {
         document.getElementById('screenForm').classList.remove('active');
         document.getElementById('screenOffer').classList.add('active');
         document.getElementById('offerSub').textContent =
-            `Thanks ${candidate.first_name}! We saved your free application. Want structured training to compete for global remote roles?`;
+            `Great news, ${candidate.first_name} — your application is in. If you want this role to move toward interview shortlists, unlock the Career Accelerator next.`;
         window.scrollTo({ top: 80, behavior: 'smooth' });
     } catch (err) {
         showToast(err.message || 'Error saving application');
@@ -297,17 +266,17 @@ document.getElementById('purchaseBtn').addEventListener('click', async () => {
         showToast(err.message || 'Checkout error');
         btn.disabled = false;
         btn.textContent = selectedProduct === 'pro'
-            ? 'Get Pro access ($47) — email delivery'
-            : 'Get course access ($27) — email delivery';
+            ? 'Unlock Pro interview pack — $47'
+            : 'Unlock interview-ready access — $27';
     }
 });
 
-const mobileToggle = document.getElementById('mobileToggle');
+const mobileToggle = document.getElementById('mobileToggle'); /* chrome.js also wires this */
 const mobileMenu = document.getElementById('mobileMenu');
 const menuIcon = document.getElementById('menuIcon');
-mobileToggle.addEventListener('click', () => {
-    const open = mobileMenu.classList.toggle('active');
-    menuIcon.setAttribute('data-icon', open ? 'mdi:close' : 'mdi:menu');
+mobileToggle && mobileToggle.addEventListener('click', () => {
+    const open = mobileMenu && mobileMenu.classList.toggle('active');
+    menuIcon && menuIcon.setAttribute('data-icon', open ? 'mdi:close' : 'mdi:menu');
 });
 </script>
 </body>

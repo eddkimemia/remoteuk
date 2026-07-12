@@ -3,49 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compliance Training Overview — RemoteMedicalJobs</title>
+    <title>Healthcare Privacy & Remote Compliance Training | RemoteMedicalJobs</title>
+    <meta name="description" content="HIPAA-oriented and GDPR-style privacy modules for remote healthcare work. Included in the $27 Career Accelerator — practical training for remote healthcare professionals.">
+    <meta name="keywords" content="HIPAA training remote, GDPR healthcare, telehealth compliance, remote workstation security, medical privacy course">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link rel="stylesheet" href="/style.css">
     <style>
         body{font-family:Inter,system-ui,sans-serif;background:#f8fafc;margin:0;color:#1e293b}
-        .nav{padding:16px 24px;background:#fff;border-bottom:1px solid #e2e8f0}
-        .nav a{font-weight:700;color:#1e3a8a;text-decoration:none}
-        .nav span{color:#059669}
         .wrap{max-width:900px;margin:40px auto;padding:0 24px 60px}
         h1{font-size:1.8rem;font-weight:800}
-        .lead{color:#64748b;margin-bottom:28px}
+        .lead{color:#64748b;margin-bottom:28px;line-height:1.7}
         .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
         .card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:24px}
         .card h3{margin:12px 0 8px;font-size:1rem}
         .card p{font-size:.88rem;color:#64748b;margin:0;line-height:1.6}
         .ico{width:44px;height:44px;border-radius:12px;background:#eff6ff;color:#2563eb;display:flex;align-items:center;justify-content:center}
         .btn{display:inline-block;margin-top:28px;background:linear-gradient(135deg,#059669,#047857);color:#fff;text-decoration:none;font-weight:600;padding:12px 22px;border-radius:10px}
+        .cta-box{margin-top:32px;background:linear-gradient(135deg,#eff6ff,#ecfdf5);border:1px solid #bfdbfe;border-radius:16px;padding:28px}
         @media(max-width:800px){.grid{grid-template-columns:1fr}}
     </style>
 </head>
 <body>
-<div class="nav"><a href="index.html">RemoteMedical<span>Jobs</span></a></div>
+<div id="site-header" data-active="" data-pad="true"></div>
+
 <div class="wrap">
-    <h1>Global compliance awareness</h1>
-    <p class="lead">Remote care teams must handle health information carefully. Our Career Accelerator includes practical privacy modules for multi-market work — not a substitute for employer-specific training or legal advice.</p>
+    <h1>Privacy &amp; compliance skills for remote healthcare</h1>
+    <p class="lead">Remote care teams handle sensitive health information every day. Our Career Accelerator includes practical multi-market privacy modules — This page is educational overview, not legal advice or employer-specific training.</p>
     <div class="grid">
         <div class="card">
-            <div class="ico"><span class="iconify" data-icon="mdi:shield-lock"></span></div>
+            <div class="ico"><span class="iconify" data-icon="mdi:shield-lock" aria-hidden="true"></span></div>
             <h3>HIPAA-oriented practices</h3>
-            <p>For US-facing roles: PHI awareness, minimum necessary, secure workspaces, and breach escalation basics.</p>
+            <p>For US-facing roles: PHI awareness, minimum necessary, secure workspaces, and breach escalation basics that telehealth employers expect.</p>
         </div>
         <div class="card">
-            <div class="ico"><span class="iconify" data-icon="mdi:earth"></span></div>
+            <div class="ico"><span class="iconify" data-icon="mdi:earth" aria-hidden="true"></span></div>
             <h3>GDPR-style principles</h3>
-            <p>For UK/EU-facing work: special category health data, purpose limitation, and careful cross-border handling.</p>
+            <p>For UK/EU-facing work: special category health data, purpose limitation, and careful cross-border handling for remote clinicians and coordinators.</p>
         </div>
         <div class="card">
-            <div class="ico"><span class="iconify" data-icon="mdi:laptop"></span></div>
+            <div class="ico"><span class="iconify" data-icon="mdi:laptop" aria-hidden="true"></span></div>
             <h3>Remote workstation hygiene</h3>
-            <p>Devices, networks, screen privacy, password hygiene — what global employers commonly audit.</p>
+            <p>Devices, networks, screen privacy, password hygiene — what global employers commonly audit before allowing remote access.</p>
         </div>
     </div>
-    <a class="btn" href="course.html">Get the full compliance module (emailed access)</a>
+    <div class="cta-box">
+        <h2 style="font-size:1.2rem;font-weight:800;margin:0 0 10px">Get the full compliance module inside the Career Accelerator</h2>
+        <p class="lead" style="margin:0 0 16px">From $27 one-time. Instant email portal access. A smart step after you apply if you want interview confidence.</p>
+        <a class="btn" href="course.html" style="margin-top:0">See Career Accelerator — $27</a>
+    </div>
+    <p class="lead" style="margin-top:24px"><strong>Related:</strong> <a href="course.html">Course</a> · <a href="jobs.html">Jobs</a> · <a href="apply.html">Apply</a> · <a href="privacy.html">Privacy policy</a> · <a href="contact.html">Contact</a></p>
 </div>
+<div id="site-footer"></div>
+<script src="/js/chrome.js"></script>
 </body>
 </html>
